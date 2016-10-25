@@ -1,0 +1,38 @@
+{
+  "name": "@mean-expert/fireloop",
+  "version": "1.0.0-alpha.8",
+  "description": "This CLI Tool generates FireLoop projects and provides a handful way to work with MEAN Stack based Applications.",
+  "main": "index.js",
+  "bin": {
+    "fireloop": "bin/fireloop.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mean-expert-official/fireloop.io.git"
+  },
+  "keywords": [
+    "FireLoop"
+  ],
+  "author": "Jonathan Casarrubias",
+  "license": "MTI",
+  "bugs": {
+    "url": "https://github.com/mean-expert-official/fireloop.io/issues"
+  },
+  "homepage": "https://github.com/mean-expert-official/fireloop.io#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "extfs": "0.0.7",
+    "generator-fireloop": "^1.0.0-alpha.8",
+    "yargs": "^6.3.0",
+    "yeoman-environment": "^1.6.5",
+    "yo": "^1.8.5"
+  },
+  "devDependencies": {
+    "@types/chalk": "^0.4.31",
+    "@types/yargs": "0.0.33"
+  }
+}

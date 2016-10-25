@@ -1,22 +1,28 @@
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
-##Overview
-
-During the time I've spent developing the [LoopBack SDK Builder], I've received a good amount of feedback related to one of the greatest improvements against the official [loopback-sdk-angular]; The Real-Time functionality provided by the [loopback-component-pubsub].
-
-But truth is that it may be limited since it hooks from writing operations and distributes between subscribed clients, though these writing operations where initially called through standard HTTP Request.
-
-So... I wanted to come up with a better solution, one that literally replaces the standard REST API for a more modern approach and using pure WebSockets as transportation layer for any type of operation, therefore HTTP Requests are deprecated when using this approach.
-
 ##Presenting FireLoop.io
 
 [FireLoop] is a [NodeJS] Real-Time Framework built on top of The Open Source [IBM's StrongLoop LoopBack] that implements a [Google's FireBase] alike API, deprecating the standard HTTP RESTful Communication Protocol from [LoopBack].
 
 Even though through the [LoopBack SDK Builder] and the NEW [LoopBack Component Real-Time] you can immediately have access to this new functionalities; this technology is currently under development and modules will be released as stable before a complete platform with its own command line tool is built and released under the name [FireLoop.io].
 
+##Installing FireLoop
+
+````sh
+$ npm install -g @mean.expert/fireloop
+````
+
+> The FireLoop CLI Tool is currently in alpha version
+
+##Create FireLoop Project, Clients and SDK
+````sh
+$ mkdir myproject && cd myproject
+$ fireloop
+````
+
 ##Why FireLoop.io
 
->My original intention was to create modules to improve my own experience while working with [LoopBack] and [Angular 2], mostly because [LoopBack] lacks of Modern Real-Time Features but also because it provides with great structure, modularity and extensibility.
+>Motivation: My original intention was to create modules to improve my own experience while working with [LoopBack] and [Angular 2], mostly because [LoopBack] lacks of Modern Real-Time Features but also because it provides with great structure, modularity and extensibility.
 
 >Suddenly a good amount of developers started to use the modules and see value on these, but after around 15 months of improving my own [LoopBack] experience; there are so many modules and configurations that it's starting to be difficult to do it and even to understand it.
 
@@ -34,12 +40,14 @@ Of course, if you are already in love with [LoopBack], you have built a system a
 
 ##FireLoop Documentation Index
 
+- [App Tutorial](http://mean.expert/2016/10/10/angular-2-real-time-applications/)
 - [Comparison Table](#comparison-table)
 - [Install FireLoop Modules](https://github.com/mean-expert-official/loopback-component-realtime#loopback-component-real-time)
 - [Using FireLoop through SDK Builder](#using-fireloop-through-sdk-builder)
 - [How to Create Data](#how-to-create-data)
 - [How to Remove Data](#how-to-remove-data)
 - [Available Events](#available-events)
+- [Read Data Using 'changes' Event](#read-data-using-changes-event)
 - [Read Data Using 'value' Event](#read-data-using-value-event)
 - [Listen 'child_added' Event](#listen-child_added-event)
 - [Listen 'child_changed' Event](#listen-child_changed-event)
@@ -56,7 +64,7 @@ Of course, if you are already in love with [LoopBack], you have built a system a
 | UI Components         | Yes  | No  | No  | Not UI but WebRTC Components for Angular 2 are under development.  |
 | Client SDK            | Monolithic | JavaScript Client  | SDKs for different languages  | Fully Typed Angular 2 SDK |
 | Extensibility         | Meteor Modules | Not yet implemented Plug-In mechanism | None | Isomorphic (Universal) Models, Hooks, Mixins and Components.
-| Scalability           | Uses MongoDB OpLog | Uses RethingDB | Auto-scaling | Adapter Driven Architecture (Options: MongoDB PubSub, Kafka, Build your own driver) |
+| Scalability           | Uses MongoDB OpLog | Uses RethinkDB | Auto-scaling | Adapter Driven Architecture (Options: MongoDB PubSub, Redis, Kafka, Build your own driver) |
 | Maturity              | Very mature | Not so mature, many pieces are not in place | Very Mature | Mature since it relies on LoopBack Maturity plus Modern Community Modules.|
 | Open Source           | Yes | Yes | No | Yes |
 
@@ -79,6 +87,26 @@ export class AppComponent {
 
 ##How to Create Data
 The following example will crate a new room instance through the new [FireLoop] API using WebSockets instead of the Standard [LoopBack] HTTP REST API protocol.
+````js
+import { Component } from '@angular/core';
+import { RealTime } from './shared/sdk/services';
+import { Room, FireLoopRef } from './shared/sdk/models';
+
+@Component(...)
+
+export class AppComponent {
+
+  private room: Room = new Room({ name: 'Hello FireLoop Room' });
+  private RoomReference: FireLoopRef<Room>;
+
+  constructor(private realTime: RealTime) {
+    this.RoomReference = this.realTime.FireLoop.ref<Room>(Room);
+    this.RoomReference.create(this.room).subscribe((instance: Room) => console.log(instance));
+  }
+}
+````
+There will be always a new instance created after using the `create` method, but you can also use `upsert` which will `create` or `update` the instance.
+
 ````js
 import { Component } from '@angular/core';
 import { RealTime } from './shared/sdk/services';
@@ -128,11 +156,33 @@ export class AppComponent {
 
 | Event | Description |
 |-------|-------------|
+| changes | This event will return an array of persisted elements and will keep firing on any change for the current Model Reference        |
 | value | This event will return an array of persisted elements and will keep firing when new values are added in the current Model Reference        |
 |  child_added     |  This event will fire once for each persisted items and will keep firing when new values are added in the current Model Reference, returning only the newly created child element           |
 | child_changed   | This event will fire once for each changed item. It will return a reference of the updated element  |
 | child_removed   | This event will fire once for each removed items It will return a reference of the removed element  |
 
+
+##Read Data Using 'changes' Event
+This is the recommended read event for real-time lists because it will be in sync any time there is a reference modification; this means that at any addition, removal or modification of any child within the reference will trigger a client synchronization.
+
+````js
+import { Component } from '@angular/core';
+import { RealTime } from './shared/sdk/services';
+import { Room, FireLoopRef } from './shared/sdk/models';
+
+@Component(...)
+
+export class AppComponent {
+
+  private RoomReference: FireLoopRef<Room>;
+
+  constructor(private realTime: RealTime) {
+    this.RoomReference = this.realTime.FireLoop.ref<Room>(Room);
+    this.RoomReference.on('changes').subscribe((rooms: Array<Room>) => console.log(rooms));
+  }
+}
+````
 
 ##Read Data Using 'value' Event
 Similar to Firebase, you are now able to listen for references changes by subscribing to the `value` event.
