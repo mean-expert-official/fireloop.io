@@ -1,18 +1,14 @@
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
-##Presenting FireLoop.io
+##Presenting FireLoop
 
 [FireLoop] is a [NodeJS] Real-Time Framework built on top of The Open Source [IBM's StrongLoop LoopBack] that implements a [Google's FireBase] alike API, deprecating the standard HTTP RESTful Communication Protocol from [LoopBack].
 
-Even though through the [LoopBack SDK Builder] and the NEW [LoopBack Component Real-Time] you can immediately have access to this new functionalities; this technology is currently under development and modules will be released as stable before a complete platform with its own command line tool is built and released under the name [FireLoop.io].
-
-##Installing FireLoop
+##Installing FireLoop CLI
 
 ````sh
 $ npm install -g @mean.expert/fireloop
 ````
-
-> The FireLoop CLI Tool is currently in alpha version
 
 ##Create FireLoop Project, Clients and SDK
 ````sh
