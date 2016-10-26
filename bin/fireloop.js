@@ -21,17 +21,25 @@ var argv = yargs
   '\nGenerate FireLoop Projects, Angular 2 Clients and SDK.' +
   '\nUsage:' +
   '\n $ fireloop [command [options]]')
-  .describe('p', 'Generate new fireloop project on the current directory.')
-  .alias({ p: 'project' })
   .argv;
-
-  if (!argv._ || argv._.length === 0) {
-    env.register(require.resolve('generator-fireloop'), 'fireloop');
-    env.register(require.resolve('generator-fireloop/generators/server'), 'fireloop:server');
-    env.register(require.resolve('generator-fireloop/generators/ng2'), 'fireloop:ng2');
-    env.register(require.resolve('generator-fireloop/generators/ng2web'), 'fireloop:ng2web');
-    env.register(require.resolve('generator-fireloop/generators/sdk'), 'fireloop:sdk');
-    env.register(require.resolve('generator-fireloop/generators/server'), 'fireloop:server');
-    env.register(require.resolve('generator-fireloop/generators/setup'), 'fireloop:setup');
-    return env.run('fireloop');
-  }
+// Register generators
+env.register(require.resolve('generator-fireloop'), 'fireloop');
+// Show default menu when no command is added
+if (!argv._ || argv._.length === 0) {
+  env.register(require.resolve('generator-fireloop/generators/app'), 'fireloop:app');
+  env.register(require.resolve('generator-fireloop/generators/ng2'), 'fireloop:ng2');
+  env.register(require.resolve('generator-fireloop/generators/ng2web'), 'fireloop:ng2web');
+  env.register(require.resolve('generator-fireloop/generators/sdk'), 'fireloop:sdk');
+  env.register(require.resolve('generator-fireloop/generators/server'), 'fireloop:server');
+  env.register(require.resolve('generator-fireloop/generators/setup'), 'fireloop:setup');
+  return env.run('fireloop');
+}
+// Process Commands
+const cmd = argv._.shift();
+try {
+  let namespaced = `fireloop:${cmd}`;
+  env.register(require.resolve(`generator-fireloop/generators/${cmd}`), namespaced);
+  env.run(namespaced, { _argv: argv });
+} catch (err) {
+  throw err;
+}
