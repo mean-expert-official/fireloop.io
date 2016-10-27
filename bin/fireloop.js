@@ -37,9 +37,15 @@ if (!argv._ || argv._.length === 0) {
 // Process Commands
 const cmd = argv._.shift();
 try {
-  let namespaced = `fireloop:${cmd}`;
-  env.register(require.resolve(`generator-fireloop/generators/${cmd}`), namespaced);
-  env.run(namespaced, { _argv: argv });
+  let loopbacked = `loopback:${cmd}`;
+  let firelooped = `fireloop:${cmd}`;
+  if (cmd === 'model') {
+    env.register(require.resolve(`generator-loopback/model`), loopbacked);
+    env.register(require.resolve(`generator-loopback/property`), `loopback:property`);
+  }
+  env.register(require.resolve(`generator-fireloop/generators/${cmd}`), firelooped);
+  env.run(firelooped, { _argv: argv });
 } catch (err) {
   throw err;
 }
+  
