@@ -7,7 +7,7 @@
 ##Installing FireLoop CLI
 
 ````sh
-$ npm install -g @mean.expert/fireloop
+$ npm install -g @mean-expert/fireloop
 ````
 
 ##Create FireLoop Project, Clients and SDK
