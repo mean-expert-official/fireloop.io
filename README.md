@@ -2,9 +2,11 @@
 
 ##Presenting FireLoop
 
-[FireLoop] is a [NodeJS] Real-Time Platform that allows you to build complex applications by seamlessly integrating the amazing technologies from the MEAN Stack, like the IBM's [LoopBack], Google's [Angular 2], Telerik's [NativeScript] and [Ionic 2] Frameworks.
+[FireLoop] is a [NodeJS] Real-Time Platform that allows you to build modern and complex applications by seamlessly integrating the amazing technologies from the MEAN Stack; Like the IBM's [LoopBack], Google's [Angular 2], Telerik's [NativeScript 2] and [Ionic 2] Frameworks.
 
-[FireLoop] also provides you with exclusive modules that will allow you to automatically build your server Real-Time APIs, Client SDKs, Statistics, **Back and Front Ends development in [TypeScript]!!!**.
+[FireLoop] also provides you with exclusive modules that will allow you to automatically build your [FireBase] alike Real-Time APIs, Client SDKs, Statistics, **Back and Front Ends development in [TypeScript]!!!**.
+
+*By the way, it's cool and open source!!!*
 
 [Public Cheering in the Background]
 
@@ -13,9 +15,9 @@
 - Nice and easy setup.
 - 1 command line tool for all (Server, Web Clients, Mobile Clients, SDK Builder).
 - Back and Front Ends in [TypeScript].
-- [LoopBack] Integration.
+- [LoopBack] 2 and 3 Integration.
 - [Angular 2] Integration.
-- [NativeScript] Integration.
+- [NativeScript 2] Integration.
 - [Ionic 2] Integration.
 - [SDK Builder] Integration.
 - [Real-Time] Integraiton.
@@ -43,7 +45,7 @@ You can read the complete documentation within the following [Documentation Link
 [FireLoop.io]: http://fireloop.io
 [FireBase]: https://firebase.google.com/
 [Google's FireBase]: https://firebase.google.com/
-[NativeScript]: http://nativescript.org
+[NativeScript 2]: http://nativescript.org
 [Ionic 2]: http://ionic.io
 [Angular 2]: http://angular.io
 [LoopBack]: http://loopback.io
