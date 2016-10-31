@@ -40,8 +40,8 @@ const cmd = argv._.shift();
 try {
   if (cmd.match(/(ng2web|nativescript)/))
   return console.log(chalk.red('This command can not stand alone.'));
-  let loopbacked = `loopback:${cmd}`;
-  let firelooped = `fireloop:${cmd}`;
+  var loopbacked = `loopback:${cmd}`;
+  var firelooped = `fireloop:${cmd}`;
   if (cmd === 'model') {
     env.register(require.resolve(`generator-loopback/model`), loopbacked);
     env.register(require.resolve(`generator-loopback/property`), `loopback:property`);
