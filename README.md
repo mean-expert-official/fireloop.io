@@ -20,7 +20,7 @@
 - [NativeScript 2] Integration.
 - [Ionic 2] Integration.
 - [SDK Builder] Integration.
-- [Real-Time] Integraiton.
+- [Real-Time] Integration.
 
 ##Installing FireLoop CLI
 
