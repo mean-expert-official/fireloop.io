@@ -29,17 +29,18 @@ if (!argv._ || argv._.length === 0) {
   env.register(require.resolve('generator-fireloop/generators/app'), 'fireloop:app');
   env.register(require.resolve('generator-fireloop/generators/ng2'), 'fireloop:ng2');
   env.register(require.resolve('generator-fireloop/generators/ng2web'), 'fireloop:ng2web');
-  env.register(require.resolve('generator-fireloop/generators/ionic'), 'fireloop:ionic');
-  env.register(require.resolve('generator-fireloop/generators/nativescript'), 'fireloop:nativescript');
+  env.register(require.resolve('generator-fireloop/generators/ng2ionic'), 'fireloop:ng2ionic');
+  env.register(require.resolve('generator-fireloop/generators/ng2native'), 'fireloop:ng2native');
+  env.register(require.resolve('generator-fireloop/generators/ng2universal'), 'fireloop:ng2universal');
   env.register(require.resolve('generator-fireloop/generators/sdk'), 'fireloop:sdk');
   env.register(require.resolve('generator-fireloop/generators/server'), 'fireloop:server');
-  env.register(require.resolve('generator-fireloop/generators/setup'), 'fireloop:setup');
+  env.register(require.resolve('generator-fireloop/generators/jsonupdate'), 'fireloop:jsonupdate');
   return env.run('fireloop');
 }
 // Process Commands
 const cmd = argv._.shift();
 try {
-  if (cmd.match(/(ng2web|nativescript|ionic)/))
+  if (cmd.match(/(ng2web|ng2native|ng2ionic|ng2universal|server)/))
   return console.log(chalk.red('This command can not stand alone.'));
   var loopbacked = `loopback:${cmd}`;
   var firelooped = `fireloop:${cmd}`;
