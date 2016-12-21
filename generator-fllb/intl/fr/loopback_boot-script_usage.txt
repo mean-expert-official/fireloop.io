@@ -1,0 +1,8 @@
+Description :
+  Crée un script d'amorçage dans l'application LoopBack.
+
+Exemple :
+
+  {{slc loopback:boot-script}} [your-script-name]
+
+  Cette opératio génère un script d'amorçage dans {{`/server/boot`}}.

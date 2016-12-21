@@ -1,0 +1,8 @@
+Açıklama:
+  LoopBack uygulamasında yeni bir önyükleme komut dosyası yaratır.
+
+Örneğin:
+
+  {{slc loopback:boot-script}} [komut dosyanızın adı]
+
+  Bu, {{`/server/boot`}} içinde bir önyükleme komut dosyası oluşturur.

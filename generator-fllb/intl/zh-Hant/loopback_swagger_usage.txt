@@ -1,0 +1,6 @@
+說明：
+  從 Swagger API 規格產生模型和遠端方法。
+
+範例：
+
+  {{slc loopback:swagger}}

@@ -1,0 +1,6 @@
+Descrizione:
+  Ccrea una nuova relazione di modello nell'applicazione LoopBack.
+
+Esempio:
+
+  {{slc loopback:relation}}

@@ -1,0 +1,6 @@
+Description:
+  Creates a new Remote Method in the LoopBack application.
+
+Example:
+
+  {{slc loopback:remote-method}}

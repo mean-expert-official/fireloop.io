@@ -1,0 +1,6 @@
+Beschreibung:
+  Erstellt eine neue Modellbeziehung in der LoopBack-Anwendung.
+
+Beispiel: 
+
+  {{slc loopback:relation}}

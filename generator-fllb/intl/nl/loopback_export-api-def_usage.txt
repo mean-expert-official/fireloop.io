@@ -1,0 +1,14 @@
+Beschrijving:
+  Swagger API-definities genereren voor LoopBack-toepassingen.
+
+Bijvoorbeeld:
+
+  {{slc loopback:export-api-def [--json]}}
+
+  Hiermee worden de API-definities naar stdout gestuurd.
+  Gebruik de optie {{--json}} voor weergave in JSON-indeling. Anders wordt standaard YAML gebruikt.
+
+  {{slc loopback:export-api-def [--o uitvoerbestand]}}
+
+  Hiermee worden de API-definities naar de opgegeven uitvoerlocatie gestuurd.
+  Afhankelijk van de bestandsextensie wordt de indeling {{yaml}} of {{json}} gebruikt.

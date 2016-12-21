@@ -1,0 +1,17 @@
+Usage:
+  slc loopback:acl [options]
+
+Options:
+  -h,   --help          # Print the generator's options and usage
+        --skip-cache    # Do not remember prompt answers             Default: false
+        --skip-install  # Do not automatically install dependencies  Default: false
+
+Description:
+  Adds a new ACL entry to the LoopBack application.
+
+Example:
+
+  slc loopback:acl
+
+  This will ask several questions do determine ACL options and
+  then add an entry to the corresponding model json.

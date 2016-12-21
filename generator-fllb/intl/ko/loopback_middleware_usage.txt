@@ -1,0 +1,8 @@
+설명:
+  LoopBack 애플리케이션에 새 미들웨어를 작성합니다. 
+
+예: 
+
+  {{slc loopback:middleware myMiddleware}}
+
+  미들웨어 "myMiddleware"를 정의하는 {{`middleware.json`}}에 항목을 추가합니다.

@@ -1,0 +1,8 @@
+Açıklama:
+  LoopBack uygulamasında yeni bir ara katman yazılımı yaratır.
+
+Örneğin:
+
+  {{slc loopback:middleware AraKatmanYazılımım}}
+
+  Bu, {{`middleware.json`}} öğesine "AraKatmanYazılımım" adlı ara katman yazılımını tanımlayan bir giriş ekler.

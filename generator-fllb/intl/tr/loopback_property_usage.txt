@@ -1,0 +1,6 @@
+Açıklama:
+  LoopBack uygulamasında yeni bir model özelliği yaratır.
+
+Örneğin:
+
+  {{slc loopback:property}}

@@ -1,0 +1,6 @@
+Açıklama:
+  Swagger api belirtiminden modeller ve uzak yöntemler oluşturur.
+
+Örneğin:
+
+  {{slc loopback:swagger}}

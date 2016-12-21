@@ -1,0 +1,8 @@
+Beschrijving:
+  Nieuw middleware maken in de LoopBack-toepassing .
+
+Bijvoorbeeld:
+
+  {{slc loopback:middleware mijnMiddleware}}
+
+  Hiermee wordt er een item toegevoegd aan {{'middleware.json'}} waarmee de middleware "mijnMiddleware" wordt gedefinieerd.

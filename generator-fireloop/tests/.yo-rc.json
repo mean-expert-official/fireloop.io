@@ -1,0 +1,12 @@
+{
+  "generator-fireloop": {
+    "version": "1.0.0-alpha.4",
+    "clients": {
+      "webapp": {
+        "path": "./webapp",
+        "type": "web"
+      }
+    }
+  },
+  "generator-loopback": {}
+}

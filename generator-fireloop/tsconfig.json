@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "mapRoot": "src",
+    "module": "commonjs",
+    "outDir": "generators",
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "types": [
+      "chalk",
+      "ejs",
+      "node"
+    ]
+  },
+  "exclude": [
+    "example",
+    "node_modules",
+    "templates",
+    "tests",
+    "**/*.spec.ts"
+  ]
+}

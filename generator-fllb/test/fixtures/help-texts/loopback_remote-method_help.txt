@@ -1,0 +1,18 @@
+Usage:
+  slc loopback:remote-method [options] [<modelName>] [<methodName>]
+
+Options:
+  -h,   --help          # Print the generator's options and usage
+        --skip-cache    # Do not remember prompt answers             Default: false
+        --skip-install  # Do not automatically install dependencies  Default: false
+
+Arguments:
+  modelName   # Name of the model          Type: String  Required: false
+  methodName  # Name of the remote method  Type: String  Required: false
+
+Description:
+  Creates a new Remote Method in the LoopBack application.
+
+Example:
+
+  slc loopback:remote-method

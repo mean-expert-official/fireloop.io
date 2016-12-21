@@ -1,0 +1,8 @@
+Beschrijving:
+  Een nieuw model maken in de LoopBack-toepassing .
+
+Bijvoorbeeld:
+
+  {{slc loopback:model Product}}
+
+  Hiermee wordt er een item toegevoegd aan {{'Product.json'}} waarmee het model "Product" wordt gedefinieerd.

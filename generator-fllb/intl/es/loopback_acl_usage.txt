@@ -1,0 +1,9 @@
+Descripción:
+  Añade una entrada de ACL a la aplicación LoopBack.
+
+Ejemplo:
+
+  {{slc loopback:acl}}
+
+  Este manato formulará varias preguntas para determinar las opciones de ACL y
+  luego añadirá una entrada del modelo correspondiente {{json}}.
