@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    SDKModule.forRoot()
+    SDKBrowserModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
