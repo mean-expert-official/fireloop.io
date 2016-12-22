@@ -2,8 +2,9 @@ FireLoop Project Change Log
 ===========================
 
 
-### Release 1.0.0-beta.1.2
+### Release 1.0.0-beta.1.3
 
+- Replaces 1.0.0-beta.1.2
 - Fix npm keepme bug, not replicable in local using npm link
 
 ### Release 1.0.0-beta.1
