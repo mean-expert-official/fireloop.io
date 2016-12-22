@@ -2,14 +2,14 @@
 import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
-import { SDKModule } from './shared/sdk/index';
+import { SDKNativeModule } from './shared/sdk/index';
 
 @NgModule({
     declarations: [AppComponent],
     bootstrap: [AppComponent],
     imports: [
         NativeScriptModule,
-        SDKModule.forRoot()
+        SDKNativeModule.forRoot()
     ],
 })
 class AppComponentModule {}

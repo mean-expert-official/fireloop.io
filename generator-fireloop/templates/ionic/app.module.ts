@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { SDKModule } from './shared/sdk/index';
+import { SDKBrowserModule } from './shared/sdk/index';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { SDKModule } from './shared/sdk/index';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    SDKModule.forRoot()
+    SDKBrowserModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

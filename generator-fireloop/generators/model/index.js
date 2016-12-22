@@ -15,6 +15,8 @@ _.mixin(require('underscore.inflections'));
 module.exports = generators.Base.extend({
     // Not reinventing the wheel, let LoopBack Generator to build the Base.
     initializing: function () {
+        this.root = this.destinationRoot();
+        this.destinationRoot('fireloop');
         this.composeWith('fireloop:model', {
             args: this.options._argv._
         }, { local: require.resolve('generator-fllb/model') });
@@ -29,7 +31,9 @@ module.exports = generators.Base.extend({
         var fname = this.destinationPath("./common/models/" + casedName + ".json");
         var config = require(fname);
         config.mixins = {
-            TimeStamp: true,
+            TimeStamp: {
+                required: false
+            },
             Stats: [
                 {
                     method: 'stats',

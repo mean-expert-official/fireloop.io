@@ -16,13 +16,17 @@ module.exports = generators.Base.extend({
     },
     prompting: function () {
         var clients = this.config.get('clients') || {};
-        clients.server = { path: './fireloop', type: 'server' };
+        clients.fireloop = { path: './fireloop', type: 'server' };
         var choices = Object.keys(clients || []);
+        /**
+         * TODO: Add user interface for those app clients that are mobile,
+         * ask if wants to run IOS or Android
+         */
         var spawns = {
             server: {
                 cmd: path.join(require.resolve('nodemon').replace(/nodemon(\/|\\)lib(\/|\\)nodemon.js/, ''), '.bin/nodemon')
             },
-            web: {
+            ng2web: {
                 cmd: path.join(require.resolve('angular-cli').replace(/angular-cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, ''), '.bin/ng'),
                 argv: ['serve']
             }
@@ -39,9 +43,10 @@ module.exports = generators.Base.extend({
                 var client = clients[answer];
                 var spawn = spawns[client.type];
                 var type = client.type === 'server' ? 'Server' : 'Client';
+                if (!spawn.cmd) {
+                    _this.log(chalk.red("Oops " + type + " is not yet implemented, try by running nativescript or ionic commands within your client app."));
+                }
                 _this.log(chalk.green("\tLoading " + type + " Application: " + answer));
-                _this.log(chalk.green(spawn.cmd));
-                _this.log(chalk.green(spawn.argv));
                 _this.spawnCommand(spawn.cmd, spawn.argv, { shell: true, cwd: path.normalize(client.path) })
                     .on('exit', function (code) {
                     _this.log(chalk.green("\n\n" + type + " Application Closed: " + answer));

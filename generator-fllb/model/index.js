@@ -27,7 +27,7 @@ module.exports = yeoman.Base.extend({
 
     this.argument('name', {
       desc: g.f('Name of the model to create.'),
-      required: false,
+      required: true,
       type: String,
     });
 
@@ -63,7 +63,7 @@ module.exports = yeoman.Base.extend({
       return;
     }
   },
-
+ /*
   askForName: function() {
     var prompts = [
       {
@@ -79,7 +79,7 @@ module.exports = yeoman.Base.extend({
       this.displayName = chalk.yellow(this.name);
     }.bind(this));
   },
-
+*/
   askForDataSource: function() {
     if (!this.hasDatasources) {
       this.dataSource = null;

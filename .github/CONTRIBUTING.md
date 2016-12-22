@@ -17,6 +17,8 @@ If you find any bug or enhancement, you are always welcome to create a [New Issu
 ## Pull Request
 If you would like to contribute by adding new features, enhancements or by fixing bugs; please consider that you need to create an issue prior your pull request. This is important for tracking purposes in CHANGELOG.
 
+> Important: When creating pull request, always point to development branch and not to master.
+
 Please send a [GitHub Pull Request](https://github.com/mean-expert-official/fireloop.io/pull/new/master) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request, we will love you forever if you include RSpec examples. We can always use more test coverage. Please make sure all of your commits are atomic (one feature per commit).
 
 Always write a clear log message for your commits. One-line messages are fine for small changes, but bigger changes should look like this:

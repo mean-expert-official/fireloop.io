@@ -27,13 +27,7 @@ var pkg = require('../package.json');
 module.exports = yeoman.Base.extend({
   constructor: function() {
     yeoman.Base.apply(this, arguments);
-    
-    this.argument('name', {
-      desc: g.f('Name of the application to scaffold.'),
-      required: false,
-      type: String,
-    });
-    
+
     this.option('skip-install', {
       desc: g.f('Do not install npm dependencies.'),
       type: Boolean,
@@ -50,29 +44,7 @@ module.exports = yeoman.Base.extend({
       type: Boolean,
     });
   },
-  /*
-  greet: function() {
-    this.log(yosay(g.f('Let\'s create a {{LoopBack}} application!')));
-  },
 
-  help: function() {
-    var msgs = [helpText.customHelp(this, 'loopback_app_usage.txt')];
-
-    var list = Object.keys(this.options.env.getGeneratorsMeta())
-      .filter(function(name) {
-        return name.indexOf('loopback:') !== -1;
-      });
-    if (helpers.getCommandName() === 'loopback-cli') {
-      list = list.map(name => name.replace(/^loopback:/, 'lb '));
-      msgs.push(g.f('\nAvailable commands:\n\n'));
-    } else {
-      msgs.push(g.f('\nAvailable generators:\n\n'));
-    }
-
-    msgs.push(list.map(it => '  ' + it).join('\n'));
-    return msgs.join('') + '\n';
-  },
-  */
   injectWorkspaceCopyRecursive: function() {
     var originalMethod = Workspace.copyRecursive;
     Workspace.copyRecursive = function(src, dest, cb) {
@@ -119,63 +91,12 @@ module.exports = yeoman.Base.extend({
   },
 
   askForProjectName: function() {
-    if (this.options.nested && this.name) {
-      this.appname = this.name;
-      return;
-    }
-
     this.appname = 'fireloop';
-    /*
-    var name = this.name || this.dir || this.appname;
-
-    var prompts = [
-      {
-        name: 'appname',
-        message: g.f('What\'s the name of your application?'),
-        default: name,
-        validate: validateAppName,
-      },
-    ];
-
-    return this.prompt(prompts).then(function(props) {
-      this.appname = props.appname || this.appname;
-    }.bind(this));
-    */
   },
 
   configureDestinationDir: actions.configureDestinationDir,
-  /*
-  fetchLoopBackVersions: function() {
-    var done = this.async();
-    var self = this;
-    Workspace.getAvailableLBVersions(function(err, versionsMap) {
-      if (err) return done(err);
-      var versionNames = Object.keys(versionsMap);
-      self.availableLBVersions = versionNames.map(function(version) {
-        return {
-          name: version + ' (' + versionsMap[version].description + ')',
-          value: version,
-        };
-      });
-      done();
-    });
-  },
-  */
-  askForLBVersion: function() {
-    /*
-    var prompts = [{
-      name: 'loopbackVersion',
-      message: g.f('Which version of {{LoopBack}} would you like to use?'),
-      type: 'list',
-      default: '2.x',
-      choices: this.availableLBVersions,
-    }];
 
-    var self = this;
-    return this.prompt(prompts).then(function(answers) {
-      self.options.loopbackVersion = answers.loopbackVersion;
-    }.bind(this));
-    */
+  askForLBVersion: function() {
     this.options.loopbackVersion = '2.x';
   },
 
@@ -189,21 +110,6 @@ module.exports = yeoman.Base.extend({
   },
 
   askForTemplate: function() {
-    /*
-    var prompts = [{
-      name: 'wsTemplate',
-      message: g.f('What kind of application do you have in mind?'),
-      type: 'list',
-      default: this.defaultTemplate,
-      choices: this.templates,
-    }];
-    
-    var self = this;
-    return this.prompt(prompts).then(function(answers) {
-      // Do NOT use name template as it's a method in the base class
-      self.wsTemplate = answers.wsTemplate;
-    }.bind(this));
-    */
     this.wsTemplate = this.defaultTemplate;
   },
 
