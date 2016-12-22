@@ -70,11 +70,6 @@ module.exports = generators.Base.extend({
                 params: {}
             },
             {
-                template: 'templates/.keepme',
-                output: { directory: 'tests', file: '.keepme' },
-                params: {}
-            },
-            {
                 template: 'templates/fireloop/testing.ts',
                 output: { directory: 'server/boot', file: 'testing.ts' },
                 params: {}
@@ -97,6 +92,11 @@ module.exports = generators.Base.extend({
             {
                 template: 'templates/fireloop/tsconfig.json',
                 output: { directory: './', file: 'tsconfig.json' },
+                params: {}
+            },
+            {
+                template: 'templates/tests/keepme.txt',
+                output: { directory: 'tests', file: '.keepme' },
                 params: {}
             }
         ].forEach(function (config) {
