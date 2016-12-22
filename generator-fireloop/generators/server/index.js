@@ -70,7 +70,7 @@ module.exports = generators.Base.extend({
                 params: {}
             },
             {
-                template: 'templates/.keepme',
+                template: 'templates/keepme',
                 output: { directory: 'tests', file: '.keepme' },
                 params: {}
             },
