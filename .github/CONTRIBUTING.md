@@ -29,14 +29,6 @@ Always write a clear log message for your commits. One-line messages are fine fo
     
 Most of the times you will need to add a new test or we may not be able to integrate it. Though, there are some cases when you don't need to add a unit test, like fixing a typo, adding a missing type, etc.
 
-## Testing
-
-Tests are being created and excecuted by using the Angular-CLI Tool, please refer to the official documentation.
-
-````sh
-$ cd to/fireloop.io
-$ npm test 
-````
 
 Thanks,
 Jonathan Casarrubias, [MEAN Expert](http://mean.expert).
