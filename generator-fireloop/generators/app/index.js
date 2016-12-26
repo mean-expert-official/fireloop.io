@@ -68,7 +68,8 @@ module.exports = generators.Base.extend({
                         this.composeWith('fireloop:sdk', {
                             options: {
                                 clientPath: clients[answers.client].path + "/" + sharedPaths[clients[answers.client].type],
-                                clientType: clients[answers.client].type
+                                clientType: clients[answers.client].type,
+                                showOptions: true
                             }
                         });
                     }.bind(this));

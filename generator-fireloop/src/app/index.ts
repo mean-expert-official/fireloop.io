@@ -12,25 +12,25 @@ import * as chalk from 'chalk';
 module.exports = generators.Base.extend({
 
 
-  constructor: function () {
+  constructor: function() {
     generators.Base.apply(this, arguments);
     this.log(yosay('Welcome to FireLoop! \n The MEAN Stack Platform by MEAN Expert'));
   },
 
-  prompting: function () {
+  prompting: function() {
 
     let keys: any = {
-      GENERATE_PROJECT : 'Generate FireLoop Project',
-      GENERATE_CLIENT  : 'Generate Angular2 Client',
-      GENERATE_SDK     : 'Generate Angular2 SDK',
-      FIRELOOP_VERSION : 'Show FireLoop Version'
+      GENERATE_PROJECT: 'Generate FireLoop Project',
+      GENERATE_CLIENT: 'Generate Angular2 Client',
+      GENERATE_SDK: 'Generate Angular2 SDK',
+      FIRELOOP_VERSION: 'Show FireLoop Version'
     };
 
     let sharedPaths: any = {
-      ng2web       : 'src/app/shared/sdk',
-      ng2universal : 'src/app/shared/sdk',
-      ng2native    : 'app/shared/sdk',
-      ng2ionic     : 'src/app/shared/sdk'
+      ng2web: 'src/app/shared/sdk',
+      ng2universal: 'src/app/shared/sdk',
+      ng2native: 'app/shared/sdk',
+      ng2ionic: 'src/app/shared/sdk'
     };
 
     let clients: { path: string, type: string }[] = <{ path: string, type: string }[]>this.config.get('clients');
@@ -51,12 +51,12 @@ module.exports = generators.Base.extend({
     choices.push(keys.FIRELOOP_VERSION);
 
     return this.prompt([{
-      type    : 'list',
-      name    : 'list',
-      message : 'What do you want to do?',
-      default : 0,
-      choices : choices
-    }]).then(function (answers: { list: any }) {
+      type: 'list',
+      name: 'list',
+      message: 'What do you want to do?',
+      default: 0,
+      choices: choices
+    }]).then(function(answers: { list: any }) {
       let done = this.async();
       let answer = answers.list;
       switch (answer) {
@@ -71,16 +71,17 @@ module.exports = generators.Base.extend({
           break;
         case keys.GENERATE_SDK:
           this.prompt([{
-            type    : 'list',
-            name    : 'client',
-            message : 'For which application do you want to build an SDK?',
-            default : 0,
-            choices : Object.keys(clients)
-          }]).then(function (answers: { client: any }) {
+            type: 'list',
+            name: 'client',
+            message: 'For which application do you want to build an SDK?',
+            default: 0,
+            choices: Object.keys(clients)
+          }]).then(function(answers: { client: any }) {
             this.composeWith('fireloop:sdk', {
               options: {
-                clientPath : `${clients[answers.client].path}/${sharedPaths[clients[answers.client].type]}`,
-                clientType : clients[answers.client].type
+                clientPath: `${clients[answers.client].path}/${sharedPaths[clients[answers.client].type]}`,
+                clientType: clients[answers.client].type,
+                showOptions: true
               }
             });
           }.bind(this));
