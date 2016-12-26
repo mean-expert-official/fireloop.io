@@ -3,7 +3,7 @@ var path = require('path');
 var changeCase = require('change-case');
 var generators = require('yeoman-generator');
 var fs = require('fs');
-var ejs = require('ejs');
+var ejs = require("ejs");
 var _ = require('underscore');
 _.mixin(require('underscore.inflections'));
 /**
@@ -96,4 +96,4 @@ function propertyBuilder(config) {
     });
     return "" + properties.join(",") + (properties.length > 0 ? '\n        ' : '');
 }
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/model/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/model/index.js.map

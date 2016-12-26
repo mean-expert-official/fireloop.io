@@ -3,8 +3,8 @@ var yosay = require('yosay');
 var fs = require('fs');
 var path = require('path');
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
-var ejs = require('ejs');
+var chalk = require("chalk");
+var ejs = require("ejs");
 var mkdirp = require('mkdirp');
 var rmdir = require('rimraf');
 /**
@@ -150,4 +150,4 @@ module.exports = generators.Base.extend({
         }
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2universal/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2universal/index.js.map

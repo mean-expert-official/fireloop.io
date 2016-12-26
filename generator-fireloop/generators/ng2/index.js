@@ -2,8 +2,8 @@
 var yosay = require('yosay');
 var generators = require('yeoman-generator');
 var commandExist = require('command-exists');
-var chalk = require('chalk');
-var async = require('async');
+var chalk = require("chalk");
+var async = require("async");
 ;
 /**
  * @module Angular 2 [FireLoop]
@@ -71,4 +71,4 @@ module.exports = generators.Base.extend({
         });
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2/index.js.map
