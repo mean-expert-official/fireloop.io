@@ -2,7 +2,7 @@
 var yosay = require('yosay');
 var path = require('path');
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
+var chalk = require("chalk");
 /**
  * @module FireLoopGenerator [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
@@ -55,4 +55,4 @@ module.exports = generators.Base.extend({
         }.bind(this));
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/serve/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/serve/index.js.map

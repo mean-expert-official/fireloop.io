@@ -4,8 +4,8 @@ var mkdirp = require('mkdirp');
 var rmdir = require('rimraf');
 var fs = require('fs');
 var ejs = require('ejs');
-var chalk = require('chalk');
-var path = require('path');
+var chalk = require("chalk");
+var path = require("path");
 /**
  * @module ServerGenerator [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
@@ -139,4 +139,4 @@ module.exports = generators.Base.extend({
 function generate(cwd, config) {
     fs.writeFileSync(path.join(cwd, config.output.file), ejs.render(fs.readFileSync(path.join(__dirname, '..', '..', config.template), { encoding: 'utf-8' }), config.params));
 }
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/server/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/server/index.js.map
