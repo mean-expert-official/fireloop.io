@@ -32,9 +32,7 @@ module.exports = generators.Base.extend({
       DEFAULT_VALUES: false
     };
     this.selected = selected;
-    if (!this.options.showOptions) {
-
-    } else {
+    if (this.options.showOptions) {
       return this.prompt([{
         type: 'checkbox',
         name: 'list',
