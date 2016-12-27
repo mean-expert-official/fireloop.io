@@ -2,7 +2,6 @@
 title: Serving Applications
 lenguage: en 
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 [FireLoop] is able to run all of your project applications at once (including your server), for this you can use the `fireloop serve` command and select the applications you want to serve.
 

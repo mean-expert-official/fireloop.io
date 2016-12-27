@@ -6,13 +6,8 @@
     <div class="brand-wrap">
       <div class="brand">
         <a href="<%- config.root %>" class="avatar">
-          <img src="<%- url_for(theme.avatar) %>">
-          <img src="/img/logo-text.png" alt="">
+          <img src="<%- url_for(theme.avatar) %>" style="width:125px;">
         </a>
-        <hgroup class="introduce">
-          <h5 class="nickname"><%- config.author %></h5>
-          <%- mail_to(theme.email, theme.email, {class: 'mail'}) %>
-        </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">

@@ -416,10 +416,10 @@
         w.lazyScripts && w.lazyScripts.length && Blog.loadScript(w.lazyScripts)
     });
 
-    var ignoreUnload = false;
-    $('a[href^="mailto"]').addEventListener(even, function () {
+    var ignoreUnload = true;
+    /*$('a[href^="mailto"]').addEventListener(even, function () {
         ignoreUnload = true;
-    });
+    });*/
     w.addEventListener('beforeunload', function (e) {
         if (!ignoreUnload) {
             Blog.page.unload();

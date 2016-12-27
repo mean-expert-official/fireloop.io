@@ -2,7 +2,6 @@
 title: Creating Client Applications
 lenguage: en 
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 ````sh
 $ cd myproject

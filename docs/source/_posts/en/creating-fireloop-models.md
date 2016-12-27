@@ -2,7 +2,6 @@
 title: Creating FireLoop Models
 lenguage: en
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 When you start building a system, the fist thing you need to do right after your setup, is to start creating your API Models.
 

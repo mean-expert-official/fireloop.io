@@ -316,8 +316,10 @@ export class AppComponent {
   private todoRef : FireLoopRef<Todo>;
 
   constructor(private rt: RealTime) {
-    this.todoRef = this.rt.FireLoop.ref<Todo>(Todo);
-    this.todoRef.stats().subscribe((stats: any) => console.log(stats));
+    this.rt.onReady().subscribe(() => {
+      this.todoRef = this.rt.FireLoop.ref<Todo>(Todo);
+      this.todoRef.stats().subscribe((stats: any) => console.log(stats));
+    });
   }
 
   create(): void {
@@ -396,16 +398,18 @@ export class AppComponent {
   private lineChartType:string = 'line';
 
   constructor(private rt: RealTime) {
-    this.todoRef = this.rt.FireLoop.ref<Todo>(Todo);
-    this.todoRef.stats().subscribe((stats: any) => {
-      this.lineChartLabels = new Array();
-      this.lineChartData   = new Array();
-      let data = new Array();
-      stats.forEach((stat: any) => {
-        data.push(stat.count);
-        this.lineChartLabels.push(moment(stat.universal).format('MM-YYYY'));
+    this.rt.onReady().subscribe(() => {
+      this.todoRef = this.rt.FireLoop.ref<Todo>(Todo);
+      this.todoRef.stats().subscribe((stats: any) => {
+        this.lineChartLabels = new Array();
+        this.lineChartData   = new Array();
+        let data = new Array();
+        stats.forEach((stat: any) => {
+          data.push(stat.count);
+          this.lineChartLabels.push(moment(stat.universal).format('MM-YYYY'));
+        });
+        this.lineChartData.push({ data: data, label: 'Number of Dued Todos'});
       });
-      this.lineChartData.push({ data: data, label: 'Number of Dued Todos'});
     });
   }
 

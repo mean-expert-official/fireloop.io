@@ -2,7 +2,6 @@
 title: Api
 lenguage: en
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 > You should [create an application] and [software development kit] by using the [FireLoop] CLI Tool before being able to use the following API.
 

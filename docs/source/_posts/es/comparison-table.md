@@ -2,7 +2,6 @@
 title: Tabla de comparación
 language: es
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 ## Tabla de comparación
 

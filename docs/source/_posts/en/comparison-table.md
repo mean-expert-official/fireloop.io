@@ -2,7 +2,6 @@
 title: Comparison Table
 language: en
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 ## Comparison Table
 

@@ -2,10 +2,6 @@
 title: Inicio Rapido
 Comments:  to to false
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
-## FireLoop
-
-### Presenting FireLoop
 
 [FireLoop] Es una Plataforma en Real-time para [NodeJS] que le permite crear aplicaciones modernas y complejas integrando a la perfección las sorprendentes tecnologias de MEAN Stack como frameworks IBM [Loopback], Google [Angular 2], Telerik's [NativeScript 2] y [Ionic 2]
 

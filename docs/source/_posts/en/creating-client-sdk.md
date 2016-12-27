@@ -2,7 +2,6 @@
 title: Creating Client SDK
 lenguage: en 
 ---
-![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
 The [FireLoop] integration is built in the SDK, so you just need to generate one and install it by using the CLI Tool.
 
