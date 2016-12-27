@@ -41,7 +41,7 @@ rss: /atom.xml
 # 你的头像url
 avatar: /img/avatar.png
 # favicon
-favicon: /favicon.ico
+favicon: /img/favicon.png
 
 # email
 email: jcasarrubias@mean.expert
@@ -98,9 +98,8 @@ baidu_tongji: false
 tajs: false
 
 # google
-google_analytics: false
+google_analytics: UA-85670284-1
 google_site_verification: false
-
 # less
 less:
   compress: true

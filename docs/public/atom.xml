@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Fireloop.io Docs</title>
+  <title>Fireloop Documentation</title>
   <subtitle>Designed for Modern Real-Time Applications by MEAN Expert.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
