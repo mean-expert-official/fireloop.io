@@ -1,10 +1,10 @@
 ---
-title: Serving Applications
-lenguage: en 
+title: Sirviendo Aplicaciones
+lenguage: es 
 ---
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
-[FireLoop] is able to run all of your project applications at once (including your server), for this you can use the `fireloop serve` command and select the applications you want to serve.
+[FireLoop] es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (incluyendo su servidor), para esto puede usar el comando `fireloop serve` y seleccionar las aplicaciones que desea servir.
 
 ````sh
 $ cd myproject
@@ -26,9 +26,9 @@ $ fireloop serve
  ◯ server
 ````
 
-It is important to note that both, client and server applications will be running in [TypeScript] and loaded with livereload mechanisms according the environment.
+Es importante tener en cuenta que tanto las aplicaciones de cliente como de servidor se ejecutarán en [TypeScript] y se cargarán con mecanismos livereload según el entorno.
 
-This means that once your applications are running, these will be restared by any code modification and recompiled to be live reloaded.
+Esto significa que una vez que sus aplicaciones se estén ejecutando, éstas serán reiniciadas por cualquier modificación de código y recompiladas para ser recargadas en vivo.
 
 [TypeScript]: http://typescriptlang.org
 [FireLoop]: http://fireloop.io

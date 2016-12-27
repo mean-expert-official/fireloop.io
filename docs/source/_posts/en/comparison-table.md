@@ -1,6 +1,6 @@
 ---
 title: Comparison Table
-Comments:  to to false  
+language: en
 ---
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 

@@ -1,30 +1,30 @@
 ---
-title: Real Time Stats Example
-Lenguage: en
+title: Ejemplo de Estatisticas RealTime
+Lenguage: es
 ---
 ![Real-Time Statistics](https://storage.googleapis.com/mean-expert-images/realtime-stats.jpg)
 
-## Project Description
+## Descripción del Proyecto
 
-To demonstrate what can be achieved with [FireLoop], I have decided to create an application that will render statistical charts with real-time data coming from a [FireLoop] project. This will be kind of a regular Todo Application, but this time we will set a due date for our todos, this way we can render some statistical information about it and play better with it.
+Para demostrar lo que se puede lograr con [FireLoop], he decidido crear una aplicación que procese gráficos estadísticos con datos en tiempo real procedentes de un proyecto [FireLoop]. Este será un tipo de aplicación Todo Todo, pero esta vez vamos a fijar una fecha de vencimiento para todos nuestros, de esta manera podemos hacer alguna información estadística sobre ella y jugar mejor con ella.
 
-## Project Repository
+## Repositorio del proyecto
 
-For this example I have created a repository that you can use as playground.
+Para este ejemplo he creado un repositorio que puedes usar como patio de recreo.
 
-[CLICK HERE FOR GITHUB REPO](https://github.com/mean-expert-official/fireloop-todo-example)
+[HAGA CLIC AQUÍ PARA GITHUB REPO](https://github.com/mean-expert-official/fireloop-todo-example)
 
-## Install FireLoop
-Of course, the very first step we'll want to take, is to install our [FireLoop] CLI Tool.
+## Instalar FireLoop
+Por supuesto, el primer paso que queremos tomar es instalar nuestra Herramienta de CLI [FireLoop].
 
 ```sh
 $ npm install -g @mean-expert/fireloop
 ```
 
-## Create FireLoop Project
-Now that we have our [FireLoop] CLI Tool installed, we can go ahead and create our first [FireLoop] Project.
+## Crear proyecto FireLoop.
+Ahora que tenemos nuestra Herramienta CLI [FireLoop] instalada, podemos seguir adelante y crear nuestro primer proyecto [FireLoop].
 
-In order to create a [FireLoop] Project, you will need to create a new folder directory in any file system location of your preference, then run the `$ fireloop` command and finally hit return for all of the displayed options.
+Para crear un proyecto [FireLoop], necesitará crear un nuevo directorio de carpetas en cualquier ubicación de sistema de archivos de su preferencia, luego ejecutar el comando `$ fireloop` y finalmente pulsar return para todas las opciones mostradas.
 
 ````sh
 $ mkdir fireloop_project && cd fireloop_project
@@ -62,12 +62,12 @@ Next steps:
 
 ````
 
-Great, now we have created a [FireLoop] Project with the minimum amount of effort. So... what if we follow the `Next Steps` tips and then we just create our Todo Model.
+Genial, ahora hemos creado un proyecto [FireLoop] con la cantidad mínima de esfuerzo. Así que ... ¿qué pasa si seguimos los consejos de los 'próximos pasos' y luego simplemente creamos nuestro modelo Todo.
 
-## Create Todo Model
-For this we are going to use the `$ fireloop model [ModelName]` command and then add a couple of properties.
+## Crear Modelo Todo
+Para ello vamos a utilizar el comando `$ fireloop model [ModelName]` y luego añadir un par de propiedades.
 
-Basically you just hit return until you reach the properties section and you add the `text: string && dueAt: date` attributes.
+Básicamente, simplemente pulsa return hasta llegar a la sección de propiedades y agrega los atributos `text: string && dueAt: date`.
 
 ````sh
 $ fireloop model Todo
@@ -102,7 +102,7 @@ Enter an empty property name when done.
 Generating: ./common/models/todo.ts
 ````
 
-If you have been using [LoopBack], you will notice that under the hood I'm using the loopback generator for this operation, but at the end; The [FireLoop] CLI Tool takes control and it will create a modified version of a [LoopBack] Model. If you open the `./common/models/todo.ts` file, you will find the new [TypeScript] structure for our Back End Models.
+Si ha estado usando [LoopBack], notará que bajo el capó estoy usando el generador de loopback para esta operación, pero al final; La herramienta [FireLoop] CLI toma el control y creará una versión modificada de un modelo [LoopBack]. Si abre el archivo `. / Common / models / todo.ts`, encontrará la nueva estructura [TypeScript] para nuestros modelos de back-end.
 
 ````js
 import { Model } from '@mean-expert/model';
@@ -143,9 +143,9 @@ class Todo {
 module.exports = Todo;
 ````
 
-Any logic related to our Todo Model in the Back-End should be placed in this [TypeScript] File, though for this demo we are going to leave it as it is. But, what we really want to do is to update our Todo Model statistical configurations. 
+Cualquier lógica relacionada con nuestro Modelo Todo en el Back-End debe colocarse en este archivo [TypeScript], aunque para esta demo lo vamos a dejar como está. Pero, lo que realmente queremos hacer es actualizar nuestras configuraciones estadísticas de Todo el Modelo.
 
-Please open the file `./common/models/todo.json` and update it as follows:
+Abra el archivo `/ common / models / todo.json` y actualícelos de la manera siguiente:
 
 ````json
 {
@@ -156,7 +156,7 @@ Please open the file `./common/models/todo.json` and update it as follows:
       {
         ...
         "count": {
-          "on": "dueAt" // <---- change createdAt for dueAt
+          "on": "dueAt" // <---- cambia createdAt por dueAt
         }
       }
     ]
@@ -164,14 +164,14 @@ Please open the file `./common/models/todo.json` and update it as follows:
 }
 ````
 
-What we are doing here is to tell the stats mixing to rely on the dueAt property, this way our statistical information will be generated according the todo due dates instead of when the todo was created.
+Lo que estamos haciendo aquí es decir que las estadísticas se mezclan para confiar en la propiedad dueAt, de esta manera nuestra información estadística se generará de acuerdo a las fechas de entrega de todo en lugar de cuando se creó el todo
 
 
-## Disable Auth Feature
+## Desactivar la función Auth
 
-For this project and for practical purposes, we won't use the authentication mechanism since I don't want to spend time creating register/login sections, but I promise I will be creating a tutorial for authentication really soon.
+Para este proyecto y para fines prácticos, no utilizaremos el mecanismo de autenticación ya que no quiero dedicar tiempo a crear secciones de registro / inicio de sesión, pero prometo que voy a crear un tutorial para la autenticación muy pronto.
 
-For this open the server/component-config.json file and modify as follows:
+Para ello, abra el archivo server/component-config.json y modifíquelo de la siguiente manera:
 
 ````json
 {
@@ -185,11 +185,11 @@ For this open the server/component-config.json file and modify as follows:
 }
 ````
 
-Ok, for this project... That is all we need to do within our Back End. Now, it is time to create our [Angular 2] Client.
+Ok, para este proyecto ... Eso es todo lo que necesitamos hacer dentro de nuestro Back End. Ahora, es hora de crear nuestro [Angular 2] Cliente.
 
-## Create Angular 2 Web Client
+## Crear cliente Web Angular 2
 
-We can create [Angular 2] clients by using the [FireLoop] command: `$ fireloop`
+Podemos crear clientes [Angular 2] usando el comando [FireLoop]: `$ fireloop`
 
 ````sh
 $ fireloop
@@ -211,36 +211,36 @@ $ fireloop
 ? What's the name of your application? webapp
 ````
 
-When following the process described above, several thing happen under the hood.
+Al seguir el proceso descrito anteriormente, suceden varias cosas bajo el capó.
 
-- [FireLoop] internally uses [Angular CLI] to create an [Angular 2] project.
-- [FireLoop] generates a SDK for your new [Angular 2] Client App to be fully connected with your [LoopBack] API.
-- [FireLoop] installs the SDK and its dependencies, including types.
+- [FireLoop] Internamente utiliza [Angular CLI] para crear un proyecto [Angular 2].
+- [FireLoop] Genera un SDK para que su nueva aplicación cliente [Angular 2] esté totalmente conectada con su API [LoopBack].
+- [FireLoop] Instala el SDK y sus dependencias, incluidos los tipos.
 
-At the end of the process you won't need to worry about any integration or configuration, everything has been automatically done for you!!!.
-[Public cheering in the background]
+Al final del proceso no tendrá que preocuparse por ninguna integración o configuración, todo se ha hecho automáticamente para usted !!!.
+[El público anima en el fondo :D]
 
-## Install NG2 Charts
+## Instalar NG2 Charts
 
-Now that you avoided a good amount of configurations and integrations, you are ready to start working over the client application.
+Ahora que ha evitado una buena cantidad de configuraciones e integraciones, está listo para comenzar a trabajar sobre la aplicación cliente.
 
-For this project I have decided to use [Ng2Charts] to render our charts, but you can also check [this tutorial for building your own custom charts](/2016/09/17/angular-2-chart-component-revised/).
+Para este proyecto he decidido utilizar [Ng2Charts] para procesar nuestros gráficos, pero también puedes comprobar [Este tutorial para crear sus propios gráficos personalizados](/2016/09/17/angular-2-chart-component-revised/).
 
 ````sh
 $ cd webapp
 $ npm install --save ng2-charts chart.js moment
 ````
 
-#### Customizing The File System Structure
-As you can see, you need to enter the webapp (or whatever name you chose for your app) directory and then install from there its own dependencies. This is because even-though you have a workspace for it, we want to keep the dependencies and the actual clients as decoupled as possible from the server.
+#### Personalización de la estructura del sistema de archivos
+Como puedes ver, debes ingresar el directorio de la aplicación web (o cualquier nombre que hayas elegido para tu aplicación) y luego instalar desde allí tus propias dependencias. Esto se debe a que aunque tengamos un espacio de trabajo para ello, queremos mantener las dependencias y los clientes reales tan desacoplados como sea posible del servidor.
 
-This means that you don't need to have in 1 place the modules for the server and the modules for [NativeScript] because it does not make sense.
+Esto significa que no es necesario tener en 1 lugar los módulos para el servidor y los módulos para [NativeScript] porque no tiene sentido.
 
-So... Why then are we creating everything within the same project? The short answer is for convenience, because remember that [FireLoop] integrates for you a full stack solution, allowing you to automatically build sdks for any of your clients and adding exclusive real-time and statistical functionalities without any configuration or extra effort.
+Entonces ... ¿Por qué entonces estamos creando todo dentro del mismo proyecto? La respuesta corta es por comodidad, porque recuerde que [FireLoop] integra para usted una solución de pila completa, lo que le permite crear automáticamente sdks para cualquiera de sus clientes y agregar funcionalidades exclusivas en tiempo real y estadística sin ninguna configuración o esfuerzo adicional.
 
-But, if you don't really like to have your webapp or any client within the same directory as the [FireLoop] project you can actually change that.
+Pero, si realmente no te gusta tener tu webapp o cualquier cliente dentro del mismo directorio que el proyecto [FireLoop], puedes cambiarlo.
 
-Just open the .yo-rc.json file and update the client path to any location of your preference
+Simplemente abra el archivo .yo-rc.json y actualice la ruta del cliente a cualquier ubicación de su preferencia
 
 ````json
 {
@@ -257,15 +257,15 @@ Just open the .yo-rc.json file and update the client path to any location of you
 }
 ````
 
-Of course, you may want to move some of these clients away; because you may want to have separated repositories and just because it does't make sense to have it in one place when talking about mobile applications. Just remember you can still have your server and clients integrated through [FireLoop] regardless of the file system directory.
+Por supuesto, usted puede desear mover algunos de estos clientes lejos; Porque es posible que desee tener depósitos separados y sólo porque no tiene sentido tenerlo en un lugar cuando se habla de aplicaciones móviles. Sólo recuerde que todavía puede tener su servidor y los clientes integrados a través de [FireLoop], independientemente del directorio del sistema de archivos.
 
-Anyway, in some cases it does make sense to have everything in 1 place; And the best of the examples will be the [Angular Universal] integration, that actually needs to be served from the [LoopBack] server.
+De todos modos, en algunos casos tiene sentido tener todo en 1 lugar; Y el mejor de los ejemplos será la integración [Angular Universal], que realmente necesita ser servida desde el servidor [LoopBack].
 
-Ok.. cool, now that I clarified how to customize the project structure, lets have some fun by building our real-time client application.
+Ok .. fresco, ahora que he aclarado cómo personalizar la estructura del proyecto, vamos a tener un poco de diversión mediante la construcción de nuestra aplicación cliente en tiempo real.
 
-## Update AppModule
+## Actualizar el AppModule
 
-First of all, lets open the `fireloop_project/webapp/src/app/app.module.ts` and tell [Angular 2] that we want to use the [Ng2Charts] Module.
+En primer lugar, permite abrir el `fireloop_project / webapp / src / app / app.module.ts` y decir [Angular 2] que queremos utilizar el módulo [Ng2Charts].
 
 ````js
 import { BrowserModule } from '@angular/platform-browser';
@@ -292,11 +292,11 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 export class AppModule { }
 ````
 
-Awesome, as simple as that our [Angular 2] Application is ready to start rendering real-time charts.
+Impresionante, tan simple como que nuestra aplicación [Angular 2] está lista para empezar a representar gráficos en tiempo real.
 
-## Add FireLoop Logic
+## Agregar logica del Fireloop
 
-Lets now update our `fireloop_project/webapp/src/app/app.component.ts` file as follows:
+Permite ahora actualizar nuestro archivo `fireloop_project /webapp/src/app/app.component.ts` de la siguiente manera:
 
 ````js
 import { Component } from '@angular/core';
@@ -334,14 +334,14 @@ export class AppComponent {
 }
 ````
 
-I believe this code is pretty straight forward, basically you just need to create 1 Todo Model instance, 1 FireLoop Reference and a couple of methods to wrap the functionality, other than that is matter of connecting the pieces together.
+Creo que este código es bastante sencillo, básicamente sólo tiene que crear 1 Todo Modelo instancia, 1 FireLoop Reference y un par de métodos para envolver la funcionalidad, con excepción de que es cuestión de conectar las piezas juntas.
 
-If you figured out already, you should know that in a really smart way... You have access within your [Angular 2] client to your backend models, in this case we created a Todo Model that works across the Back and Front Ends.
+Si ya lo has descubierto, deberías saberlo de una manera realmente inteligente ... Tienes acceso dentro de tu cliente [Angular 2] a tus modelos de backend, en este caso creamos un Todo Model que funciona a través de los extremos trasero y frontal.
 
-The other super important piece in here is the FireLoop Reference, this service allows you to sync your client applications with the back end server by providing you with methods that allow you to create, update, remove, listen for changes and listen for stats.
+La otra pieza súper importante de aquí es FireLoop Reference, este servicio le permite sincronizar sus aplicaciones cliente con el servidor back-end, proporcionándole métodos que le permiten crear, actualizar, eliminar, escuchar cambios y escuchar estadísticas.
 
-A good example can be seen within the constructor, we are subscribing to the stats method in order to listen for real-time statistics, this is really cool.
 
+Un buen ejemplo se puede ver dentro del constructor, estamos suscribiendo al método stats para escuchar estadísticas en tiempo real, esto es realmente genial.
 ````js
   constructor(private rt: RealTime) {
     this.todoRef = this.rt.FireLoop.ref<Todo>(Todo);
@@ -349,13 +349,13 @@ A good example can be seen within the constructor, we are subscribing to the sta
   }
 ````
 
-Great, every time something changes within the FireLoop Todo Reference, you will get some statistical information about it, but... At this moment we are just sending to the console our stats, lets add the chart logic.
+Es genial, cada vez que algo cambia dentro de FireLoop Todo, obtendrás información estadística sobre él, pero ... En este momento estamos enviando a la consola nuestras estadísticas, vamos a agregar la lógica del gráfico.
 
-## Add Ng2Charts Logic
+## Agregar logica del Ng2Charts
 
-What I'm adding here is just the standard configuration for a line chart that I took from their [documentation](https://github.com/valor-software/ng2-charts).
+Lo que estoy agregando aquí es sólo la configuración estándar para un gráfico de líneas que tomé de su [documentación](https://github.com/valor-software/ng2-charts).
 
-Our `app.component.ts` will finally be something like:
+Nuestro `app.component.ts` finalmente será algo como:
 
 ````js
 require('chart.js');
@@ -424,11 +424,11 @@ export class AppComponent {
 
 ````
 
-Here we are just adding a couple of configurations to decide which colors to be used, etc. But you should be able to see that now we are mapping our stats to be rendered by [Ng2Charts].
+Aquí solo estamos agregando un par de configuraciones para decidir qué colores usar, etc. Pero deberías ser capaz de ver que ahora estamos mapeando nuestras estadísticas para ser renderizadas por [Ng2Charts].
 
-## Update App Component View
+## Actualizar vista de componente de aplicación
 
-Lets now update our `fireloop_project/webapp/src/app/app.component.html` file as follows:
+Permite ahora actualizar nuestro archivo `fireloop_project/webapp/src/app/app.component.html` de la siguiente manera:
 
 ````html
 <h1>
@@ -461,11 +461,11 @@ Lets now update our `fireloop_project/webapp/src/app/app.component.html` file as
 </div>
 ````
 
-Cool, how easy was that? we just bind everything associated to our component logic and here we are, with a full stack real-time application that is ready to be tested.
+Cool, ¿qué tan fácil fue eso? Simplemente enlazamos todo lo relacionado con nuestra lógica de componentes y aquí estamos, con una aplicación en tiempo real de pila completa que está lista para ser probada.
 
 ## Test
 
-Lets now run our fireloop project bu running `$ fireloop serve` and then select both, your client and server by using the sapace bar and then just hit return to load them.
+Ahora ejecutamos nuestro buff de proyecto fireloop ejecutando `$ fireloop service` y luego seleccionamos ambos, tu cliente y servidor usando la barra de sapace y luego solo pulsamos return para cargarlos.
 
 ````sh
 $ fireloop serve
@@ -488,7 +488,7 @@ $ fireloop serve
 	Loading Server Application: server
 ````
 
-And *Voilà*... Just open 2 browser in [http://127.0.0.1:4200](http://127.0.0.1:4200) so you can verify both are updated in real-time.
+Y * Voilà * ... Sólo tienes que abrir el navegador 2 en [http://127.0.0.1:4200](http://127.0.0.1:4200) para que puedas verificar que ambos se actualizan en tiempo real.
 
 [FireLoop Stats Gif Example](https://storage.googleapis.com/mean-expert-images/fireloop-stats.gif)
 

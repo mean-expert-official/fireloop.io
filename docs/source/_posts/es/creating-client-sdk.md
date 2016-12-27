@@ -1,10 +1,10 @@
 ---
 title: Creating Client SDK
-lenguage: en 
+lenguage: es
 ---
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
-The [FireLoop] integration is built in the SDK, so you just need to generate one and install it by using the CLI Tool.
+La integración [FireLoop] se construye en el SDK, por lo que sólo necesita generar uno e instalarlo mediante la herramienta CLI.
 
 ````sh
 $ cd myproject
@@ -25,10 +25,9 @@ $ fireloop
 ❯ webapp 
 ````
 
-It is important to note that you should [create an application] by using the [FireLoop] CLI Tool prior this procedure.
+Es importante tener en cuenta que debe [crear una aplicación] utilizando la herramienta [FireLoop] CLI antes de este procedimiento.
 
-Also, when you create new [FireLoop] Models, you may want to rebuild the SDK for any of your client applications using the same procedure we just followed.
-
+Además, al crear nuevos modelos [FireLoop], puede que desee reconstruir el SDK para cualquiera de sus aplicaciones cliente siguiendo el mismo procedimiento que seguimos.
 
 [FireLoop]: http://fireloop.io
 [create an application]: https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-Applications

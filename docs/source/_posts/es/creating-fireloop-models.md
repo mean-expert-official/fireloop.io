@@ -1,14 +1,14 @@
 ---
-title: Creating FireLoop Models
-lenguage: en
+title: Creación de modelos FireLoop
+lenguage: es
 ---
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
-When you start building a system, the fist thing you need to do right after your setup, is to start creating your API Models.
+Cuando empiece a construir un sistema, lo primero que debe hacer justo después de su instalación, es comenzar a crear sus Modelos de API.
 
-This models are similar to [LoopBack] Models, but with a difference... This models will be created and executed using [TypeScript] instead of JavaScript. (POW!)
+Estos modelos son similares a [LoopBack] Modelos, pero con una diferencia ... Estos modelos serán creados y ejecutados usando [TypeScript] en lugar de JavaScript. (POW!)
 
-##  Creating FireLoop Models
+##  Creación de modelos FireLoop
 
 ````sh
 $ cd myproject
@@ -36,10 +36,10 @@ Enter an empty property name when done.
 Generating: ./common/models/my-model.ts
 ````
 
-If you have experience with [LoopBack] you will see it is the same creational flow, is just that as described before; The model will be created in [TypeScript] Language.
+Si usted tiene experiencia con [LoopBack] verá que es el mismo flujo creacional, es sólo que como se describió anteriormente; El modelo se creará en [TypeScript] Language.
 
-## Model Structure
-Now that your Models are in  [TypeScript] you will see these are different in structure to the [LoopBack] ones, but it has the exact same functionality.
+## Estructura del Modelo
+Ahora que sus modelos están en [TypeScript] verá que estos son diferentes en estructura a los [LoopBack], pero tiene la misma funcionalidad exacta.
 
 ````js
 import { Model } from '@mean-expert/model';

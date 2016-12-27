@@ -1,6 +1,6 @@
 ---
-title: Creating Client Applications
-lenguage: en 
+title: Creación de aplicaciones cliente
+lenguage: es
 ---
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
@@ -23,7 +23,7 @@ $ fireloop
 ? What's the name of your application? (webapp)
 ````
 
-After your application is created, it will automatically have installed your [software development kit], but any time you [create a new model]; You will need to re-build your SDK by [following this instructions].
+Una vez creada su aplicación, automáticamente habrá instalado su [kit de desarrollo de software], pero cada vez que [cree un nuevo modelo]; Deberá volver a crear su SDK siguiendo estas instrucciones.
 
 
 [FireLoop]: http://fireloop.io

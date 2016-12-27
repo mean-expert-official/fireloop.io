@@ -1,13 +1,14 @@
 ---
 title: Api
-lenguage: en
+lenguage: es
 ---
 ![FireLoop.io](https://storage.googleapis.com/mean-expert-images/fireloop-logo.png)
 
-> You should [create an application] and [software development kit] by using the [FireLoop] CLI Tool before being able to use the following API.
+> Debería [crear una aplicación] y [software development kit] utilizando la Herramienta de CLI [FireLoop] antes de poder utilizar la siguiente API.
 
-## Importing RealTime Service
-The [LoopBack SDK Builder] will generate and provide an [Angular 2] service that can be injected within our constructor as follows:
+## Importación de servicio RealTime
+
+El [LoopBack SDK Builder] generará y proporcionará un servicio [Angular 2] que se puede inyectar dentro de nuestro constructor de la siguiente manera:
 
 ````js
 import { Component } from '@angular/core';
@@ -22,10 +23,10 @@ export class AppComponent {
 }
 ````
 
-## Waiting for Connection
-When using any real-time feature, you first need to make sure your client application is connected with the server through web sockets.
+## Esperando la conexión
+Al utilizar cualquier característica en tiempo real, primero debe asegurarse de que su aplicación cliente está conectada con el servidor a través de sockets web.
 
-The following example illustrates how to wait for a connection to be established by using the `onReady` method.
+El siguiente ejemplo ilustra cómo esperar a que se establezca una conexión mediante el método `onReady`.
 
 ````js
 import { Component } from '@angular/core';
@@ -44,8 +45,9 @@ export class AppComponent {
 }
 ````
 
-## How to Create Data
-The following example will crate a new room instance through the new [FireLoop] API using WebSockets instead of the Standard [LoopBack] HTTP REST API protocol.
+## Cómo crear datos
+El siguiente ejemplo creará una nueva instancia de sala a través de la nueva API [FireLoop] utilizando WebSockets en lugar del protocolo API de REST de HTTP estándar [LoopBack].
+
 ````js
 import { Component } from '@angular/core';
 import { RealTime } from './shared/sdk/services';
@@ -70,7 +72,7 @@ export class AppComponent {
   }
 }
 ````
-There will be always a new instance created after using the `create` method, but you can also use `upsert` which will `create` or `update` the instance.
+Siempre habrá una nueva instancia creada después de usar el método `create`, pero también puede usar` upsert` que `create` o el `update` de la instancia.
 
 ````js
 import { Component } from '@angular/core';
@@ -97,10 +99,10 @@ export class AppComponent {
   }
 }
 ````
-By using upsert, [FireLoop] will verify if the item is already persisted and update it, otherwise it will create a new instance.
+Utilizando upsert, [FireLoop] comprobará si el elemento ya se ha persistido y lo actualiza, de lo contrario creará una nueva instancia.
 
-## How to Remove Data
-The following example will remove a room instance through the new [FireLoop] API using WebSockets.
+## Cómo quitar datos
+El ejemplo siguiente eliminará una instancia de sala a través de la nueva API [FireLoop] que usa WebSockets.
 
 ````js
 import { Component } from '@angular/core';
@@ -128,19 +130,18 @@ export class AppComponent {
 }
 ````
 
-## Available Events
+## Eventos disponibles
 
 | Event | Description |
 |-------|-------------|
-| change | This event will return an array of persisted elements and will keep firing on any change for the current Model Reference        |
-| value | This event will return an array of persisted elements and will keep firing when new values are added in the current Model Reference        |
-|  child_added     |  This event will fire once for each persisted items and will keep firing when new values are added in the current Model Reference, returning only the newly created child element           |
-| child_changed   | This event will fire once for each changed item. It will return a reference of the updated element  |
-| child_removed   | This event will fire once for each removed items It will return a reference of the removed element  |
+| change | Este evento devolverá una matriz de elementos persistentes y continuará disparando en cualquier cambio para la referencia de modelo actual.        |
+| value | Este evento devolverá una matriz de elementos persistentes y continuará disparando cuando se agreguen nuevos valores en la referencia de modelo actual.           |
+| child_changed   | Este evento se disparará una vez por cada elemento persistido y continuará disparando cuando se agreguen nuevos valores en la Referencia del Modelo actual, devolviendo sólo el elemento hijo recién creado  |
+| child_removed   | Este evento se disparará una vez para cada elemento cambiado  |
 
 
-## Read Data Using 'change' Event
-This is the recommended read event for real-time lists because it will be in sync any time there is a reference modification; this means that at any addition, removal or modification of any child within the reference will trigger a client synchronization.
+## Leer datos utilizando el evento 'change'
+Este es el evento de lectura recomendado para las listas en tiempo real porque estará sincronizado en cualquier momento en que haya una modificación de referencia; Esto significa que en cualquier adición, eliminación o modificación de cualquier niño dentro de la referencia activará una sincronización de cliente.
 
 ````js
 import { Component } from '@angular/core';
@@ -164,8 +165,8 @@ export class AppComponent {
 }
 ````
 
-## Read Data Using 'value' Event
-Similar to Firebase, you are now able to listen for references changes by subscribing to the `value` event.
+## Leer datos utilizando el evento 'value'
+Similar a Firebase, ahora puede escuchar los cambios de referencias suscribiéndose al evento `value`.
 
 ````js
 import { Component } from '@angular/core';
@@ -188,11 +189,11 @@ export class AppComponent {
   }
 }
 ````
-The example above will list the persisted items (Rooms) the first time and will keep firing every time there is a new value added.
+El ejemplo anterior lista los elementos persistentes (Salas) la primera vez y continuará disparando cada vez que haya un nuevo valor agregado.
 
-When not query is defined the `value` Event will return the latest 100 records from the database. 
+Cuando no se define la consulta, el evento `value` devolverá los últimos 100 registros de la base de datos.
 
-## Listen 'child_added' Event
+## Escucha el evento 'child_added'
 
 ````js
 import { Component } from '@angular/core';
@@ -215,7 +216,7 @@ export class AppComponent {
   }
 }
 ````
-## Listen 'child_changed' Event
+## Escucha el evento 'child_changed'
 
 ````js
 import { Component } from '@angular/core';
@@ -239,7 +240,7 @@ export class AppComponent {
 }
 ````
 
-## Listen 'child_removed' Event
+## Escucha el evento 'child_removed'
 
 ````js
 import { Component } from '@angular/core';
@@ -263,8 +264,8 @@ export class AppComponent {
 }
 ````
 
-## Querying Data
-Since the built in [LoopBack] Query Language is really mature, I decided to keep using it in order to allow you pull the information according your necessities.
+## Consultar datos
+Desde el construido en [LoopBack] Query Language es realmente maduro, decidí seguir usando para permitir que tire de la información de acuerdo a sus necesidades.
 
 ````js
 import { Component } from '@angular/core';
@@ -291,10 +292,10 @@ export class AppComponent {
   }
 }
 ````
-For more information about how to query data see the following [documentation](https://docs.strongloop.com/display/public/LB/Querying+data)
+Para obtener más información acerca de cómo consultar datos, consulte la siguiente  [documentation](https://docs.strongloop.com/display/public/LB/Querying+data)
 
-## Working with Child References
-Working with child references will allow you to persist a relation between a parent and a child reference. For instance when creating messages in a room chat, we want these to be persisted within the right Room.
+## Trabajar con referencias de Child
+Trabajar con referencias Child le permitirá persistir una relación entre un padre y una referencia de niño. Por ejemplo, al crear mensajes en una sala de chat, queremos que se persistan dentro de la habitación correcta.
 
 ````js
 import { Component } from '@angular/core';
@@ -327,7 +328,7 @@ export class AppComponent {
   }
 }
 ````
-The example above will create a new Room and then will create a MessageReference, now you can store or listen for messages within this specific room. Everything related with this reference will persist the relationship Parent -> Child.
+El ejemplo anterior creará una nueva Sala y luego creará una MessageReference, ahora puede almacenar o escuchar mensajes dentro de esta sala específica. Todo lo relacionado con esta referencia persistirá la relación Parent -> Child.
 
 [NodeJS]: http://nodejs.org
 [Horizon]: http://horizon.io/
