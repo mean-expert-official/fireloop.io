@@ -152,17 +152,17 @@ ga('send', 'pageview');
         
         
 
-      <div class="header-lang-select-wrap header-link" style="{margin-top:15px;}">
+      <div class="header-lang-select-wrap header-link">
         <label>
         
           English
         
         </label>
-        <select id="header-lang-select" class="header-lang-select">
+        <select id="header-lang-select" class="header-lang-select" onchange="location = this.options[this.selectedIndex].value">
         
           
             <option
-              value="en"
+              value=""
               selected
               data-href=""
             >
@@ -170,7 +170,7 @@ ga('send', 'pageview');
             </option>
           
             <option
-              value="es"
+              value=""
               
               data-href=""
             >
@@ -206,221 +206,11 @@ ga('send', 'pageview');
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-api"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/api/">Api</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-Debería [crear una aplicación] y software development kit utilizando la Herramienta de CLI FireLoop antes de poder utilizar la siguiente API.
-
-Importación de servicio RealTimeEl LoopBack SDK Build...
-    
-
-        <a href="/es/api/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-creating-client-apps"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/creating-client-apps/">Creación de aplicaciones cliente</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        12345678910111213141516$ cd myproject$ fireloop? What do you want to do? Generate Angular2 Client     _-----_         |       |    ╭──────────────────────────╮    |--(o)--|    │ Lets's create an An...
-    
-
-        <a href="/es/creating-client-apps/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-creating-fireloop-models"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/en/creating-fireloop-models/">Creating FireLoop Models</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        When you start building a system, the fist thing you need to do right after your setup, is to start creating your API Models.
-This models are similar to LoopBack Models, but with a difference… This...
-    
-
-        <a href="/en/creating-fireloop-models/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-getting-started"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/en/getting-started/">Getting Started</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        FireLoop is a NodeJS Real-Time Platform that allows you to build modern and complex applications by seamlessly integrating the amazing technologies from the MEAN Stack; Like the IBM’s LoopBack, Goo...
-    
-
-        <a href="/en/getting-started/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-hello-world"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/en/hello-world/">Hello World</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-    
-
-        <a href="/en/hello-world/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-realtime-stats-example"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.368Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -464,11 +254,11 @@ Project DescriptionTo demonstrate what can be achieved with FireLoop, I have dec
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-serving-apps"
+            <article id="post-getting-started"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.368Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -482,7 +272,7 @@ Project DescriptionTo demonstrate what can be achieved with FireLoop, I have dec
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/en/serving-apps/">Serving Applications</a>
+      <a class="post-title-link" href="/en/getting-started/">Getting Started</a>
     </h3>
   
 
@@ -492,11 +282,177 @@ Project DescriptionTo demonstrate what can be achieved with FireLoop, I have dec
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        FireLoop is able to run all of your project applications at once (including your server), for this you can use the fireloop serve command and select the applications you want to serve.
-123456789101...
+        FireLoop is a NodeJS Real-Time Platform that allows you to build modern and complex applications by seamlessly integrating the amazing technologies from the MEAN Stack; Like the IBM’s LoopBack, Goo...
     
 
-        <a href="/en/serving-apps/" class="post-more waves-effect waves-button">
+        <a href="/en/getting-started/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-hello-world"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.368Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/en/hello-world/">Hello World</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
+    
+
+        <a href="/en/hello-world/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-creating-fireloop-models"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.352Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/en/creating-fireloop-models/">Creating FireLoop Models</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        When you start building a system, the fist thing you need to do right after your setup, is to start creating your API Models.
+This models are similar to LoopBack Models, but with a difference… This...
+    
+
+        <a href="/en/creating-fireloop-models/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-creating-client-apps"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.336Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/en/creating-client-apps/">Creating Client Applications</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        12345678910111213141516$ cd myproject$ fireloop? What do you want to do? Generate Angular2 Client     _-----_         |       |    ╭──────────────────────────╮    |--(o)--|    │ Lets's create an An...
+    
+
+        <a href="/en/creating-client-apps/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-creating-client-sdk"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.336Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/en/creating-client-sdk/">Creating Client SDK</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        The FireLoop integration is built in the SDK, so you just need to generate one and install it by using the CLI Tool.
+1234567891011121314151617181920$ cd myproject$ fireloop     _-----_     ╭───────...
+    
+
+        <a href="/en/creating-client-sdk/" class="post-more waves-effect waves-button">
             hello world
         </a>
     </div>
@@ -510,7 +466,7 @@ Project DescriptionTo demonstrate what can be achieved with FireLoop, I have dec
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.305Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -524,7 +480,7 @@ Project DescriptionTo demonstrate what can be achieved with FireLoop, I have dec
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/comparison-table/">Tabla de comparación</a>
+      <a class="post-title-link" href="/en/comparison-table/">Comparison Table</a>
     </h3>
   
 
@@ -534,10 +490,10 @@ Project DescriptionTo demonstrate what can be achieved with FireLoop, I have dec
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Tabla de comparación
+        Comparison Table
 
 
-Plataforma
+Platform
 Meteor
 Horizon
 FireBase
@@ -547,12 +503,56 @@ FireLoop
 
 
 Description
-Plataforma de código abierto para web, móvil y escritorio.
+Open source platform for web, mobile and desktop.
 Real-time platform built on top of RethinkDB.
-BackEnd a...
+BaaS Cloud platform for ...
     
 
-        <a href="/es/comparison-table/" class="post-more waves-effect waves-button">
+        <a href="/en/comparison-table/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-api"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.305Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/en/api/">Api</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+You should create an application and software development kit by using the FireLoop CLI Tool before being able to use the following API.
+
+Importing RealTime ServiceThe LoopBack SDK Builder will ge...
+    
+
+        <a href="/en/api/" class="post-more waves-effect waves-button">
             hello world
         </a>
     </div>
@@ -566,7 +566,7 @@ BackEnd a...
   class="article-card article-type-at The the Categories" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-26 12:27" datetime="2016-12-26T18:27:27.000Z"  itemprop="datePublished">2016-12-26</time>
+        <time class="post-time" title="2016-12-26 12:27" datetime="2016-12-26T16:27:27.000Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -607,7 +607,7 @@ BackEnd a...
   class="article-card article-type-Tags" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-26 12:26" datetime="2016-12-26T18:26:41.000Z"  itemprop="datePublished">2016-12-26</time>
+        <time class="post-time" title="2016-12-26 12:26" datetime="2016-12-26T16:26:41.000Z"  itemprop="datePublished">2016-12-26</time>
 
         
 

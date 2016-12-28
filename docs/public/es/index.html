@@ -152,17 +152,17 @@ ga('send', 'pageview');
         
         
 
-      <div class="header-lang-select-wrap header-link" style="{margin-top:15px;}">
+      <div class="header-lang-select-wrap header-link">
         <label>
         
           Spanish
         
         </label>
-        <select id="header-lang-select" class="header-lang-select">
+        <select id="header-lang-select" class="header-lang-select" onchange="location = this.options[this.selectedIndex].value">
         
           
             <option
-              value="en"
+              value="/en/index.html"
               
               data-href="/en/index.html"
             >
@@ -170,7 +170,7 @@ ga('send', 'pageview');
             </option>
           
             <option
-              value="es"
+              value=""
               selected
               data-href=""
             >
@@ -206,225 +206,11 @@ ga('send', 'pageview');
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-creating-client-sdk"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-28 12:43" datetime="2016-12-28T18:43:24.000Z"  itemprop="datePublished">2016-12-28</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/creating-client-sdk/">Creando el SDK para el Cliente</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        La integración FireLoop se construye en el SDK, por lo que sólo necesita generar uno e instalarlo mediante la herramienta CLI.
-1234567891011121314151617181920$ cd myproject$ fireloop     _-----_   ...
-    
-
-        <a href="/es/creating-client-sdk/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-creating-fireloop-models"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/creating-fireloop-models/">Creación de modelos FireLoop</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Cuando empiece a construir un sistema, lo primero que debe hacer justo después de su instalación, es comenzar a crear sus Modelos de API.
-Estos modelos son similares a LoopBack Modelos, pero con un...
-    
-
-        <a href="/es/creating-fireloop-models/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-getting-started"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/getting-started/">Inicio Rapido</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        FireLoop Es una Plataforma en Real-time para NodeJS que le permite crear aplicaciones modernas y complejas integrando a la perfección las sorprendentes tecnologias de MEAN Stack como frameworks IBM...
-    
-
-        <a href="/es/getting-started/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-hello-world"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/hello-world/">Hola Mundo</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Bienvenido a [Hexo] (https://hexo.io/)! Este es tu primer post. Consulte [documentación] (https://hexo.io/docs/) para obtener más información. Si tienes algún problema al usar Hexo, puedes encontra...
-    
-
-        <a href="/es/hello-world/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-realtime-stats-example"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/realtime-stats-example/">Ejemplo de Estatisticas RealTime</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-                
-                    
-                    
-                
-                Real-Time
-            
-Descripción del ProyectoPara demostrar lo que se puede lograr con FireLoop, he de...
-    
-
-        <a href="/es/realtime-stats-example/" class="post-more waves-effect waves-button">
-            hello world
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-serving-apps"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 21:36" datetime="2016-12-27T01:36:31.281Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -468,11 +254,11 @@ FireLoop es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (i.
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-api"
+            <article id="post-realtime-stats-example"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 21:18" datetime="2016-12-27T01:18:30.377Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -486,7 +272,7 @@ FireLoop es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (i.
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/es/api/">Api</a>
+      <a class="post-title-link" href="/es/realtime-stats-example/">Ejemplo de Estatisticas RealTime</a>
     </h3>
   
 
@@ -497,12 +283,100 @@ FireLoop es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (i.
 
     
         
-Debería [crear una aplicación] y software development kit utilizando la Herramienta de CLI FireLoop antes de poder utilizar la siguiente API.
-
-Importación de servicio RealTimeEl LoopBack SDK Build...
+                
+                    
+                    
+                
+                Real-Time
+            
+Descripción del ProyectoPara demostrar lo que se puede lograr con FireLoop, he de...
     
 
-        <a href="/es/api/" class="post-more waves-effect waves-button">
+        <a href="/es/realtime-stats-example/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-creating-fireloop-models"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 21:14" datetime="2016-12-27T01:14:19.710Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/es/creating-fireloop-models/">Creación de modelos FireLoop</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Cuando empiece a construir un sistema, lo primero que debe hacer justo después de su instalación, es comenzar a crear sus Modelos de API.
+Estos modelos son similares a LoopBack Modelos, pero con un...
+    
+
+        <a href="/es/creating-fireloop-models/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-creating-client-sdk"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 21:10" datetime="2016-12-27T01:10:31.529Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/es/creating-client-sdk/">Creando el SDK para el Cliente</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        La integración FireLoop se construye en el SDK, por lo que sólo necesita generar uno e instalarlo mediante la herramienta CLI.
+1234567891011121314151617181920$ cd myproject$ fireloop     _-----_   ...
+    
+
+        <a href="/es/creating-client-sdk/" class="post-more waves-effect waves-button">
             hello world
         </a>
     </div>
@@ -516,7 +390,7 @@ Importación de servicio RealTimeEl LoopBack SDK Build...
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 21:07" datetime="2016-12-27T01:07:04.069Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -557,7 +431,7 @@ Importación de servicio RealTimeEl LoopBack SDK Build...
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-12-27 10:04" datetime="2016-12-27T16:04:11.000Z"  itemprop="datePublished">2016-12-27</time>
+        <time class="post-time" title="2016-12-26 20:58" datetime="2016-12-27T00:58:32.714Z"  itemprop="datePublished">2016-12-26</time>
 
         
 
@@ -600,6 +474,132 @@ BackEnd a...
     
 
         <a href="/es/comparison-table/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-api"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 20:42" datetime="2016-12-27T00:42:15.827Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/es/api/">Api</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+Debería [crear una aplicación] y software development kit utilizando la Herramienta de CLI FireLoop antes de poder utilizar la siguiente API.
+
+Importación de servicio RealTimeEl LoopBack SDK Build...
+    
+
+        <a href="/es/api/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-hello-world"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.461Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/es/hello-world/">Hola Mundo</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Bienvenido a [Hexo] (https://hexo.io/)! Este es tu primer post. Consulte [documentación] (https://hexo.io/docs/) para obtener más información. Si tienes algún problema al usar Hexo, puedes encontra...
+    
+
+        <a href="/es/hello-world/" class="post-more waves-effect waves-button">
+            hello world
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-getting-started"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.414Z"  itemprop="datePublished">2016-12-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/es/getting-started/">Inicio Rapido</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        FireLoop Es una Plataforma en Real-time para NodeJS que le permite crear aplicaciones modernas y complejas integrando a la perfección las sorprendentes tecnologias de MEAN Stack como frameworks IBM...
+    
+
+        <a href="/es/getting-started/" class="post-more waves-effect waves-button">
             hello world
         </a>
     </div>
