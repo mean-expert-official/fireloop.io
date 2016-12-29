@@ -68,4 +68,4 @@ module.exports = generators.Base.extend({
 function generate(cwd, config) {
     fs.writeFileSync(path.join(cwd, config.output.file), ejs.render(fs.readFileSync(require.resolve(__dirname + "/../../" + config.template), { encoding: 'utf-8' }), config.params));
 }
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/setup/index.js.map
+//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/setup/index.js.map
