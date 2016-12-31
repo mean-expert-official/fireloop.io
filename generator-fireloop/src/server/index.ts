@@ -29,19 +29,28 @@ module.exports = generators.Base.extend({
       });
   },
 
+  prompting: function () {
+    return this.prompt([{
+      type: 'input',
+      name: 'name',
+      message: 'Your project name',
+      default: this.appname
+    }]).then(function( answers: {name: string}){
+      this.appname = answers.name;
+    }.bind(this));
+  },
+
   install: function () {
-    this.npmInstall([
-      '@mean-expert/loopback-sdk-builder',
-      'ts-node',
-      'typescript',
-      '@types/node',
-      '@types/mocha'
-    ], { 'save-dev': true });
     this.npmInstall([
       '@mean-expert/loopback-component-realtime',
       '@mean-expert/loopback-stats-mixin',
       '@mean-expert/model',
       '@mean-expert/boot-script',
+      '@mean-expert/loopback-sdk-builder',
+      'ts-node',
+      'typescript',
+      '@types/node',
+      '@types/mocha',
       'loopback-ds-timestamp-mixin',
       'cookie-parser',
       'chai',
@@ -55,6 +64,7 @@ module.exports = generators.Base.extend({
     rmdir.sync(this.destinationPath('client'));
     rmdir.sync(this.destinationPath('server/boot/root.js'));
     rmdir.sync(this.destinationPath('server/boot/authentication.js'));
+
     [
       {
         template: 'templates/fireloop/component-config.json',
@@ -100,6 +110,21 @@ module.exports = generators.Base.extend({
         template: 'templates/tests/keepme.txt',
         output: { directory: 'tests', file: '.keepme' },
         params: {}
+      },
+      {
+        template: 'templates/fireloop/app.json',
+        output: { directory: '../', file: 'app.json' },
+        params: {}
+      },
+      {
+        template: 'templates/fireloop/Procfile',
+        output: { directory: '../', file: 'Procfile' },
+        params: {}
+      },
+      {
+        template: 'templates/fireloop/package.json',
+        output: { directory: '../', file: 'package.json' },
+        params: { appname: this.appname }
       }
     ].forEach(function (config: any) {
       console.info('Generating: %s', "" + config.output.file);

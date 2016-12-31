@@ -150,4 +150,4 @@ module.exports = generators.Base.extend({
         }
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2universal/index.js.map
+//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/ng2universal/index.js.map
