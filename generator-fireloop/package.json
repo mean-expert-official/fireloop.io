@@ -11,6 +11,10 @@
 		"name": "Brannon N. Darby II",
 		"email": "bdarby86@gmail.com",
 		"url": "https://github.com/ng-logic"
+	},{
+		"name": "Andres D. Jimenez S",
+		"email": "andresdavid@outlook.com",
+		"url": "https://github.com/kattsushi"
 	}],
 	"description": "Not for standalone usage, use @mean-expert/fireloop instead.",
 	"scripts": {
