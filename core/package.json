@@ -1,0 +1,27 @@
+{
+  "name": "@fireloop/core",
+  "version": "1.0.5",
+  "description": "FireLoop Core Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "index.js",
+    "index.js.map",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mean-expert-official/fireloop.io.git"
+  },
+  "keywords": [
+    "FireLoop"
+  ],
+  "author": "Jonathan Casarrubias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mean-expert-official/fireloop.io/issues"
+  },
+  "homepage": "https://github.com/mean-expert-official/fireloop.io#readme"
+}
