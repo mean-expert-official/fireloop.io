@@ -23,9 +23,10 @@
 	},
 	"files": [
 		"decorators",
-		"src/model/index.d.ts",
-		"src/boot-script/index.d.ts",
-		"src/inject/index.d.ts",
+		"src/index.ts",
+		"src/decorators/model/index.d.ts",
+		"src/decorators/boot-script/index.d.ts",
+		"src/decorators/inject/index.d.ts",
 		"index.js",
 		"index.js.map",
 		"index.ts",
