@@ -1,1 +1,1 @@
-export * from './model-register';
+export * from './src/model-register';

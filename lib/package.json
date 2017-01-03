@@ -31,7 +31,6 @@
 		"Angular CLI"
 	],
 	"dependencies": {
-		"@fireloop/lib": "lasted",
 		"async": "2.1.4",
 		"chalk": "1.1.3",
 		"change-case": "3.0.0",
