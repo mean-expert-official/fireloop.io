@@ -1,5 +1,12 @@
 "use strict";
 var lib_1 = require("@fireloop/lib");
+/**
+ * @author Jonathan Casarrubias
+ * @module Model Decorator
+ * @license MIT
+ * @description
+ * This decorator will register fireloop models
+ **/
 function Model(arg) {
     function f(target) {
         function ff(reference) {
@@ -16,4 +23,4 @@ function Model(arg) {
     return f;
 }
 exports.Model = Model;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/core/src/decorators/model/index.js.map

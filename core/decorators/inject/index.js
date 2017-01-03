@@ -69,6 +69,13 @@ function instanceiateDependency(caller, target) {
     }
     return target._instance;
 }
+/**
+ * Propouse this function for the bootstrap instance of the app loopback/fireLoopBootstrap
+ *  with typescript, but dependens of migration server.js to typescript.
+ *
+ * @export
+ * @param {Injectable} main
+ */
 function fireLoopBootstrap(main) {
     'use strict';
     var tmp;
@@ -89,3 +96,4 @@ function fireLoopBootstrap(main) {
     }
 }
 exports.fireLoopBootstrap = fireLoopBootstrap;
+//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/core/src/decorators/inject/index.js.map

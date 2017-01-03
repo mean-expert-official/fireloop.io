@@ -1,5 +1,5 @@
 {
-	"name": "@fireloop/core",
+	"name": "@fireloop/lib",
 	"version": "1.0.0-alpha.1",
 	"main": "index.js",
 	"author": {
@@ -31,7 +31,6 @@
 		"Angular CLI"
 	],
 	"dependencies": {
-		"@fireloop/lib": "1.0.0-alpha.1",
 		"async": "2.1.4",
 		"chalk": "1.1.3",
 		"change-case": "3.0.0",

@@ -1,5 +1,5 @@
-import { Dependencies }     from    './dependencies';
-import { Injectable }       from    './injectable';
+import { Dependencies } from './dependencies';
+import { Injectable }   from './injectable';
 
 /**
  * @author Andres Jimenez Fork from @mean-expert/boot-script by Jonathan Casarrubias
