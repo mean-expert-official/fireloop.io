@@ -1,6 +1,6 @@
 {
-	"name": "lib-fireloop",
-	"version": "1.0.0-beta.1.3",
+	"name": "@fireloop/lib",
+	"version": "1.0.0-alpha.1",
 	"main": "index.js",
 	"author": {
 		"name": "Jonathan Casarrubias",
@@ -8,21 +8,20 @@
 		"url": "http://mean.expert"
 	},
 	"contributors": [{
-		"name": "Brannon N. Darby II",
-		"email": "bdarby86@gmail.com",
-		"url": "https://github.com/ng-logic"
-	},{
 		"name": "Andres D. Jimenez S",
 		"email": "andresdavid@outlook.com",
 		"url": "https://github.com/kattsushi"
+	},{
+		"name": "Brannon N. Darby II",
+		"email": "bdarby86@gmail.com",
+		"url": "https://github.com/ng-logic"
 	}],
 	"description": "Not for standalone usage, use @fireloop/lib instead.",
 	"scripts": {
-		"build": "./node_modules/.bin/tsc",
+		"build": "./node_modules/.bin/tsc --p tsconfig.json",
 		"prepublish": ""
 	},
 	"files": [
-		"../lib"
 	],
 	"keywords": [
 		"FireLoop",
