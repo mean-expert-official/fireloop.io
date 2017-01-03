@@ -18,7 +18,7 @@
 	}],
 	"description": "Not for standalone usage, use @fireloop/lib instead.",
 	"scripts": {
-		"build": "./node_modules/.bin/tsc",
+		"build": "./node_modules/.bin/tsc --p tsconfig.json",
 		"prepublish": ""
 	},
 	"files": [
@@ -31,7 +31,6 @@
 		"Angular CLI"
 	],
 	"dependencies": {
-		"@fireloop/lib": "latest",
 		"async": "2.1.4",
 		"chalk": "1.1.3",
 		"change-case": "3.0.0",
