@@ -7,6 +7,9 @@
     "mapRoot": "src",
     "module": "commonjs",
     "outDir": "./",
+    "rootDirs": [
+      "src"
+    ],
     "sourceMap": true,
     "target": "es5",
     "typeRoots": [
@@ -21,6 +24,7 @@
   "exclude": [
     "node_modules",
     "tests",
+    "index.ts",
     "**/*.spec.ts"
   ]
 }
