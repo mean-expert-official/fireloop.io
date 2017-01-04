@@ -1,6 +1,6 @@
 {
 	"name": "@fireloop/core",
-	"version": "1.0.0-alpha.2",
+	"version": "1.0.0-alpha.3",
 	"main": "index.js",
 	"author": {
 		"name": "Jonathan Casarrubias",
@@ -18,18 +18,14 @@
 	}],
 	"description": "Not for standalone usage, use @fireloop/lib instead.",
 	"scripts": {
-		"build": "./node_modules/.bin/tsc --p tsconfig.json",
+		"build": "./node_modules/.bin/tsc -p tsconfig.json",
 		"prepublish": ""
 	},
 	"files": [
 		"decorators",
-		"src/index.ts",
-		"src/decorators/model/index.d.ts",
-		"src/decorators/boot-script/index.d.ts",
-		"src/decorators/inject/index.d.ts",
 		"index.js",
 		"index.js.map",
-		"index.ts",
+		"index.d.ts",
 		"package.json"
 	],
 	"keywords": [
@@ -40,11 +36,11 @@
 		"Angular CLI"
 	],
 	"dependencies": {
-		"@fireloop/lib": "1.0.0-alpha.1",
+		"@fireloop/lib": "1.0.0-alpha.3",
 		"ts-node": "2.0.0"
 	},
 	"devDependencies": {
-		"@types/node": "6.0.55",
+		"@types/node": "6.0.56",
 		"typescript": "2.1.4"
 	}
 }
