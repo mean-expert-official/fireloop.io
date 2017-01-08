@@ -10,7 +10,7 @@ var chalk = require("chalk");
  */
 module.exports = generators.extend({
     constructor: function () {
-        generators.Base.apply(this, arguments);
+        generators.apply(this, arguments);
         this.log(yosay('Welcome to FireLoop! \n The MEAN Stack Platform by MEAN Expert'));
     },
     prompting: function () {
