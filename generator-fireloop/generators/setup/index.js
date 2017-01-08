@@ -13,7 +13,7 @@ var ejs = require("ejs");
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     // The name `constructor` is important here
     constructor: function () {
         // Calling the super constructor is important so our generator is correctly set up
@@ -68,4 +68,4 @@ module.exports = generators.Base.extend({
 function generate(cwd, config) {
     fs.writeFileSync(path.join(cwd, config.output.file), ejs.render(fs.readFileSync(require.resolve(__dirname + "/../../" + config.template), { encoding: 'utf-8' }), config.params));
 }
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/setup/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/setup/index.js.map

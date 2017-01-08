@@ -9,9 +9,9 @@ var chalk = require("chalk");
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     constructor: function () {
-        generators.Base.apply(this, arguments);
+        generators.apply(this, arguments);
         this.log(yosay('Let\'s serve an application!'));
     },
     prompting: function () {
@@ -55,4 +55,4 @@ module.exports = generators.Base.extend({
         }.bind(this));
     }
 });
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/serve/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/serve/index.js.map

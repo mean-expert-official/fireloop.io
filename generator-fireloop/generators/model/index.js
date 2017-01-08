@@ -12,7 +12,7 @@ _.mixin(require('underscore.inflections'));
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     // Not reinventing the wheel, let LoopBack Generator to build the Base.
     initializing: function () {
         this.root = this.destinationRoot();
@@ -96,4 +96,4 @@ function propertyBuilder(config) {
     });
     return "" + properties.join(",") + (properties.length > 0 ? '\n        ' : '');
 }
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/model/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/model/index.js.map

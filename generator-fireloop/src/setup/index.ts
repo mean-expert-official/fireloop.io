@@ -15,15 +15,15 @@ import * as ejs from 'ejs';
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
   // The name `constructor` is important here
-  constructor: function () {
+  constructor: function() {
     // Calling the super constructor is important so our generator is correctly set up
     generators.Base.apply(this, arguments);
     this.log(chalk.yellow('Let\'s setup up the FireLoop Modules.'));
   },
   // Configure Component
-  configureComponent: function () {
+  configureComponent: function() {
     rmdir.sync(this.destinationPath('client'));
     [
       {

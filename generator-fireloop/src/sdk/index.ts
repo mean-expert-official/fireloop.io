@@ -10,7 +10,7 @@ import * as chalk from 'chalk';
  * @description
  * This module generates and configures a FireLoop SDK
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
   /**
    * @method prompting
    * @author Brannon N. Darby II <gh:ng-logic>
@@ -28,7 +28,7 @@ module.exports = generators.Base.extend({
     // TODO: set FIRELOOP to true after fix
     let selected: { IO: boolean, FIRELOOP: boolean, DEFAULT_VALUES: boolean } = {
       IO: true,
-      FIRELOOP: false,
+      FIRELOOP: true,
       DEFAULT_VALUES: false
     };
     this.selected = selected;

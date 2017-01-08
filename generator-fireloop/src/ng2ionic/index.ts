@@ -12,8 +12,8 @@ import * as ejs from 'ejs';
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
-  prompting: function () {
+module.exports = generators.extend({
+  prompting: function() {
     this.options.clients = this.config.get('clients') || {};
     let done = this.async();
     return this.prompt([{
@@ -21,7 +21,7 @@ module.exports = generators.Base.extend({
       name: 'name',
       message: 'What\'s the name of your application?',
       default: 'ionicapp'
-    }]).then(function (answers: { name: string }) {
+    }]).then(function(answers: { name: string }) {
       if (this.options.clients[answers.name]) {
         this.log(chalk.red(`\n\nThere is already an application using the name ${answers.name}`));
         done();
@@ -45,7 +45,7 @@ module.exports = generators.Base.extend({
     }.bind(this));
   },
 
-  buildsdk: function () {
+  buildsdk: function() {
     if (this.options.current) {
       this.composeWith('fireloop:sdk', {
         options: {
@@ -57,17 +57,17 @@ module.exports = generators.Base.extend({
     }
   },
 
-  install: function () {
+  install: function() {
     let dest = this.destinationPath(this.options.current);
     if (this.options.current) {
       this.spawnCommand(
-        `npm`, [ 'install', '--save', 'socket.io-client' ], {
-        cwd: dest
-      });
+        `npm`, ['install', '--save', 'socket.io-client'], {
+          cwd: dest
+        });
       this.spawnCommand(
-        `npm`, [ 'install', '--save-dev', '@types/socket.io-client' ], {
-        cwd: dest
-      });
+        `npm`, ['install', '--save-dev', '@types/socket.io-client'], {
+          cwd: dest
+        });
     } else {
       this.log(chalk.red(`\nUnable to install socket io lib: ${this.options.current}\n`));
     }
@@ -100,7 +100,7 @@ module.exports = generators.Base.extend({
             )
           )
         }
-      );
+        );
     }
   }
 

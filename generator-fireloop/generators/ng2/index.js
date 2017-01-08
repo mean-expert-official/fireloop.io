@@ -11,7 +11,7 @@ var async = require("async");
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     prompting: function () {
         var _this = this;
         var keys = {
@@ -71,4 +71,4 @@ module.exports = generators.Base.extend({
         });
     }
 });
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/ng2/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2/index.js.map

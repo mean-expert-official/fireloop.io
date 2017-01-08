@@ -9,11 +9,11 @@ var chalk = require('chalk');
  * @description
  * This module updates JSON Files
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     method: function () {
         var config = Object.assign(require(this.options.filePath), this.options.replace);
         fs.writeFileSync(this.options.filePath, JSON.stringify(config, null, 2));
         this.log(chalk.green('Updating: ', this.options.filePath));
     }
 });
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/jsonupdate/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/jsonupdate/index.js.map

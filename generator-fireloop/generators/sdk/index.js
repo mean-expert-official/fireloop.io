@@ -9,7 +9,7 @@ var chalk = require("chalk");
  * @description
  * This module generates and configures a FireLoop SDK
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     /**
      * @method prompting
      * @author Brannon N. Darby II <gh:ng-logic>
@@ -27,7 +27,7 @@ module.exports = generators.Base.extend({
         // TODO: set FIRELOOP to true after fix
         var selected = {
             IO: true,
-            FIRELOOP: false,
+            FIRELOOP: true,
             DEFAULT_VALUES: false
         };
         this.selected = selected;
@@ -80,4 +80,4 @@ module.exports = generators.Base.extend({
         });
     }
 });
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/sdk/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/sdk/index.js.map

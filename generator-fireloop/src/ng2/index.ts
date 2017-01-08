@@ -13,18 +13,18 @@ interface ClientInterface { name: string, path?: string };
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
-  
-  prompting: function () {
+module.exports = generators.extend({
 
-    let keys: { ANGULAR_WEB: string,  ANGULAR_UNIVERSAL: string, ANGULAR_NATIVE: string, ANGULAR_IONIC: string} = {
-       ANGULAR_WEB       : 'Angular 2 for Web',
-       ANGULAR_UNIVERSAL : 'Angular 2 Universal (Experimental)',
-       ANGULAR_NATIVE    : 'Angular 2 {N}ative',
-       ANGULAR_IONIC     : 'Angular 2 Ionic'
+  prompting: function() {
+
+    let keys: { ANGULAR_WEB: string, ANGULAR_UNIVERSAL: string, ANGULAR_NATIVE: string, ANGULAR_IONIC: string } = {
+      ANGULAR_WEB: 'Angular 2 for Web',
+      ANGULAR_UNIVERSAL: 'Angular 2 Universal (Experimental)',
+      ANGULAR_NATIVE: 'Angular 2 {N}ative',
+      ANGULAR_IONIC: 'Angular 2 Ionic'
     };
 
-    let choises: string[] = [ keys.ANGULAR_WEB, keys.ANGULAR_UNIVERSAL ];
+    let choises: string[] = [keys.ANGULAR_WEB, keys.ANGULAR_UNIVERSAL];
 
     return async.parallel([
       (next: Function) => commandExist('tns', (err: any, exist: boolean) => {
@@ -48,13 +48,13 @@ module.exports = generators.Base.extend({
     ], (err) => {
       // UI
       return this.prompt([{
-        type    : 'list',
-        name    : 'selected',
-        message : 'What type of Angular 2 Application do you want to create?',
-        default : 0,
-        choices : choises
-      }]).then(function (answers: { selected: any }) {
-        let done   = this.async();
+        type: 'list',
+        name: 'selected',
+        message: 'What type of Angular 2 Application do you want to create?',
+        default: 0,
+        choices: choises
+      }]).then(function(answers: { selected: any }) {
+        let done = this.async();
         switch (answers.selected) {
           default:
           case keys.ANGULAR_WEB:

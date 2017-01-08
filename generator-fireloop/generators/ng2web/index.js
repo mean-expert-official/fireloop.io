@@ -11,7 +11,7 @@ var ejs = require("ejs");
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     prompting: function () {
         this.options.clients = this.config.get('clients') || {};
         var done = this.async();
@@ -109,4 +109,4 @@ module.exports = generators.Base.extend({
         }
     }
 });
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/ng2web/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2web/index.js.map

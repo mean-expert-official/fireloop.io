@@ -13,15 +13,15 @@ import * as path from 'path';
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
   // The name `constructor` is important here
-  constructor: function () {
+  constructor: function() {
     // Calling the super constructor is important so our generator is correctly set up
     generators.Base.apply(this, arguments);
     this.log(chalk.yellow('\nSetting up new FireLoop environment.\n'));
   },
   // Not reinventing the wheel, let LoopBack Generator to build the Base.
-  installBase: function () {
+  installBase: function() {
     this.composeWith('fireloop:loopback', {
       options: { skipNextSteps: true }
     }, {
@@ -29,18 +29,18 @@ module.exports = generators.Base.extend({
       });
   },
 
-  prompting: function () {
+  prompting: function() {
     return this.prompt([{
       type: 'input',
       name: 'name',
       message: 'Your project name',
       default: this.appname
-    }]).then(function( answers: {name: string}){
+    }]).then(function(answers: { name: string }) {
       this.appname = answers.name;
     }.bind(this));
   },
 
-  install: function () {
+  install: function() {
     this.npmInstall([
       '@mean-expert/loopback-component-realtime',
       '@mean-expert/loopback-stats-mixin',
@@ -59,7 +59,7 @@ module.exports = generators.Base.extend({
       'cookie-parser'
     ], { 'save': true });
   },
-  end: function () {
+  end: function() {
     var _this = this;
     rmdir.sync(this.destinationPath('client'));
     rmdir.sync(this.destinationPath('server/boot/root.js'));
@@ -126,7 +126,7 @@ module.exports = generators.Base.extend({
         output: { directory: '../', file: 'package.json' },
         params: { appname: this.appname }
       }
-    ].forEach(function (config: any) {
+    ].forEach(function(config: any) {
       console.info('Generating: %s', "" + config.output.file);
       var _cwd = _this.destinationPath(config.output.directory);
       // TODO: Decouple and polish the code in below

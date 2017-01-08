@@ -13,7 +13,7 @@ var rmdir = require('rimraf');
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
     prompting: function () {
         this.options.clients = this.config.get('clients') || {};
         var done = this.async();
@@ -23,10 +23,10 @@ module.exports = generators.Base.extend({
                 message: 'What\'s the name of your application?',
                 default: 'universalapp'
             } /*, {
-          type    : 'confirm',
-          name    : 'universal',
-          message : 'Would you like to enable Angular Universal?'
-        }*/
+              type    : 'confirm',
+              name    : 'universal',
+              message : 'Would you like to enable Angular Universal?'
+            }*/
         ]).then(function (answers) {
             var _this = this;
             if (this.options.clients[answers.name]) {
@@ -150,4 +150,4 @@ module.exports = generators.Base.extend({
         }
     }
 });
-//# sourceMappingURL=C:/Users/a-jimenez/mean-expert/fireloop.io/generator-fireloop/src/ng2universal/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2universal/index.js.map

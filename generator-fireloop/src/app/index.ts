@@ -9,7 +9,7 @@ import * as chalk from 'chalk';
  * @description
  * This module generates and configure a FireLoop Server
  */
-module.exports = generators.Base.extend({
+module.exports = generators.extend({
 
 
   constructor: function() {

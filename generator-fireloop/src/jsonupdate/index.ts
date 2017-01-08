@@ -9,10 +9,10 @@ var chalk = require('chalk');
  * @description
  * This module updates JSON Files
  */
-module.exports = generators.Base.extend({
-    method: function () {
-        var config = Object.assign(require(this.options.filePath), this.options.replace);
-        fs.writeFileSync(this.options.filePath, JSON.stringify(config, null, 2));
-        this.log(chalk.green('Updating: ', this.options.filePath));
-    }
+module.exports = generators.extend({
+  method: function() {
+    var config = Object.assign(require(this.options.filePath), this.options.replace);
+    fs.writeFileSync(this.options.filePath, JSON.stringify(config, null, 2));
+    this.log(chalk.green('Updating: ', this.options.filePath));
+  }
 });
