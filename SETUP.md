@@ -1,7 +1,7 @@
 How to locally setup FireLoop
 ==============
 
-If you want to start contributing or just because you want to have FireLoop locally installed, then you will need to read the following steps:
+If you want to start contributing or just because you want to have FireLoop installed locally, then you will need to read the following steps:
 
 ## Clone FireLoop Repo
 First of all you need to clone the FireLoop repository from GitHub.
@@ -11,11 +11,11 @@ $ git clone git@github.com:mean-expert-official/fireloop.io.git
 ````
 
 ## FireLoop CLI
-The FireLoop CLI is a gateway that acts as an interface for the final user, thought it uses a couple of yeoman generators to work on the actual scaffolding.
+The FireLoop CLI is a gateway that acts as an interface for the final user, though it uses a couple of yeoman generators to work on the actual scaffolding.
 
-Since the FireLoop CLI is for users public entrace, you will require to `$npm link` this specific project locally running.
+Since the FireLoop CLI is for users public entrance, you will require to `npm link` this specific project locally running.
 
-> IMPORTANT: Make sure you globally uninstall previous versions of fireloop $ npm uninstall -g @mean-expert/fireloop
+> IMPORTANT: Make sure you globally uninstall previous versions of fireloop `$ npm uninstall -g @mean-expert/fireloop`
 
 ````sh
 $ cd fireloop.io/fireloop-cli
@@ -25,7 +25,7 @@ $ npm link
 
 The commands described above will install local copy of the FireLoop CLI running from the code you just cloned.
 
-Any change you make within the fireloop-cli code, will be immediatly reflected within the command line interface functionality.
+Any change you make within the fireloop-cli code, will be immediately reflected within the command line interface functionality.
 
 ## FireLoop Generator
 The FireLoop Generator is a yeoman generator that actually coordinates the setup of the project, sdk generations and it provides with the templates that transforms a regular LoopBack application into a FireLoop Application.
