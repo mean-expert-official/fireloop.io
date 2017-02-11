@@ -35,4 +35,4 @@ module.exports = generators.Base.extend({
         ], { shell: true, cwd: this.destinationPath('fireloop') });
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/sdk/index.js.map
+//# sourceMappingURL=/Users/beeman/workspace/mean-expert/fireloop.io/generator-fireloop/src/sdk/index.js.map

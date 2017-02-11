@@ -33,7 +33,7 @@ module.exports = generators.Base.extend({
             }
             else {
                 this.log(chalk.green("\n\nCreating new Angular 2 Application: " + answers.name));
-                var nmdir = require.resolve('angular-cli').replace(/angular-cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, '');
+                var nmdir = require.resolve('@angular/cli').replace(/@angular(\/|\\)cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, '');
                 var clicmd = path.join(nmdir, '.bin/ng');
                 var args = ['new', answers.name];
                 if (answers.universal) {
@@ -109,4 +109,4 @@ module.exports = generators.Base.extend({
         }
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2web/index.js.map
+//# sourceMappingURL=/Users/beeman/workspace/mean-expert/fireloop.io/generator-fireloop/src/ng2web/index.js.map

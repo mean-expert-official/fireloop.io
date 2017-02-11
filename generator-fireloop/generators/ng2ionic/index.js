@@ -93,4 +93,4 @@ module.exports = generators.Base.extend({
         }
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2ionic/index.js.map
+//# sourceMappingURL=/Users/beeman/workspace/mean-expert/fireloop.io/generator-fireloop/src/ng2ionic/index.js.map
