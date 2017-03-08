@@ -34,7 +34,7 @@ module.exports = generators.Base.extend({
                     done();
                 } else {
                     this.log(chalk.green(`\n\nCreating new Angular 2 Application: ${answers.name}`));
-                    let nmdir: string = require.resolve('@angular/cli').replace(/@angular(\/|\\)cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, '');
+                    let nmdir: string = require.resolve('angular-cli').replace(/angular-cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, '');
                     let clicmd: string = path.join(nmdir, '.bin/ng');
                     let args: string[] = ['new', answers.name];
                     if (answers.universal) { args.push('--universal'); }
