@@ -96,4 +96,4 @@ function propertyBuilder(config) {
     });
     return "" + properties.join(",") + (properties.length > 0 ? '\n        ' : '');
 }
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/model/index.js.map
+//# sourceMappingURL=/Users/beeman/workspace/mean-expert/fireloop.io/generator-fireloop/src/model/index.js.map
