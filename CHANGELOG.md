@@ -1,4 +1,4 @@
-FireLoop Project Change Log
+FireLoop Project Change Log.
 ===========================
 
 
