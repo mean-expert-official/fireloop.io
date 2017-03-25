@@ -2,6 +2,14 @@ FireLoop Project Change Log
 ===========================
 
 
+### Release 1.0.0-beta.2
+
+- Updated to allow using LoopBack 3
+- Updated to allow using Angular 4
+- Implemented custom API directory
+- Fixes on Model Creation
+- Fixes on App Creation
+
 ### Release 1.0.0-beta.1.3
 
 - Replaces 1.0.0-beta.1.2

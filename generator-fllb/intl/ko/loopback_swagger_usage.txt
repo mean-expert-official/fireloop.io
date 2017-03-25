@@ -1,6 +1,0 @@
-설명:
-  Swagger API 스펙에서 모델과 원격 메소드를 생성합니다. 
-
-예: 
-
-  {{slc loopback:swagger}}

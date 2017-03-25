@@ -1,8 +1,0 @@
-Beschrijving:
-  Een nieuw opstartscript maken in de LoopBack-toepassing .
-
-Bijvoorbeeld:
-
-  {{slc loopback:boot-script}} [uw-script]
-
-  Hiermee wordt er een opstartscrit gemaakt in {{'/server/boot'}}.

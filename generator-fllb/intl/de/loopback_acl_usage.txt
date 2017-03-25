@@ -1,9 +1,0 @@
-Beschreibung:
-  Füge einen neuen ACL-Eintrag zur LoopBack-Anwendung hinzu.
-
-Beispiel: 
-
-  {{slc loopback:acl}}
-
-  Es werden mehrere Fragen gestellt, um ACL-Optionen zu bestimmen und
-  anschließend einen Eintrag zum entsprechenden Modell {{json}} hinzuzufügen.

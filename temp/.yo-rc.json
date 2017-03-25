@@ -1,0 +1,15 @@
+{
+  "generator-fireloop": {
+    "version": "1.0.0-beta.1.3",
+    "clients": {
+      "api": {
+        "path": "./api",
+        "type": "server"
+      },
+      "webapp": {
+        "path": "./webapp",
+        "type": "ng2web"
+      }
+    }
+  }
+}

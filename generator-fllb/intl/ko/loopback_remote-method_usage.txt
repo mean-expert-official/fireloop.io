@@ -1,6 +1,0 @@
-설명:
-  LoopBack 애플리케이션에 새 원격 메소드를 작성합니다. 
-
-예: 
-
-  {{slc loopback:remote-method}}

@@ -1,3 +1,0 @@
---require lib/globalize
---reporter spec
---timeout 60000

@@ -1,6 +1,0 @@
-Açıklama:
-  LoopBack uygulamasında yeni bir model ilişkisi yaratır.
-
-Örneğin:
-
-  {{slc loopback:relation}}

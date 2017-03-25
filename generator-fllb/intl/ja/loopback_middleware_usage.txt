@@ -1,8 +1,0 @@
-説明:
-  LoopBack アプリケーションで新しいミドルウェアを作成します。
-
-例:
-
-  {{slc loopback:middleware myMiddleware}}
-
-  これにより、ミドルウェア "myMiddleware" を定義するエントリーが {{`middleware.json`}} に追加されます。

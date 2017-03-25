@@ -1,0 +1,131 @@
+# hexo-theme-indigo
+# https://github.com/yscoder/hexo-theme-indigo
+
+# 添加新菜单项遵循以下规则
+# menu:
+#  link:               fontawesome图标，省略前缀，本主题前缀为 icon-，必须
+#    text: About       菜单显示的文字，如果省略即默认与图标一致，首字母会转大写
+#    url: /about       链接，绝对或相对路径，必须。
+#    target: _blank    是否跳出，省略则在当前页面打开
+menu:
+  home:
+    text: Getting Started
+    url: /getting-started/
+  book:
+    text: Api
+    url: /api/
+  first-order:
+    text: Comparison Table
+    url: /comparison-table/
+  rocket:
+    text: Creating Client Applications
+    url: /creating-client-apps/
+  cogs:
+    text: Creating Client SDK
+    url: /creating-client-sdk/
+  database:
+    text: Creating FireLoop Models
+    url: /creating-fireloop-models/
+  fire:
+    text: Real Time Stats Example
+    url: /realtime-stats-example/
+  server:
+    text: Serving Applications
+    url: /serving-apps/
+  github:
+    url: https://github.com/mean-expert-official/fireloop.io
+    target: _blank
+
+rss: /atom.xml
+
+# 你的头像url
+avatar: /img/avatar.png
+# favicon
+favicon: /img/favicon.png
+
+# email
+email: jcasarrubias@mean.expert
+
+# 设置 Android L Chrome 浏览器状态栏颜色
+# color: '#3F51B5'
+color: '#C13A00'
+
+# 页面标题
+tags_title: Tags
+archives_title: Archives
+categories_title: Categories
+
+# 文章截断
+excerpt_render: false
+excerpt_length: 200
+excerpt_link: hello world
+mathjax: false
+archive_yearly: true
+
+# 是否显示文章最后更新时间
+show_last_updated: true
+
+# 是否开启分享
+share: false
+
+# 是否开启打赏，关闭 reward: false
+reward: false
+#  title: 谢谢大爷~
+#  wechat: /img/wechat.jpg     #微信，关闭设为 false
+#  alipay: /img/alipay.jpg     #支付宝，关闭设为 false
+
+# 是否开启搜索
+search: true
+
+# 是否大屏幕下文章页隐藏导航
+hideMenu: true
+
+# 是否开启toc
+# toc: false
+toc:
+  list_number: true  # 是否显示数字排序
+
+# 文章页版权声明内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 hexo.io
+copyright: All rigths Reserved：<a href="<%- url_for(page.path).replace(/index\.html$/, '') %>" target="_blank" rel="external"><%- url.replace(/index\.html$/, '') %></a>
+
+# 站长统计，如要开启，输入CNZZ站点id，如 cnzz: 1255152447
+cnzz: false
+
+# 百度统计，如要开启，改为你的 key
+baidu_tongji: false
+
+# 腾讯分析，如要开启，输入站点id
+tajs: false
+
+# google
+google_analytics: UA-85670284-1
+google_site_verification: false
+# less
+less:
+  compress: true
+  paths:
+    - source/css/style.less
+
+# 是否开启多说评论，填写你在多说创建的站点二级域名
+duoshuo: ysblog
+# 是否开启多说评论计数（该服务不稳定）
+duoshuo_count: false
+# 使用 disqus 时关闭多说评论
+disqus_shortname: false
+
+# 规范网址
+# 让搜索引擎重定向你的不同域名、不同子域、同域不同目录的站点到你期望的路径
+# https://support.google.com/webmasters/answer/139066
+# 假设配置为 canonical: http://imys.net，那么从搜索引擎中 www.imys.net 进入会重定向到 imys.net
+canonical: false
+
+# 版权起始年份
+since_year: 2016
+
+# 用户页面中作者相关的描述性文字，如不需要设为 false
+about: Building Real-Time Applications has never been so easy
+
+# “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
+visit_counter:
+  site_uv: Total number of visitors 
+  site_pv: Site total views 

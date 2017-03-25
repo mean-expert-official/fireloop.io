@@ -1,6 +1,0 @@
-Description:
-  Creates a new model property in the LoopBack application.
-
-Example:
-
-  {{slc loopback:property}}

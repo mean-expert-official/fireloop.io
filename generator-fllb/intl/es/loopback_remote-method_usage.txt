@@ -1,6 +1,0 @@
-Descripción:
-  Crea un método remoto en la aplicación LoopBack.
-
-Ejemplo:
-
-  {{slc loopback:remote-method}}

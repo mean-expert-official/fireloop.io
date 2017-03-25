@@ -1,6 +1,0 @@
-Descripción:
-  Genera modelos y métodos remotos desde una especificación de api swagger.
-
-Ejemplo:
-
-  {{slc loopback:swagger}}

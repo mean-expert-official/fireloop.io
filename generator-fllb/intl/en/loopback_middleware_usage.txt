@@ -1,8 +1,0 @@
-Description:
-  Creates a new middleware in the LoopBack application.
-
-Example:
-
-  {{slc loopback:middleware myMiddleware}}
-
-  This adds an entry to {{`middleware.json`}} defining the middleware "myMiddleware".

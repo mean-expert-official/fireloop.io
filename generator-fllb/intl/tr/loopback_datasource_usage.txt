@@ -1,8 +1,0 @@
-Açıklama:
-  LoopBack uygulamasında yeni bir Veri Kaynağı yaratır.
-
-Örneğin:
-
-  {{slc loopback:datasource crm}}
-
-  Bu, {{`datasources.json`}} öğesine "crm" veri kaynağını tanımlayan bir giriş ekler.

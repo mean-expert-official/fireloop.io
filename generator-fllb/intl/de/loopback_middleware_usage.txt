@@ -1,8 +1,0 @@
-Beschreibung:
-  Erstellt eine neue Middleware in der LoopBack-Anwendung.
-
-Beispiel: 
-
-  {{slc loopback:middleware myMiddleware}}
-
-  Dies fügt einen Eintrag zu {{`middleware.json`}} hinzu, der die Middleware "myMiddleware" definiert.

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85670284-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Api | Fireloop Documentation | Designed for Modern Real-Time Applications by MEAN Expert.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#C13A00">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="You should create an application and software development kit by using the FireLoop CLI Tool before being able to use the following API.
+
+Importing RealTime ServiceThe LoopBack SDK Builder will gener">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Api">
+<meta property="og:url" content="http://fireloop.io/en/api/index.html">
+<meta property="og:site_name" content="Fireloop Documentation">
+<meta property="og:description" content="You should create an application and software development kit by using the FireLoop CLI Tool before being able to use the following API.
+
+Importing RealTime ServiceThe LoopBack SDK Builder will gener">
+<meta property="og:updated_time" content="2016-12-27T17:45:16.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Api">
+<meta name="twitter:description" content="You should create an application and software development kit by using the FireLoop CLI Tool before being able to use the following API.
+
+Importing RealTime ServiceThe LoopBack SDK Builder will gener">
+    
+        <link rel="alternative" href="/atom.xml" title="Fireloop Documentation" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.2">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar">
+          <img src="/img/avatar.png" style="width:125px;">
+        </a>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/getting-started/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Getting Started
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/api/"  >
+                <i class="icon icon-lg icon-book"></i>
+                Api
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/comparison-table/"  >
+                <i class="icon icon-lg icon-first-order"></i>
+                Comparison Table
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/creating-client-apps/"  >
+                <i class="icon icon-lg icon-rocket"></i>
+                Creating Client Applications
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/creating-client-sdk/"  >
+                <i class="icon icon-lg icon-cogs"></i>
+                Creating Client SDK
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/creating-fireloop-models/"  >
+                <i class="icon icon-lg icon-database"></i>
+                Creating FireLoop Models
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/realtime-stats-example/"  >
+                <i class="icon icon-lg icon-fire"></i>
+                Real Time Stats Example
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/serving-apps/"  >
+                <i class="icon icon-lg icon-server"></i>
+                Serving Applications
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="enhttps://github.com/mean-expert-official/fireloop.io" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Api</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder=" Search......">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+
+      <div class="header-lang-select-wrap header-link">
+        <label>
+        
+          English
+        
+        </label>
+        <select id="header-lang-select" class="header-lang-select" onchange="location = this.options[this.selectedIndex].value">
+        
+          
+            <option
+              value=""
+              selected
+              data-href=""
+            >
+              English
+            </option>
+          
+            <option
+              value="/es/api/"
+              
+              data-href="/es/api/"
+            >
+              Spanish
+            </option>
+          
+        
+        </select>
+      </div>
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Docs</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-26T23:47:21.305Z" itemprop="datePublished" class="page-time">
+  2016-12-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    <!-- Select Lenguaje -->
+
+    
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Importing-RealTime-Service"><span class="post-toc-number">1.</span> <span class="post-toc-text">Importing RealTime Service</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Waiting-for-Connection"><span class="post-toc-number">2.</span> <span class="post-toc-text">Waiting for Connection</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#How-to-Create-Data"><span class="post-toc-number">3.</span> <span class="post-toc-text">How to Create Data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#How-to-Remove-Data"><span class="post-toc-number">4.</span> <span class="post-toc-text">How to Remove Data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Available-Events"><span class="post-toc-number">5.</span> <span class="post-toc-text">Available Events</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Read-Data-Using-‘change’-Event"><span class="post-toc-number">6.</span> <span class="post-toc-text">Read Data Using ‘change’ Event</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Read-Data-Using-‘value’-Event"><span class="post-toc-number">7.</span> <span class="post-toc-text">Read Data Using ‘value’ Event</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Listen-‘child-added’-Event"><span class="post-toc-number">8.</span> <span class="post-toc-text">Listen ‘child_added’ Event</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Listen-‘child-changed’-Event"><span class="post-toc-number">9.</span> <span class="post-toc-text">Listen ‘child_changed’ Event</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Listen-‘child-removed’-Event"><span class="post-toc-number">10.</span> <span class="post-toc-text">Listen ‘child_removed’ Event</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Querying-Data"><span class="post-toc-number">11.</span> <span class="post-toc-text">Querying Data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Working-with-Child-References"><span class="post-toc-number">12.</span> <span class="post-toc-text">Working with Child References</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-api"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Api</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-12-26 19:47" datetime="2016-12-26T23:47:21.305Z"  itemprop="datePublished">2016-12-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>You should <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-Applications" target="_blank" rel="external">create an application</a> and <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">software development kit</a> by using the <a href="http://fireloop.io">FireLoop</a> CLI Tool before being able to use the following API.</p>
+</blockquote>
+<h2 id="Importing-RealTime-Service"><a href="#Importing-RealTime-Service" class="headerlink" title="Importing RealTime Service"></a>Importing RealTime Service</h2><p>The <a href="http://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">LoopBack SDK Builder</a> will generate and provide an <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> service that can be injected within our constructor as follows:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime.FireLoop <span class="comment">// explore with intellisense</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Waiting-for-Connection"><a href="#Waiting-for-Connection" class="headerlink" title="Waiting for Connection"></a>Waiting for Connection</h2><p>When using any real-time feature, you first need to make sure your client application is connected with the server through web sockets.</p>
+<p>The following example illustrates how to wait for a connection to be established by using the <code>onReady</code> method.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">            <span class="comment">// Register FireLoop References in here....</span></div><div class="line">        &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="How-to-Create-Data"><a href="#How-to-Create-Data" class="headerlink" title="How to Create Data"></a>How to Create Data</h2><p>The following example will crate a new room instance through the new <a href="http://fireloop.io">FireLoop</a> API using WebSockets instead of the Standard <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> HTTP REST API protocol.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private room: Room = <span class="keyword">new</span> Room(&#123; <span class="attr">name</span>: <span class="string">'Hello FireLoop Room'</span> &#125;);</div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line">  </div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">  create(): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.RoomReference.create(<span class="keyword">this</span>.room).subscribe(<span class="function">(<span class="params">instance: Room</span>) =&gt;</span> <span class="built_in">console</span>.log(instance));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>There will be always a new instance created after using the <code>create</code> method, but you can also use <code>upsert</code> which will <code>create</code> or <code>update</code> the instance.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private room: Room = <span class="keyword">new</span> Room(&#123; <span class="attr">name</span>: <span class="string">'Hello FireLoop Room'</span> &#125;);</div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  upsert(): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.RoomReference.upsert(<span class="keyword">this</span>.room).subscribe(<span class="function">(<span class="params">instance: Room</span>) =&gt;</span> <span class="built_in">console</span>.log(instance));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>By using upsert, <a href="http://fireloop.io">FireLoop</a> will verify if the item is already persisted and update it, otherwise it will create a new instance.</p>
+<h2 id="How-to-Remove-Data"><a href="#How-to-Remove-Data" class="headerlink" title="How to Remove Data"></a>How to Remove Data</h2><p>The following example will remove a room instance through the new <a href="http://fireloop.io">FireLoop</a> API using WebSockets.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private room: Room = <span class="keyword">new</span> Room(&#123; <span class="attr">name</span>: <span class="string">'Hello FireLoop Room'</span> &#125;);</div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  remove(room: Room): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.RoomReference.remove(room).subscribe(<span class="function">(<span class="params">removed: Room</span>) =&gt;</span> &#123;&#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Available-Events"><a href="#Available-Events" class="headerlink" title="Available Events"></a>Available Events</h2><table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>This event will return an array of persisted elements and will keep firing on any change for the current Model Reference</td>
+</tr>
+<tr>
+<td>value</td>
+<td>This event will return an array of persisted elements and will keep firing when new values are added in the current Model Reference</td>
+</tr>
+<tr>
+<td>child_added</td>
+<td>This event will fire once for each persisted items and will keep firing when new values are added in the current Model Reference, returning only the newly created child element</td>
+</tr>
+<tr>
+<td>child_changed</td>
+<td>This event will fire once for each changed item. It will return a reference of the updated element</td>
+</tr>
+<tr>
+<td>child_removed</td>
+<td>This event will fire once for each removed items It will return a reference of the removed element</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Read-Data-Using-‘change’-Event"><a href="#Read-Data-Using-‘change’-Event" class="headerlink" title="Read Data Using ‘change’ Event"></a>Read Data Using ‘change’ Event</h2><p>This is the recommended read event for real-time lists because it will be in sync any time there is a reference modification; this means that at any addition, removal or modification of any child within the reference will trigger a client synchronization.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.on(<span class="string">'change'</span>).subscribe(<span class="function">(<span class="params">rooms: <span class="built_in">Array</span>&lt;Room&gt;</span>) =&gt;</span> <span class="built_in">console</span>.log(rooms));</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Read-Data-Using-‘value’-Event"><a href="#Read-Data-Using-‘value’-Event" class="headerlink" title="Read Data Using ‘value’ Event"></a>Read Data Using ‘value’ Event</h2><p>Similar to Firebase, you are now able to listen for references changes by subscribing to the <code>value</code> event.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.on(<span class="string">'value'</span>).subscribe(<span class="function">(<span class="params">rooms: <span class="built_in">Array</span>&lt;Room&gt;</span>) =&gt;</span> <span class="built_in">console</span>.log(rooms));</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The example above will list the persisted items (Rooms) the first time and will keep firing every time there is a new value added.</p>
+<p>When not query is defined the <code>value</code> Event will return the latest 100 records from the database. </p>
+<h2 id="Listen-‘child-added’-Event"><a href="#Listen-‘child-added’-Event" class="headerlink" title="Listen ‘child_added’ Event"></a>Listen ‘child_added’ Event</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.on(<span class="string">'child_added'</span>).subscribe(<span class="function">(<span class="params">room: Room</span>) =&gt;</span> <span class="built_in">console</span>.log(room));</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Listen-‘child-changed’-Event"><a href="#Listen-‘child-changed’-Event" class="headerlink" title="Listen ‘child_changed’ Event"></a>Listen ‘child_changed’ Event</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.on(<span class="string">'child_changed'</span>).subscribe(<span class="function">(<span class="params">room: Room</span>) =&gt;</span> <span class="built_in">console</span>.log(room));</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Listen-‘child-removed’-Event"><a href="#Listen-‘child-removed’-Event" class="headerlink" title="Listen ‘child_removed’ Event"></a>Listen ‘child_removed’ Event</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.on(<span class="string">'child_removed'</span>).subscribe(<span class="function">(<span class="params">room: Room</span>) =&gt;</span> <span class="built_in">console</span>.log(room));</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Querying-Data"><a href="#Querying-Data" class="headerlink" title="Querying Data"></a>Querying Data</h2><p>Since the built in <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> Query Language is really mature, I decided to keep using it in order to allow you pull the information according your necessities.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.on(<span class="string">'change'</span>,&#123;</div><div class="line">              <span class="attr">limit</span>: <span class="number">10</span>,</div><div class="line">              <span class="attr">order</span>: <span class="string">'id DESC'</span>,</div><div class="line">              <span class="attr">include</span>: <span class="string">'members'</span></div><div class="line">            &#125;).subscribe(<span class="function">(<span class="params">rooms: Room[]</span>) =&gt;</span> <span class="built_in">console</span>.log(rooms));</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>For more information about how to query data see the following <a href="https://docs.strongloop.com/display/public/LB/Querying+data" target="_blank" rel="external">documentation</a></p>
+<h2 id="Working-with-Child-References"><a href="#Working-with-Child-References" class="headerlink" title="Working with Child References"></a>Working with Child References</h2><p>Working with child references will allow you to persist a relation between a parent and a child reference. For instance when creating messages in a room chat, we want these to be persisted within the right Room.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Room, Message, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"></div><div class="line">@Component(...)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private RoomReference: FireLoopRef&lt;Room&gt;;</div><div class="line">  private MessageReference: FireLoopRef&lt;Message&gt;;</div><div class="line">  private room: Room = <span class="keyword">new</span> Room(&#123; <span class="attr">name</span>: <span class="string">'FireLoop Room'</span> &#125;);</div><div class="line">  private message: Room = <span class="keyword">new</span> Message(&#123; <span class="attr">text</span>: <span class="string">'Test Message'</span> &#125;);</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private realTime: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.realTime</div><div class="line">        .onReady()</div><div class="line">        .subscribe(<span class="function"><span class="params">()</span> =&gt;</span></div><div class="line">            <span class="keyword">this</span>.RoomReference = <span class="keyword">this</span>.realTime.FireLoop.ref&lt;Room&gt;(Room)</div><div class="line">            <span class="keyword">this</span>.RoomReference.upsert(<span class="keyword">this</span>.room).subscribe(<span class="function">(<span class="params">instance: Room</span>) =&gt;</span> &#123;</div><div class="line">             <span class="comment">// Create a Child Reference</span></div><div class="line">             <span class="keyword">this</span>.MessageReference = RoomReference.make(instance).child&lt;Message&gt;(<span class="string">'messages'</span>);</div><div class="line">             <span class="keyword">this</span>.MessageReference.on(<span class="string">'value'</span>).subscribe(</div><div class="line">                <span class="function">(<span class="params">messages: <span class="built_in">Array</span>&lt;Message&gt;</span>) =&gt;</span> <span class="keyword">this</span>.logger.info(messages)</div><div class="line">              );</div><div class="line">              MessageReference.upsert(<span class="keyword">this</span>.message).subscribe(<span class="function">(<span class="params">res: Message</span>) =&gt;</span> <span class="built_in">console</span>.log(res.text));</div><div class="line">            &#125;))</div><div class="line">        );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The example above will create a new Room and then will create a MessageReference, now you can store or listen for messages within this specific room. Everything related with this reference will persist the relationship Parent -&gt; Child.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last Updated：<time datetime="2016-12-27T17:45:16.595Z" title="2016-12-27 13:45" itemprop="dateUpdated">2016:27:13:45</time>
+</span><br>
+
+
+        All rigths Reserved：<a href="/en/api/" target="_blank" rel="external">http://fireloop.io/en/api/</a>
+    </div>
+    <footer>
+        <a href="http://fireloop.io">
+            <img src="/img/avatar.png" alt="Mean.Expert">
+            Mean.Expert
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/en/comparison-table/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Comparison Table</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/en/categories/index/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">categories</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+   <!-- 
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="api" data-title="Api" data-url="http://fireloop.io/en/api/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.2');
+
+
+</script>
+
+
+
+
+
+
+ -->
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total number of visitors : <span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Site total views : <span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+       <!-- <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>The blog content follows<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution - Noncommercial - Share Alike 4.0 Protocol</a></span>
+        </p> -->
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Fireloop Documentation &copy; 2016</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

@@ -1,8 +1,0 @@
-描述：
-  在 LoopBack 应用程序中创建新的中间件。
-
-例如：
-
-  {{slc loopback:middleware myMiddleware}}
-
-  这将向 {{`middleware.json`}} 添加一个定义中间件“myMiddleware”的条目。

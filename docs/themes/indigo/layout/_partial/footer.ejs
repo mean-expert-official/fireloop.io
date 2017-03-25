@@ -1,0 +1,15 @@
+<footer class="footer">
+    <div class="top">
+        <%- partial('plugins/site-visit') %>
+       <!-- <p>
+            <span><a href="<%-theme.rss %>" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>The blog content follows<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution - Noncommercial - Share Alike 4.0 Protocol</a></span>
+        </p> -->
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span><%-config.title %> &copy; <%if (theme.since_year && theme.since_year < date(new Date(), 'YYYY')) {%><%- theme.since_year %> - <%}%><%- date(new Date(), 'YYYY') %></span>
+        </p>
+    </div>
+</footer>

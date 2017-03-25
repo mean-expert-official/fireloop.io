@@ -1,9 +1,0 @@
-Descrizione:
-  aggiunge una nuova voce ACL all'applicazione LoopBack.
-
-Esempio:
-
-  {{slc loopback:acl}}
-
-  In questo modo verranno richieste diverse domande per determinare le opzioni ACL e
-  quindi aggiungere una voce al corrispondente modello {{json}}.

@@ -1,6 +1,0 @@
-描述：
-  通过 Swagger API 规范生成模型和远程方法。
-
-例如：
-
-  {{slc loopback:swagger}}

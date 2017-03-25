@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85670284-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Ejemplo de Estatisticas RealTime | Fireloop Documentation | Designed for Modern Real-Time Applications by MEAN Expert.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#C13A00">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="Real-Time
+            
+Descripción del ProyectoPara demostrar lo que se puede lograr con FireLoop, he decid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ejemplo de Estatisticas RealTime">
+<meta property="og:url" content="http://fireloop.io/es/realtime-stats-example/index.html">
+<meta property="og:site_name" content="Fireloop Documentation">
+<meta property="og:description" content="Real-Time
+            
+Descripción del ProyectoPara demostrar lo que se puede lograr con FireLoop, he decid">
+<meta property="og:image" content="https://storage.googleapis.com/mean-expert-images/realtime-stats.jpg">
+<meta property="og:updated_time" content="2016-12-27T17:45:16.609Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ejemplo de Estatisticas RealTime">
+<meta name="twitter:description" content="Real-Time
+            
+Descripción del ProyectoPara demostrar lo que se puede lograr con FireLoop, he decid">
+<meta name="twitter:image" content="https://storage.googleapis.com/mean-expert-images/realtime-stats.jpg">
+    
+        <link rel="alternative" href="/atom.xml" title="Fireloop Documentation" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.2">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar">
+          <img src="/img/avatar.png" style="width:125px;">
+        </a>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/getting-started/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Inicio Rapido
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/api/"  >
+                <i class="icon icon-lg icon-book"></i>
+                Api
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/comparison-table/"  >
+                <i class="icon icon-lg icon-first-order"></i>
+                Tabla de Comparacion
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/creating-client-apps/"  >
+                <i class="icon icon-lg icon-rocket"></i>
+                Creando App Cliente
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/creating-client-sdk/"  >
+                <i class="icon icon-lg icon-cogs"></i>
+                Creando SDK
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/creating-fireloop-models/"  >
+                <i class="icon icon-lg icon-database"></i>
+                Modelos FireLoop
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/realtime-stats-example/"  >
+                <i class="icon icon-lg icon-fire"></i>
+                Estadisticas RealTime
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/es/serving-apps/"  >
+                <i class="icon icon-lg icon-server"></i>
+                Sirviendo App
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="eshttps://github.com/mean-expert-official/fireloop.io" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ejemplo de Estatisticas RealTime</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder=" Buscar......">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+
+      <div class="header-lang-select-wrap header-link">
+        <label>
+        
+          Spanish
+        
+        </label>
+        <select id="header-lang-select" class="header-lang-select" onchange="location = this.options[this.selectedIndex].value">
+        
+          
+            <option
+              value="/en/realtime-stats-example/"
+              
+              data-href="/en/realtime-stats-example/"
+            >
+              English
+            </option>
+          
+            <option
+              value=""
+              selected
+              data-href=""
+            >
+              Spanish
+            </option>
+          
+        
+        </select>
+      </div>
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Docs</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-27T01:18:30.377Z" itemprop="datePublished" class="page-time">
+  2016-12-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    <!-- Select Lenguaje -->
+
+    
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Descripcion-del-Proyecto"><span class="post-toc-number">1.</span> <span class="post-toc-text">Descripción del Proyecto</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Repositorio-del-proyecto"><span class="post-toc-number">2.</span> <span class="post-toc-text">Repositorio del proyecto</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Instalar-FireLoop"><span class="post-toc-number">3.</span> <span class="post-toc-text">Instalar FireLoop</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Crear-proyecto-FireLoop"><span class="post-toc-number">4.</span> <span class="post-toc-text">Crear proyecto FireLoop.</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Crear-Modelo-Todo"><span class="post-toc-number">5.</span> <span class="post-toc-text">Crear Modelo Todo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Desactivar-la-funcion-Auth"><span class="post-toc-number">6.</span> <span class="post-toc-text">Desactivar la función Auth</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Crear-cliente-Web-Angular-2"><span class="post-toc-number">7.</span> <span class="post-toc-text">Crear cliente Web Angular 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Instalar-NG2-Charts"><span class="post-toc-number">8.</span> <span class="post-toc-text">Instalar NG2 Charts</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Personalizacion-de-la-estructura-del-sistema-de-archivos"><span class="post-toc-number">8.0.1.</span> <span class="post-toc-text">Personalización de la estructura del sistema de archivos</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Actualizar-el-AppModule"><span class="post-toc-number">9.</span> <span class="post-toc-text">Actualizar el AppModule</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Agregar-logica-del-Fireloop"><span class="post-toc-number">10.</span> <span class="post-toc-text">Agregar logica del Fireloop</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Agregar-logica-del-Ng2Charts"><span class="post-toc-number">11.</span> <span class="post-toc-text">Agregar logica del Ng2Charts</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Actualizar-vista-de-componente-de-aplicacion"><span class="post-toc-number">12.</span> <span class="post-toc-text">Actualizar vista de componente de aplicación</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Test"><span class="post-toc-number">13.</span> <span class="post-toc-text">Test</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-realtime-stats-example"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ejemplo de Estatisticas RealTime</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-12-26 21:18" datetime="2016-12-27T01:18:30.377Z"  itemprop="datePublished">2016-12-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://storage.googleapis.com/mean-expert-images/realtime-stats.jpg" alt="Real-Time" title="">
+                </div>
+                <div class="image-caption">Real-Time</div>
+            </figure>
+<h2 id="Descripcion-del-Proyecto"><a href="#Descripcion-del-Proyecto" class="headerlink" title="Descripción del Proyecto"></a>Descripción del Proyecto</h2><p>Para demostrar lo que se puede lograr con <a href="http://fireloop.io">FireLoop</a>, he decidido crear una aplicación que procese gráficos estadísticos con datos en tiempo real procedentes de un proyecto <a href="http://fireloop.io">FireLoop</a>. Este será un tipo de aplicación Todo Todo, pero esta vez vamos a fijar una fecha de vencimiento para todos nuestros, de esta manera podemos hacer alguna información estadística sobre ella y jugar mejor con ella.</p>
+<h2 id="Repositorio-del-proyecto"><a href="#Repositorio-del-proyecto" class="headerlink" title="Repositorio del proyecto"></a>Repositorio del proyecto</h2><p>Para este ejemplo he creado un repositorio que puedes usar como patio de recreo.</p>
+<p><a href="https://github.com/mean-expert-official/fireloop-todo-example" target="_blank" rel="external">HAGA CLIC AQUÍ PARA GITHUB REPO</a></p>
+<h2 id="Instalar-FireLoop"><a href="#Instalar-FireLoop" class="headerlink" title="Instalar FireLoop"></a>Instalar FireLoop</h2><p>Por supuesto, el primer paso que queremos tomar es instalar nuestra Herramienta de CLI <a href="http://fireloop.io">FireLoop</a>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g @mean-expert/fireloop</div></pre></td></tr></table></figure>
+<h2 id="Crear-proyecto-FireLoop"><a href="#Crear-proyecto-FireLoop" class="headerlink" title="Crear proyecto FireLoop."></a>Crear proyecto FireLoop.</h2><p>Ahora que tenemos nuestra Herramienta CLI <a href="http://fireloop.io">FireLoop</a> instalada, podemos seguir adelante y crear nuestro primer proyecto <a href="http://fireloop.io">FireLoop</a>.</p>
+<p>Para crear un proyecto <a href="http://fireloop.io">FireLoop</a>, necesitará crear un nuevo directorio de carpetas en cualquier ubicación de sistema de archivos de su preferencia, luego ejecutar el comando <code>$ fireloop</code> y finalmente pulsar return para todas las opciones mostradas.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">$ mkdir fireloop_project &amp;&amp; <span class="built_in">cd</span> fireloop_project</div><div class="line">$ fireloop</div><div class="line"></div><div class="line">     _-----_     ╭──────────────────────────╮</div><div class="line">    |       |    │   Welcome to FireLoop!   │</div><div class="line">    |--(o)--|    │  The MEAN Stack Platform │</div><div class="line">  \`---------´   │      by MEAN Expert      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __<span class="string">'.___.'</span>__   </div><div class="line"> ´   `  |° ´ Y \` </div><div class="line"></div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? (Use arrow keys)</div><div class="line">❯ Generate FireLoop Project </div><div class="line">  Show FireLoop Version </div><div class="line"></div><div class="line"></div><div class="line">? What\<span class="string">'s the name of your application? fireloop_project</span></div><div class="line">? Which version of LoopBack would you like to use? 2.x (stable)</div><div class="line">? What kind of application do you have in mind? api-server (A LoopBack API server with local User auth)</div><div class="line"></div><div class="line">Next steps:</div><div class="line"></div><div class="line">	Create a model in your server</div><div class="line">		$ fireloop model [ModelName]</div><div class="line"></div><div class="line">	Create a new Angular 2 Client or SDK</div><div class="line">		$ fireloop</div><div class="line"></div><div class="line">	Serve an application</div><div class="line">		$ fireloop serve</div></pre></td></tr></table></figure>
+<p>Genial, ahora hemos creado un proyecto <a href="http://fireloop.io">FireLoop</a> con la cantidad mínima de esfuerzo. Así que … ¿qué pasa si seguimos los consejos de los ‘próximos pasos’ y luego simplemente creamos nuestro modelo Todo.</p>
+<h2 id="Crear-Modelo-Todo"><a href="#Crear-Modelo-Todo" class="headerlink" title="Crear Modelo Todo"></a>Crear Modelo Todo</h2><p>Para ello vamos a utilizar el comando <code>$ fireloop model [ModelName]</code> y luego añadir un par de propiedades.</p>
+<p>Básicamente, simplemente pulsa return hasta llegar a la sección de propiedades y agrega los atributos <code>text: string &amp;&amp; dueAt: date</code>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">$ fireloop model Todo</div><div class="line"></div><div class="line">? Enter the model name: Todo</div><div class="line">? Select the data-source to attach Todo to: db (memory)</div><div class="line">? Select model´s base class PersistedModel</div><div class="line">? Expose Todo via the REST API? Yes</div><div class="line">? Custom plural form (used to build REST URL): </div><div class="line">? Common model or server only? common</div><div class="line">Let´s add some Todo properties now.</div><div class="line"></div><div class="line"> Property text: string</div><div class="line">Enter an empty property name when done.</div><div class="line">? Property name: text</div><div class="line">? Property <span class="built_in">type</span>: string</div><div class="line">? Required? Yes</div><div class="line">? Default value[leave blank <span class="keyword">for</span> none]: </div><div class="line"></div><div class="line"> Property dueAt: date</div><div class="line">Let´s add another Todo property.</div><div class="line">Enter an empty property name when done.</div><div class="line">? Property name: dueAt</div><div class="line">? Property <span class="built_in">type</span>: date</div><div class="line">? Required? Yes</div><div class="line">? Default value[leave blank <span class="keyword">for</span> none]: </div><div class="line"></div><div class="line">Let´s add another Todo property.</div><div class="line">Enter an empty property name when done.</div><div class="line">? Property name: </div><div class="line"></div><div class="line">Generating: ./common/models/todo.ts</div></pre></td></tr></table></figure>
+<p>Si ha estado usando <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>, notará que bajo el capó estoy usando el generador de loopback para esta operación, pero al final; La herramienta <a href="http://fireloop.io">FireLoop</a> CLI toma el control y creará una versión modificada de un modelo <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>. Si abre el archivo <code>. / Common / models / todo.ts</code>, encontrará la nueva estructura <a href="http://typescriptlang.org" target="_blank" rel="external">TypeScript</a> para nuestros modelos de back-end.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Model &#125; <span class="keyword">from</span> <span class="string">'@mean-expert/model'</span>;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * @module Todo</div><div class="line"> * @description</div><div class="line"> * Write a useful Todo Model description.</div><div class="line"> * Register hooks and remote methods within the</div><div class="line"> * Model Decorator</div><div class="line"> **/</div><div class="line">@Model(&#123;</div><div class="line">  <span class="attr">hooks</span>: &#123;</div><div class="line">    <span class="attr">beforeSave</span>: &#123; <span class="attr">name</span>: <span class="string">'before save'</span>, <span class="attr">type</span>: <span class="string">'operation'</span> &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">remotes</span>: &#123;</div><div class="line">    <span class="attr">myRemote</span>: &#123;</div><div class="line">      <span class="attr">returns</span> : &#123; <span class="attr">arg</span>: <span class="string">'result'</span>, <span class="attr">type</span>: <span class="string">'array'</span> &#125;,</div><div class="line">      <span class="attr">http</span>    : &#123; <span class="attr">path</span>: <span class="string">'/my-remote'</span>, <span class="attr">verb</span>: <span class="string">'get'</span> &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Todo</span> </span>&#123;</div><div class="line">  <span class="comment">// LoopBack model instance is injected in constructor</span></div><div class="line">  <span class="keyword">constructor</span>(public model: any) &#123;&#125;</div><div class="line"></div><div class="line">  <span class="comment">// Example Operation Hook</span></div><div class="line">  beforeSave(ctx: any, <span class="attr">next</span>: <span class="built_in">Function</span>): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Todo: Before Save'</span>);</div><div class="line">    next();</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// Example Remote Method</span></div><div class="line">  myRemote(next: <span class="built_in">Function</span>): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.model.find(next);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = Todo;</div></pre></td></tr></table></figure>
+<p>Cualquier lógica relacionada con nuestro Modelo Todo en el Back-End debe colocarse en este archivo <a href="http://typescriptlang.org" target="_blank" rel="external">TypeScript</a>, aunque para esta demo lo vamos a dejar como está. Pero, lo que realmente queremos hacer es actualizar nuestras configuraciones estadísticas de Todo el Modelo.</p>
+<p>Abra el archivo <code>/ common / models / todo.json</code> y actualícelos de la manera siguiente:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  ...</div><div class="line">  "mixins": &#123;</div><div class="line">    ...</div><div class="line">    "Stats": [</div><div class="line">      &#123;</div><div class="line">        ...</div><div class="line">        "count": &#123;</div><div class="line">          "on": "dueAt" // &lt;---- cambia createdAt por dueAt</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Lo que estamos haciendo aquí es decir que las estadísticas se mezclan para confiar en la propiedad dueAt, de esta manera nuestra información estadística se generará de acuerdo a las fechas de entrega de todo en lugar de cuando se creó el todo</p>
+<h2 id="Desactivar-la-funcion-Auth"><a href="#Desactivar-la-funcion-Auth" class="headerlink" title="Desactivar la función Auth"></a>Desactivar la función Auth</h2><p>Para este proyecto y para fines prácticos, no utilizaremos el mecanismo de autenticación ya que no quiero dedicar tiempo a crear secciones de registro / inicio de sesión, pero prometo que voy a crear un tutorial para la autenticación muy pronto.</p>
+<p>Para ello, abra el archivo server/component-config.json y modifíquelo de la siguiente manera:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "loopback-component-explorer": &#123;</div><div class="line">    "mountPath": "/explorer"</div><div class="line">  &#125;,</div><div class="line">  "@mean-expert/loopback-component-realtime": &#123;</div><div class="line">    "auth": false, // &lt;--- Change this to false</div><div class="line">    "debug": false</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Ok, para este proyecto … Eso es todo lo que necesitamos hacer dentro de nuestro Back End. Ahora, es hora de crear nuestro <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> Cliente.</p>
+<h2 id="Crear-cliente-Web-Angular-2"><a href="#Crear-cliente-Web-Angular-2" class="headerlink" title="Crear cliente Web Angular 2"></a>Crear cliente Web Angular 2</h2><p>Podemos crear clientes <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> usando el comando <a href="http://fireloop.io">FireLoop</a>: <code>$ fireloop</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ fireloop</div><div class="line"></div><div class="line">     _-----_     ╭──────────────────────────╮</div><div class="line">    |       |    │   Welcome to FireLoop!   │</div><div class="line">    |--(o)--|    │  The MEAN Stack Platform │</div><div class="line">   `---------´   │      by MEAN Expert      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __<span class="string">'.___.'</span>__   </div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? (Use arrow keys)</div><div class="line">❯ Generate Angular2 Client </div><div class="line"></div><div class="line">? What <span class="built_in">type</span> of Angular 2 Application <span class="keyword">do</span> you want to create? Angular 2 <span class="keyword">for</span> Web</div><div class="line">? What<span class="string">'s the name of your application? webapp</span></div></pre></td></tr></table></figure>
+<p>Al seguir el proceso descrito anteriormente, suceden varias cosas bajo el capó.</p>
+<ul>
+<li><a href="http://fireloop.io">FireLoop</a> Internamente utiliza <a href="http://cli.angular.io" target="_blank" rel="external">Angular CLI</a> para crear un proyecto <a href="http://angular.io" target="_blank" rel="external">Angular 2</a>.</li>
+<li><a href="http://fireloop.io">FireLoop</a> Genera un SDK para que su nueva aplicación cliente <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> esté totalmente conectada con su API <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>.</li>
+<li><a href="http://fireloop.io">FireLoop</a> Instala el SDK y sus dependencias, incluidos los tipos.</li>
+</ul>
+<p>Al final del proceso no tendrá que preocuparse por ninguna integración o configuración, todo se ha hecho automáticamente para usted !!!.<br>[El público anima en el fondo :D]</p>
+<h2 id="Instalar-NG2-Charts"><a href="#Instalar-NG2-Charts" class="headerlink" title="Instalar NG2 Charts"></a>Instalar NG2 Charts</h2><p>Ahora que ha evitado una buena cantidad de configuraciones e integraciones, está listo para comenzar a trabajar sobre la aplicación cliente.</p>
+<p>Para este proyecto he decidido utilizar <a href="http://valor-software.com/ng2-charts/" target="_blank" rel="external">Ng2Charts</a> para procesar nuestros gráficos, pero también puedes comprobar <a href="/2016/09/17/angular-2-chart-component-revised/">Este tutorial para crear sus propios gráficos personalizados</a>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> webapp</div><div class="line">$ npm install --save ng2-charts chart.js moment</div></pre></td></tr></table></figure>
+<h4 id="Personalizacion-de-la-estructura-del-sistema-de-archivos"><a href="#Personalizacion-de-la-estructura-del-sistema-de-archivos" class="headerlink" title="Personalización de la estructura del sistema de archivos"></a>Personalización de la estructura del sistema de archivos</h4><p>Como puedes ver, debes ingresar el directorio de la aplicación web (o cualquier nombre que hayas elegido para tu aplicación) y luego instalar desde allí tus propias dependencias. Esto se debe a que aunque tengamos un espacio de trabajo para ello, queremos mantener las dependencias y los clientes reales tan desacoplados como sea posible del servidor.</p>
+<p>Esto significa que no es necesario tener en 1 lugar los módulos para el servidor y los módulos para <a href="http://nativescript.org" target="_blank" rel="external">NativeScript</a> porque no tiene sentido.</p>
+<p>Entonces … ¿Por qué entonces estamos creando todo dentro del mismo proyecto? La respuesta corta es por comodidad, porque recuerde que <a href="http://fireloop.io">FireLoop</a> integra para usted una solución de pila completa, lo que le permite crear automáticamente sdks para cualquiera de sus clientes y agregar funcionalidades exclusivas en tiempo real y estadística sin ninguna configuración o esfuerzo adicional.</p>
+<p>Pero, si realmente no te gusta tener tu webapp o cualquier cliente dentro del mismo directorio que el proyecto <a href="http://fireloop.io">FireLoop</a>, puedes cambiarlo.</p>
+<p>Simplemente abra el archivo .yo-rc.json y actualice la ruta del cliente a cualquier ubicación de su preferencia</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "generator-fireloop": &#123;</div><div class="line">    "version": "1.0.0-beta.1",</div><div class="line">    "clients": &#123;</div><div class="line">      "webapp": &#123;</div><div class="line">        "path": "./webapp", // &lt;--- Move your project out of the FireLoop directory and update the path reference here</div><div class="line">        "type": "web"</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  "generator-loopback": &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Por supuesto, usted puede desear mover algunos de estos clientes lejos; Porque es posible que desee tener depósitos separados y sólo porque no tiene sentido tenerlo en un lugar cuando se habla de aplicaciones móviles. Sólo recuerde que todavía puede tener su servidor y los clientes integrados a través de <a href="http://fireloop.io">FireLoop</a>, independientemente del directorio del sistema de archivos.</p>
+<p>De todos modos, en algunos casos tiene sentido tener todo en 1 lugar; Y el mejor de los ejemplos será la integración <a href="http://universal.angular.io" target="_blank" rel="external">Angular Universal</a>, que realmente necesita ser servida desde el servidor <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>.</p>
+<p>Ok .. fresco, ahora que he aclarado cómo personalizar la estructura del proyecto, vamos a tener un poco de diversión mediante la construcción de nuestra aplicación cliente en tiempo real.</p>
+<h2 id="Actualizar-el-AppModule"><a href="#Actualizar-el-AppModule" class="headerlink" title="Actualizar el AppModule"></a>Actualizar el AppModule</h2><p>En primer lugar, permite abrir el <code>fireloop_project / webapp / src / app / app.module.ts</code> y decir <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> que queremos utilizar el módulo <a href="http://valor-software.com/ng2-charts/" target="_blank" rel="external">Ng2Charts</a>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</div><div class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; FormsModule &#125; <span class="keyword">from</span> <span class="string">'@angular/forms'</span>;</div><div class="line"><span class="keyword">import</span> &#123; SDKModule &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/index'</span>;</div><div class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</div><div class="line"><span class="keyword">import</span> &#123; ChartsModule &#125; <span class="keyword">from</span> <span class="string">'ng2-charts/ng2-charts'</span>;</div><div class="line"></div><div class="line">@NgModule(&#123;</div><div class="line">  <span class="attr">declarations</span>: [</div><div class="line">    AppComponent</div><div class="line">  ],</div><div class="line">  <span class="attr">imports</span>: [</div><div class="line">    BrowserModule,</div><div class="line">    FormsModule,</div><div class="line">    SDKModule.forRoot(),</div><div class="line">    ChartsModule</div><div class="line">  ],</div><div class="line">  <span class="attr">providers</span>: [],</div><div class="line">  <span class="attr">bootstrap</span>: [AppComponent]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</div></pre></td></tr></table></figure>
+<p>Impresionante, tan simple como que nuestra aplicación <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> está lista para empezar a representar gráficos en tiempo real.</p>
+<h2 id="Agregar-logica-del-Fireloop"><a href="#Agregar-logica-del-Fireloop" class="headerlink" title="Agregar logica del Fireloop"></a>Agregar logica del Fireloop</h2><p>Permite ahora actualizar nuestro archivo <code>fireloop_project /webapp/src/app/app.component.ts</code> de la siguiente manera:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Todo, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"></div><div class="line">@Component(&#123;</div><div class="line">  <span class="attr">selector</span>: <span class="string">'app-root'</span>,</div><div class="line">  <span class="attr">templateUrl</span>: <span class="string">'./app.component.html'</span>,</div><div class="line">  <span class="attr">styleUrls</span>: [<span class="string">'./app.component.css'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private title   : string = <span class="string">'Todo app works!'</span>;</div><div class="line">  private todo    : Todo   = <span class="keyword">new</span> Todo();</div><div class="line">  private todoRef : FireLoopRef&lt;Todo&gt;;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private rt: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.rt.onReady().subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.todoRef = <span class="keyword">this</span>.rt.FireLoop.ref&lt;Todo&gt;(Todo);</div><div class="line">      <span class="keyword">this</span>.todoRef.stats().subscribe(<span class="function">(<span class="params">stats: any</span>) =&gt;</span> <span class="built_in">console</span>.log(stats));</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  create(): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.todoRef.create(<span class="keyword">this</span>.todo).subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.todo = <span class="keyword">new</span> Todo());</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  update(todo: Todo): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.todoRef.upsert(todo).subscribe();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  remove(todo: Todo): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.todoRef.remove(todo).subscribe();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Creo que este código es bastante sencillo, básicamente sólo tiene que crear 1 Todo Modelo instancia, 1 FireLoop Reference y un par de métodos para envolver la funcionalidad, con excepción de que es cuestión de conectar las piezas juntas.</p>
+<p>Si ya lo has descubierto, deberías saberlo de una manera realmente inteligente … Tienes acceso dentro de tu cliente <a href="http://angular.io" target="_blank" rel="external">Angular 2</a> a tus modelos de backend, en este caso creamos un Todo Model que funciona a través de los extremos trasero y frontal.</p>
+<p>La otra pieza súper importante de aquí es FireLoop Reference, este servicio le permite sincronizar sus aplicaciones cliente con el servidor back-end, proporcionándole métodos que le permiten crear, actualizar, eliminar, escuchar cambios y escuchar estadísticas.</p>
+<p>Un buen ejemplo se puede ver dentro del constructor, estamos suscribiendo al método stats para escuchar estadísticas en tiempo real, esto es realmente genial.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(private rt: RealTime) &#123;</div><div class="line">  <span class="keyword">this</span>.todoRef = <span class="keyword">this</span>.rt.FireLoop.ref&lt;Todo&gt;(Todo);</div><div class="line">  <span class="keyword">this</span>.todoRef.stats().subscribe(<span class="function">(<span class="params">stats: any</span>) =&gt;</span> <span class="built_in">console</span>.log(stats));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Es genial, cada vez que algo cambia dentro de FireLoop Todo, obtendrás información estadística sobre él, pero … En este momento estamos enviando a la consola nuestras estadísticas, vamos a agregar la lógica del gráfico.</p>
+<h2 id="Agregar-logica-del-Ng2Charts"><a href="#Agregar-logica-del-Ng2Charts" class="headerlink" title="Agregar logica del Ng2Charts"></a>Agregar logica del Ng2Charts</h2><p>Lo que estoy agregando aquí es sólo la configuración estándar para un gráfico de líneas que tomé de su <a href="https://github.com/valor-software/ng2-charts" target="_blank" rel="external">documentación</a>.</p>
+<p>Nuestro <code>app.component.ts</code> finalmente será algo como:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'chart.js'</span>);</div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="keyword">import</span> &#123; Todo, FireLoopRef &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/models'</span>;</div><div class="line"><span class="keyword">import</span> &#123; RealTime &#125; <span class="keyword">from</span> <span class="string">'./shared/sdk/services'</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> moment <span class="keyword">from</span> <span class="string">'moment'</span>;</div><div class="line"></div><div class="line">@Component(&#123;</div><div class="line">  <span class="attr">selector</span>: <span class="string">'app-root'</span>,</div><div class="line">  <span class="attr">templateUrl</span>: <span class="string">'./app.component.html'</span>,</div><div class="line">  <span class="attr">styleUrls</span>: [<span class="string">'./app.component.css'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  private title   : string = <span class="string">'Todo app works!'</span>;</div><div class="line">  private todo    : Todo   = <span class="keyword">new</span> Todo();</div><div class="line">  private todoRef : FireLoopRef&lt;Todo&gt;;</div><div class="line">  private lineChartData:<span class="built_in">Array</span>&lt;any&gt; = [];</div><div class="line">  private lineChartLabels:<span class="built_in">Array</span>&lt;any&gt; = [];</div><div class="line">  private lineChartOptions:any = &#123;</div><div class="line">    <span class="attr">animation</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">responsive</span>: <span class="literal">false</span></div><div class="line">  &#125;;</div><div class="line">  private lineChartColors:<span class="built_in">Array</span>&lt;any&gt; = [</div><div class="line">    &#123; </div><div class="line">      <span class="attr">backgroundColor</span>: <span class="string">'rgba(148,159,177,0.2)'</span>,</div><div class="line">      <span class="attr">borderColor</span>: <span class="string">'rgba(148,159,177,1)'</span>,</div><div class="line">      <span class="attr">pointBackgroundColor</span>: <span class="string">'rgba(148,159,177,1)'</span>,</div><div class="line">      <span class="attr">pointBorderColor</span>: <span class="string">'#fff'</span>,</div><div class="line">      <span class="attr">pointHoverBackgroundColor</span>: <span class="string">'#fff'</span>,</div><div class="line">      <span class="attr">pointHoverBorderColor</span>: <span class="string">'rgba(148,159,177,0.8)'</span></div><div class="line">    &#125;</div><div class="line">  ];</div><div class="line">  private lineChartLegend:boolean = <span class="literal">true</span>;</div><div class="line">  private lineChartType:string = <span class="string">'line'</span>;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private rt: RealTime) &#123;</div><div class="line">    <span class="keyword">this</span>.rt.onReady().subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.todoRef = <span class="keyword">this</span>.rt.FireLoop.ref&lt;Todo&gt;(Todo);</div><div class="line">      <span class="keyword">this</span>.todoRef.stats().subscribe(<span class="function">(<span class="params">stats: any</span>) =&gt;</span> &#123;</div><div class="line">        <span class="keyword">this</span>.lineChartLabels = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">        <span class="keyword">this</span>.lineChartData   = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">        <span class="keyword">let</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">        stats.forEach(<span class="function">(<span class="params">stat: any</span>) =&gt;</span> &#123;</div><div class="line">          data.push(stat.count);</div><div class="line">          <span class="keyword">this</span>.lineChartLabels.push(moment(stat.universal).format(<span class="string">'MM-YYYY'</span>));</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.lineChartData.push(&#123; <span class="attr">data</span>: data, <span class="attr">label</span>: <span class="string">'Number of Dued Todos'</span>&#125;);</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  create(): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.todoRef.create(<span class="keyword">this</span>.todo).subscribe(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.todo = <span class="keyword">new</span> Todo());</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  update(todo: Todo): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.todoRef.upsert(todo).subscribe();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  remove(todo: Todo): <span class="keyword">void</span> &#123;</div><div class="line">    <span class="keyword">this</span>.todoRef.remove(todo).subscribe();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Aquí solo estamos agregando un par de configuraciones para decidir qué colores usar, etc. Pero deberías ser capaz de ver que ahora estamos mapeando nuestras estadísticas para ser renderizadas por <a href="http://valor-software.com/ng2-charts/" target="_blank" rel="external">Ng2Charts</a>.</p>
+<h2 id="Actualizar-vista-de-componente-de-aplicacion"><a href="#Actualizar-vista-de-componente-de-aplicacion" class="headerlink" title="Actualizar vista de componente de aplicación"></a>Actualizar vista de componente de aplicación</h2><p>Permite ahora actualizar nuestro archivo <code>fireloop_project/webapp/src/app/app.component.html</code> de la siguiente manera:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">  &#123;&#123;title&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> (<span class="attr">submit</span>)=<span class="string">"create()"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"todo"</span> <span class="attr">type</span>=<span class="string">"text"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"todo.text"</span> <span class="attr">placeholder</span>=<span class="string">"Add Todo"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"todo"</span> <span class="attr">type</span>=<span class="string">"date"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"todo.dueAt"</span> <span class="attr">placeholder</span>=<span class="string">"Due Date"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>Add Todo<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let _todo of todoRef.on('change') | async"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"_todo.id"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"_todo.text"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"update(_todo)"</span>&gt;</span>Update<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"remove(_todo)"</span>&gt;</span>Remove<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: block;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">canvas</span> *<span class="attr">ngIf</span>=<span class="string">"lineChartData.length &gt; 0"</span> <span class="attr">baseChart</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span></span></div><div class="line">                [<span class="attr">datasets</span>]=<span class="string">"lineChartData"</span></div><div class="line">                [<span class="attr">labels</span>]=<span class="string">"lineChartLabels"</span></div><div class="line">                [<span class="attr">options</span>]=<span class="string">"lineChartOptions"</span></div><div class="line">                [<span class="attr">colors</span>]=<span class="string">"lineChartColors"</span></div><div class="line">                [<span class="attr">legend</span>]=<span class="string">"lineChartLegend"</span></div><div class="line">                [<span class="attr">chartType</span>]=<span class="string">"lineChartType"</span>&gt;<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Cool, ¿qué tan fácil fue eso? Simplemente enlazamos todo lo relacionado con nuestra lógica de componentes y aquí estamos, con una aplicación en tiempo real de pila completa que está lista para ser probada.</p>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>Ahora ejecutamos nuestro buff de proyecto fireloop ejecutando <code>$ fireloop service</code> y luego seleccionamos ambos, tu cliente y servidor usando la barra de sapace y luego solo pulsamos return para cargarlos.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$ fireloop serve</div><div class="line"></div><div class="line">     _-----_     </div><div class="line">    |       |    ╭──────────────────────────╮</div><div class="line">    |--(o)--|    │      Let<span class="string">'s serve an      │</span></div><div class="line">   `---------´   │       application!       │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __'.___.<span class="string">'__   </span></div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What application do you want to serve? (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to inverse selection)</div><div class="line">❯◯ webapp</div><div class="line"> ◯ server</div><div class="line">  ...</div><div class="line">	Loading Client Application: webapp</div><div class="line">	Loading Server Application: server</div></pre></td></tr></table></figure>
+<p>Y <em> Voilà </em> … Sólo tienes que abrir el navegador 2 en <a href="http://127.0.0.1:4200" target="_blank" rel="external">http://127.0.0.1:4200</a> para que puedas verificar que ambos se actualizan en tiempo real.</p>
+<p><a href="https://storage.googleapis.com/mean-expert-images/fireloop-stats.gif" target="_blank" rel="external">FireLoop Stats Gif Example</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last Updated：<time datetime="2016-12-27T17:45:16.609Z" title="2016-12-27 13:45" itemprop="dateUpdated">2016:27:13:45</time>
+</span><br>
+
+
+        All rigths Reserved：<a href="/es/realtime-stats-example/" target="_blank" rel="external">http://fireloop.io/es/realtime-stats-example/</a>
+    </div>
+    <footer>
+        <a href="http://fireloop.io">
+            <img src="/img/avatar.png" alt="Mean.Expert">
+            Mean.Expert
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/es/serving-apps/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Sirviendo Aplicaciones</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/es/creating-fireloop-models/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Creación de modelos FireLoop</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+   <!-- 
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="realtime-stats-example" data-title="Ejemplo de Estatisticas RealTime" data-url="http://fireloop.io/es/realtime-stats-example/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.2');
+
+
+</script>
+
+
+
+
+
+
+ -->
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total number of visitors : <span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Site total views : <span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+       <!-- <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>The blog content follows<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution - Noncommercial - Share Alike 4.0 Protocol</a></span>
+        </p> -->
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Fireloop Documentation &copy; 2016</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

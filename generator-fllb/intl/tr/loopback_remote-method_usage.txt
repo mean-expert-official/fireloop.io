@@ -1,6 +1,0 @@
-Açıklama:
-  LoopBack uygulamasında yeni bir Uzak Yöntem yaratır.
-
-Örneğin:
-
-  {{slc loopback:remote-method}}

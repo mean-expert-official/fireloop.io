@@ -1,9 +1,0 @@
-Açıklama:
-  LoopBack uygulamasına yeni bir ACL girişi ekler.
-
-Örneğin:
-
-  {{slc loopback:acl}}
-
-  Bu komut ACL seçeneklerini saptamak için birkaç soru sorar
-  ve sonra ilgili {{json}} modeline bir giriş ekler.

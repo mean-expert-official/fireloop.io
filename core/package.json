@@ -1,0 +1,46 @@
+{
+	"name": "@fireloop/core",
+	"version": "1.0.0-alpha.3",
+	"main": "index.js",
+	"author": {
+		"name": "Jonathan Casarrubias",
+		"email": "jcasarrubias@mean.expert",
+		"url": "http://mean.expert"
+	},
+	"contributors": [{
+		"name": "Andres D. Jimenez S",
+		"email": "andresdavid@outlook.com",
+		"url": "https://github.com/kattsushi"
+	},{
+		"name": "Brannon N. Darby II",
+		"email": "bdarby86@gmail.com",
+		"url": "https://github.com/ng-logic"
+	}],
+	"description": "Not for standalone usage, use @fireloop/lib instead.",
+	"scripts": {
+		"build": "./node_modules/.bin/tsc -p tsconfig.json",
+		"prepublish": ""
+	},
+	"files": [
+		"decorators",
+		"index.js",
+		"index.js.map",
+		"index.d.ts",
+		"package.json"
+	],
+	"keywords": [
+		"FireLoop",
+		"LoopBack",
+		"NodeJS",
+		"Angular 2",
+		"Angular CLI"
+	],
+	"dependencies": {
+		"@fireloop/lib": "1.0.0-alpha.3",
+		"ts-node": "2.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "6.0.56",
+		"typescript": "2.1.4"
+	}
+}

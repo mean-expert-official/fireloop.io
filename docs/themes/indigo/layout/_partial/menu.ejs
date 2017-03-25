@@ -1,0 +1,34 @@
+<aside id="menu" <% if((is_post() || page.layout === 'page') && theme.hideMenu){ %>class="hide"<% } %> >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="<%- config.root %>" class="avatar">
+          <img src="<%- url_for(theme.avatar) %>" style="width:125px;">
+        </a>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        <%
+          var menuItem, isActive = function(item) {
+              var pageUrl = url_for(page.path)
+              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : _.startsWith(pageUrl, url_for(item.url))
+          };
+          var currentLang = (page.lang.length === 2) ? page.lang : page.lang.split['/'][0];
+          for (var i in theme.menu) {
+            menuItem = theme.menu[i];
+          %>
+            <li class="waves-block waves-effect<% if(isActive(menuItem)){ %> active<% } %>">
+              <a href="<%- url_for( currentLang + menuItem.url ) %>" <% if(menuItem.target){ %>target="_blank"<% } %> >
+                <i class="icon icon-lg icon-<%= i %>"></i>
+                <%=(__(menuItem.text) || _.startCase(i)) %>
+              </a>
+            </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</aside>

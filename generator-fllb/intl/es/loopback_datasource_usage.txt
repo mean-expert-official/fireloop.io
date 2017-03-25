@@ -1,8 +1,0 @@
-Descripción:
-  Crea un origen de datos en la aplicación LoopBack.
-
-Ejemplo:
-
-  {{slc loopback:datasource crm}}
-
-  Esto añade una entrada a {{`datasources.json`}} que define el origen de datos "crm".

@@ -1,8 +1,0 @@
-説明:
-  LoopBack アプリケーションで新しいモデルを作成します。
-
-例:
-
-  {{slc loopback:model Product}}
-
-  これにより、モデル "Product" を定義するエントリーが {{`Product.json`}} に追加されます。
