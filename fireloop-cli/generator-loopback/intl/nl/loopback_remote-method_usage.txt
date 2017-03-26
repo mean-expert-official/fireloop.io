@@ -1,0 +1,6 @@
+Beschrijving:
+  Een nieuwe niet-lokale methode (Remote Method) maken in de LoopBack-toepassing .
+
+Bijvoorbeeld:
+
+  {{slc loopback:remote-method}}

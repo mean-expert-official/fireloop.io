@@ -1,0 +1,6 @@
+Beschreibung:
+  Erstellt eine neue Modelleigenschaft in der LoopBack-Anwendung.
+
+Beispiel: 
+
+  {{slc loopback:property}}

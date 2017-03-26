@@ -1,0 +1,6 @@
+Beschrijving:
+  Modellen en niet-lokale methoden (remote methods) genereren op basis van een swagger API spec.
+
+Bijvoorbeeld:
+
+  {{slc loopback:swagger}}

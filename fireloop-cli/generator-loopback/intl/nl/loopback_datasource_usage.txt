@@ -1,0 +1,8 @@
+Beschrijving:
+  Een nieuwe gegevensbron maken in de LoopBack-toepassing .
+
+Bijvoorbeeld:
+
+  {{slc loopback:datasource crm}}
+
+  Hiermee wordt er een item toegevoegd aan {{'datasources.json'}} waarmee de gegevensbron "crm" wordt gedefinieerd.

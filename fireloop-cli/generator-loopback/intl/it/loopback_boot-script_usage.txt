@@ -1,0 +1,8 @@
+Descrizione:
+  crea un nuovo script di avvio nell'applicazione LoopBack.
+
+Esempio:
+
+  {{slc loopback:boot-script}} [your-script-name]
+
+  Questo genera uno script di avvio in {{`/server/boot`}}.

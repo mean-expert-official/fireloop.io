@@ -1,0 +1,6 @@
+說明：
+  在 LoopBack 應用程式中建立新的模型關係。
+
+範例：
+
+  {{slc loopback:relation}}

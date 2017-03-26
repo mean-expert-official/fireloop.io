@@ -1,0 +1,8 @@
+説明:
+  LoopBack アプリケーションで新しいブート・スクリプトを作成します。
+
+例:
+
+  {{slc loopback:boot-script}} [your-script-name]
+
+  これにより、{{`/server/boot`}} にブート・スクリプトが生成されます。

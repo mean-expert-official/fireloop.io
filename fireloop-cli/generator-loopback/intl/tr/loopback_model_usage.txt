@@ -1,0 +1,8 @@
+Açıklama:
+  LoopBack uygulamasında yeni bir Model yaratır.
+
+Örneğin:
+
+  {{slc loopback:model Ürün}}
+
+  Bu, {{`Product.json`}} öğesine "Ürün" adlı modeli tanımlayan bir giriş ekler.

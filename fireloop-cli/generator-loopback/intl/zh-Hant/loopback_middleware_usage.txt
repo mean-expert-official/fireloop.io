@@ -1,0 +1,8 @@
+說明：
+  在 LoopBack 應用程式中建立新的中介軟體。
+
+範例：
+
+  {{slc loopback:middleware myMiddleware}}
+
+  這會將項目新增至 {{`middleware.json`}} 來定義中介軟體 "myMiddleware"。

@@ -1,0 +1,8 @@
+Description:
+  Creates a new boot script in the LoopBack application.
+
+Example:
+
+  {{slc loopback:boot-script}} [your-script-name]
+
+  This generates a boot script in {{`/server/boot`}}.

@@ -1,0 +1,6 @@
+Beschrijving:
+  Een nieuwe modeleigenschap maken in de LoopBack-toepassing .
+
+Bijvoorbeeld:
+
+  {{slc loopback:property}}

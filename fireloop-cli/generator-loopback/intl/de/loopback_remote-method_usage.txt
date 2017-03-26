@@ -1,0 +1,6 @@
+Beschreibung:
+  Erstellt eine neue Remote-Methode in der LoopBack-Anwendung.
+
+Beispiel: 
+
+  {{slc loopback:remote-method}}

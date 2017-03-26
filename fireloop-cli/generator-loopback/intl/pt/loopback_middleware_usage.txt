@@ -1,0 +1,8 @@
+Descrição:
+  Cria um novo middleware no aplicativo LoopBack.
+
+Exemplo:
+
+  {{slc loopback:middleware myMiddleware}}
+
+  Isso inclui uma entrada em {{`middleware.json`}} definindo o middleware "myMiddleware".

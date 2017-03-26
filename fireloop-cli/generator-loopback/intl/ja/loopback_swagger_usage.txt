@@ -1,0 +1,6 @@
+説明:
+  Swagger API 仕様からモデルおよびリモート・メソッドを生成します。
+
+例:
+
+  {{slc loopback:swagger}}

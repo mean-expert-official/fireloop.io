@@ -1,0 +1,14 @@
+說明：
+  產生 LoopBack 應用程式的 Swagger API 定義。
+
+範例：
+
+  {{slc loopback:export-api-def [--json]}}
+
+  這會將 API 定義輸出至 stdout。
+  使用選項 {{--json}} 會以 JSON 格式顯示，否則會預設為 YAML。
+
+  {{slc loopback:export-api-def [--o outputFile]}}
+
+  這會將 API 定義輸出至指定的位置。根據副檔名，
+  它將以 {{yaml}} 或 {{json}} 格式列印。

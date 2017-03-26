@@ -1,0 +1,8 @@
+說明：
+  在 LoopBack 應用程式中建立新的資料來源。
+
+範例：
+
+  {{slc loopback:datasource crm}}
+
+  這會將項目新增至 {{`datasources.json`}} 來定義資料來源 "crm"。

@@ -1,0 +1,18 @@
+Açıklama:
+  Bir LoopBack uygulaması yaratır.
+
+Örneğin:
+
+  {{slc loopback}}
+
+  Bu şunu yaratır:
+
+    {{package.json}}: {{npm}} tarafından kurulan geliştirme paketleri.
+
+    {{common/models/<modelAdı>.json}}: LoopBack tarafından sağlanan temel modellerin tanımı.
+    {{common/models/}}: Özel model kodunun koyulacağı dizin.
+
+    {{server/server.js}}: Ana uygulama dosyası.
+    {{server/config.json}}: Makine tarafından düzenlenebilir uygulama yapılandırması.
+    {{server/datasources.json}}: Veri kaynaklarının tanımı.
+    {{server/model-config.json}}: Model yapılandırması.

@@ -1,0 +1,8 @@
+說明：
+  在 LoopBack 應用程式中建立新的啟動 Script。
+
+範例：
+
+  {{slc loopback:boot-script}} [your-script-name]
+
+  這會在 {{`/server/boot`}} 中產生啟動 Script。

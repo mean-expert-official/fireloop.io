@@ -1,0 +1,6 @@
+Beschrijving:
+  Een nieuwe modelrelatie maken in de LoopBack-toepassing .
+
+Bijvoorbeeld:
+
+  {{slc loopback:relation}}
