@@ -47,14 +47,15 @@ module.exports = generators.extend({
 
     // Filter clients only not server.
     let _clients: string[] = []; 
-    Object.keys(clients).forEach((name: string) => {
-      if (clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
-        _clients.push(name);
+    if (typeof clients === 'object') {
+      Object.keys(clients).forEach((name: string) => {
+        if (clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
+          _clients.push(name);
+        }
+      });
+      if (_clients.length > 0) {
+        choices.push(keys.GENERATE_SDK);
       }
-    });
-
-    if (typeof clients === 'object' && _clients.length > 0) {
-      choices.push(keys.GENERATE_SDK);
     }
 
     choices.push(keys.FIRELOOP_VERSION);

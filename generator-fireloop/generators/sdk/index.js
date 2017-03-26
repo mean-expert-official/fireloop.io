@@ -27,7 +27,7 @@ module.exports = generators.extend({
         // TODO: set FIRELOOP to true after fix
         var selected = {
             IO: true,
-            FIRELOOP: true,
+            FIRELOOP: false,
             DEFAULT_VALUES: false
         };
         this.selected = selected;
@@ -73,7 +73,7 @@ module.exports = generators.extend({
         });
         this.log(chalk.green("SERVER PATH: " + serverPath));
         this.log(chalk.green("IO: " + this.selected.IO));
-        this.log(chalk.green("FIRELOOP: " + this.selected.FIRELOOP));
+        this.log(chalk.green("FIRELOOP ONLY: " + this.selected.FIRELOOP));
         this.log(chalk.green("DEFAULT_VALUES: " + this.selected.DEFAULT_VALUES));
         this.spawnCommand('node_modules/.bin/lb-sdk', [
             'server/server',
@@ -91,4 +91,4 @@ module.exports = generators.extend({
         });
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/fireloop-cli/generator-fireloop/src/sdk/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/sdk/index.js.map

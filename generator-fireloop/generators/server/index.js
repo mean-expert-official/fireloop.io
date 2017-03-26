@@ -31,7 +31,7 @@ module.exports = generators.extend({
     },
     // Not reinventing the wheel, let LoopBack Generator to build the Base.
     installBase: function () {
-        this.composeWith(require.resolve('generator-loopback'), { name: this.appname, skipNextSteps: true });
+        this.composeWith(require.resolve('generator-fllb'), { name: this.appname, skipNextSteps: true });
     },
     install: function () {
         this.npmInstall([
@@ -166,4 +166,4 @@ module.exports = generators.extend({
 function generate(cwd, config) {
     fs.writeFileSync(path.join(cwd, config.output.file), ejs.render(fs.readFileSync(path.join(__dirname, '..', '..', config.template), { encoding: 'utf-8' }), config.params));
 }
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/fireloop-cli/generator-fireloop/src/server/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/server/index.js.map

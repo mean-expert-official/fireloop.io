@@ -36,7 +36,7 @@ module.exports = generators.extend({
       this.destinationRoot(serverName);
       this.composeWith('loopback:model', {
         args: this.options._argv._
-      }, { local: require.resolve('generator-loopback/model') });
+      }, { local: require.resolve('generator-fllb/model') });
     }
   },
   // Replace JS Model for TS Model

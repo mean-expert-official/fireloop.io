@@ -33,7 +33,7 @@ module.exports = generators.extend({
             this.destinationRoot(serverName);
             this.composeWith('loopback:model', {
                 args: this.options._argv._
-            }, { local: require.resolve('generator-loopback/model') });
+            }, { local: require.resolve('generator-fllb/model') });
         }
     },
     // Replace JS Model for TS Model
@@ -111,4 +111,4 @@ function propertyBuilder(config) {
     });
     return "" + properties.join(",") + (properties.length > 0 ? '\n        ' : '');
 }
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/fireloop-cli/generator-fireloop/src/model/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/model/index.js.map

@@ -45,8 +45,8 @@ try {
   var loopbacked = `loopback:${cmd}`;
   var firelooped = `fireloop:${cmd}`;
   if (cmd === 'model') {
-    env.register(require.resolve(`generator-loopback/model`), loopbacked);
-    env.register(require.resolve(`generator-loopback/property`), `loopback:property`);
+    env.register(require.resolve(`generator-fllb/model`), loopbacked);
+    env.register(require.resolve(`generator-fllb/property`), `loopback:property`);
   }
   env.register(require.resolve(`generator-fireloop/generators/${cmd}`), firelooped);
   env.run(firelooped, { _argv: argv });

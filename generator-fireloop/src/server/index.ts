@@ -34,7 +34,7 @@ module.exports = generators.extend({
   
   // Not reinventing the wheel, let LoopBack Generator to build the Base.
   installBase: function () {
-    this.composeWith(require.resolve('generator-loopback'),
+    this.composeWith(require.resolve('generator-fllb'),
       { name: this.appname, skipNextSteps: true }
     );
   },

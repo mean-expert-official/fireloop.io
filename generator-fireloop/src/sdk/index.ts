@@ -28,7 +28,7 @@ module.exports = generators.extend({
     // TODO: set FIRELOOP to true after fix
     let selected: { IO: boolean, FIRELOOP: boolean, DEFAULT_VALUES: boolean } = {
       IO: true,
-      FIRELOOP: true,
+      FIRELOOP: false, // FireLoop only will avoid to create LoopBack services, by default we want both of them.
       DEFAULT_VALUES: false
     };
     this.selected = selected;
@@ -74,7 +74,7 @@ module.exports = generators.extend({
 
     this.log(chalk.green(`SERVER PATH: ${serverPath}`));
     this.log(chalk.green(`IO: ${this.selected.IO}`));
-    this.log(chalk.green(`FIRELOOP: ${this.selected.FIRELOOP}`));
+    this.log(chalk.green(`FIRELOOP ONLY: ${this.selected.FIRELOOP}`));
     this.log(chalk.green(`DEFAULT_VALUES: ${this.selected.DEFAULT_VALUES}`));
 
     this.spawnCommand(

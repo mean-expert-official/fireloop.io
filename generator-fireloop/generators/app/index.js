@@ -36,13 +36,15 @@ module.exports = generators.extend({
         }
         // Filter clients only not server.
         var _clients = [];
-        Object.keys(clients).forEach(function (name) {
-            if (clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
-                _clients.push(name);
+        if (typeof clients === 'object') {
+            Object.keys(clients).forEach(function (name) {
+                if (clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
+                    _clients.push(name);
+                }
+            });
+            if (_clients.length > 0) {
+                choices.push(keys.GENERATE_SDK);
             }
-        });
-        if (typeof clients === 'object' && _clients.length > 0) {
-            choices.push(keys.GENERATE_SDK);
         }
         choices.push(keys.FIRELOOP_VERSION);
         return this.prompt([{
@@ -89,4 +91,4 @@ module.exports = generators.extend({
         }.bind(this));
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/fireloop-cli/generator-fireloop/src/app/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/app/index.js.map
