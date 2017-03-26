@@ -1,7 +1,7 @@
 {
-  "name": "generator-loopback",
-  "version": "3.0.0",
-  "description": "Yeoman generator for LoopBack",
+  "name": "generator-fllb",
+  "version": "1.0.0-beta.2.1",
+  "description": "Yeoman generator for LoopBack modified for FireLoop CLI usage",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "strongloop/generator-loopback",

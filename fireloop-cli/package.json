@@ -1,6 +1,6 @@
 {
   "name": "@mean-expert/fireloop",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.2.1",
   "description": "This CLI Tool generates FireLoop projects and provides a handful way to work with MEAN Stack based Applications.",
   "main": "index.js",
   "bin": {
