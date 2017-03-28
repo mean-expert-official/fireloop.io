@@ -150,7 +150,7 @@ module.exports = generators.extend({
       }
     });
 
-    let apiName: string = this.destinationPath().split('/').pop();
+    let apiName: string = this.destinationPath().split(path.sep).pop();
 
     this.config.set('clients', {
       [apiName]: {

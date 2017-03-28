@@ -143,7 +143,7 @@ module.exports = generators.extend({
                 }
             }
         });
-        var apiName = this.destinationPath().split('/').pop();
+        var apiName = this.destinationPath().split(path.sep).pop();
         this.config.set('clients', (_a = {},
             _a[apiName] = {
                 path: "./" + apiName,

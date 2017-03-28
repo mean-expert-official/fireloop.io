@@ -2,6 +2,11 @@ FireLoop Project Change Log
 ===========================
 
 
+### Release 1.0.0-beta.2.4
+
+- Fixed relative path issues on windows.
+- Added contributors section to the README file
+
 ### Release 1.0.0-beta.2.3 (Replaces beta.2.1 && beta.2.2)
 
 - Hot fixes on missing nested dependencies

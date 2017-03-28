@@ -1,6 +1,6 @@
 {
   "name": "generator-fireloop",
-  "version": "1.0.0-beta.2.3",
+  "version": "1.0.0-beta.2.4",
   "main": "generators/app/index.js",
   "author": {
     "name": "Jonathan Casarrubias",
