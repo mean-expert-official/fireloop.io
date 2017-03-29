@@ -13,7 +13,7 @@
 
 [Public Cheering in the Background]
 
-##FireLoop Features
+## FireLoop Features
 
 - Nice and easy setup.
 - 1 command line tool for all (Server, Web Clients, Mobile Clients, SDK Builder).
