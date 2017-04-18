@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fireloop.io/"/>
-  <updated>2016-12-27T01:37:58.373Z</updated>
+  <updated>2017-04-18T12:16:33.545Z</updated>
   <id>http://fireloop.io/</id>
   
   <author>
@@ -16,11 +16,103 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Escalando FireLoop</title>
+    <link href="http://fireloop.io/es/scaling-fireloop/"/>
+    <id>http://fireloop.io/es/scaling-fireloop/</id>
+    <published>2017-04-18T11:40:54.485Z</published>
+    <updated>2017-04-18T12:16:33.545Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png" alt="FireLoop.io" title="">
+                </div>
+                <div class="image-caption">FireLoop.io</div>
+            </figure>
+<h2 id="Escalando-FireLoop"><a href="#Escalando-FireLoop" class="headerlink" title="Escalando FireLoop"></a>Escalando FireLoop</h2><p>Construir aplicaciones con <a href="http://fireloop.io">FireLoop</a> es agradable y fácil, pero no valdría nada si la plataforma no escalara a varios servidores o incluso procese instancias.</p>
+<p>La siguiente documentación explicará cómo habilitar <a href="http://fireloop.io">FireLoop</a> para trabajar en entornos agrupados.</p>
+<h2 id="Requerimientos"><a href="#Requerimientos" class="headerlink" title="Requerimientos"></a>Requerimientos</h2><ul>
+<li><a href="https://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">SDK Builder</a> v2.1.0-rc.10+</li>
+<li><a href="http://github.com/mean-expert-official/loopback-component-realtime" target="_blank" rel="external">LoopBack Component Real-Time</a> v1.0.0-rc.5+</li>
+<li><a href="https://socket.io" target="_blank" rel="external">Socket IO</a> Adaptador <em>(cualquier socket.io-adapter como <a href="https://www.npmjs.com/package/socket.io-adapter-mongo" target="_blank" rel="external">socket.io-adapter-mongo</a>, <a href="https://www.npmjs.com/package/socket.io-redis" target="_blank" rel="external">socket.io-redis</a>, etc)</em></li>
+<li>PubSub capa de base de datos como <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> o <a href="https://redis.io/" target="_blank" rel="external">Redis</a></li>
+</ul>
+<h2 id="Creando-el-DataSource"><a href="#Creando-el-DataSource" class="headerlink" title="Creando el DataSource"></a>Creando el DataSource</h2><p>Independientemente del origen de datos que seleccione para sus modelos de API, deberá crear una fuente de datos que apunte a una base de datos <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> o <a href="https://redis.io/" target="_blank" rel="external">Redis</a>.</p>
+<p>Si ya seleccionó <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> o <a href="https://redis.io/" target="_blank" rel="external">Redis</a> como base de datos para sus Modelos de API, no necesitará crear una nueva fuente de datos, los usuarios que utilicen otras bases de datos como SQL, <em> requerirá crear una nueva fuente de datos apuntando a <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> O <a href="https://redis.io/" target="_blank" rel="external">Redis</a> </em> e instale su correspondiente dependencia de <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> to/project/api</div><div class="line">$ npm install --save [loopback-connector-mongodb | loopback-connector-redis]</div></pre></td></tr></table></figure>
+<p>y como cualquier otro origen de datos <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>, se configura de la siguiente forma:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"mongodb"</span>: &#123;</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"mongodb://user:pass@host:27016/dbname"</span>,</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"mongodb"</span>,</div><div class="line">    <span class="attr">"connector"</span>: <span class="string">"mongodb"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>server/datasources.json</code></p>
+<h2 id="Habilitar-el-modo-Clustering"><a href="#Habilitar-el-modo-Clustering" class="headerlink" title="Habilitar el modo Clustering"></a>Habilitar el modo Clustering</h2><p>Para habilitar el modo de Clustering, necesitamos realizar las siguientes configuraciones:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"@mean-expert/loopback-component-realtime"</span>: &#123;</div><div class="line">    <span class="attr">"auth"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"debug"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"driver"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"socket.io"</span>,</div><div class="line">      <span class="attr">"options"</span>: &#123;</div><div class="line">        <span class="attr">"adapter"</span>: &#123;</div><div class="line">          <span class="attr">"name"</span>: <span class="string">"socket.io-adapter-mongo"</span>,</div><div class="line">          <span class="attr">"datasource"</span>: <span class="string">"mongodb"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Tenga en cuenta que <code>adapter.name</code> debe ser el adaptador que ha seleccionado e instalado antes de este proceso, así como el<code>adapter.datasource</code> debe ser el nombre de la fuente de datos que ha creado.</p>
+<p>Después de seguir las configuraciones anteriores, <a href="http://fireloop.io">FireLoop</a> funcionará en entornos de procesos o servidores agrupados.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Scaling FireLoop</title>
+    <link href="http://fireloop.io/en/scaling-fireloop/"/>
+    <id>http://fireloop.io/en/scaling-fireloop/</id>
+    <published>2017-04-18T11:39:40.473Z</published>
+    <updated>2017-04-18T12:16:13.297Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png" alt="FireLoop.io" title="">
+                </div>
+                <div class="image-caption">FireLoop.io</div>
+            </figure>
+<h2 id="Scaling-FireLoop"><a href="#Scaling-FireLoop" class="headerlink" title="Scaling FireLoop"></a>Scaling FireLoop</h2><p>Building apps with <a href="http://fireloop.io">FireLoop</a> is nice and easy, but that would be worthless if the platform wouldn’t scale into multiple server or even process instances.</p>
+<p>The following documentation will explain how to enable <a href="http://fireloop.io">FireLoop</a> to work under clustered environments.</p>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul>
+<li><a href="https://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">SDK Builder</a> v2.1.0-rc.10+</li>
+<li><a href="http://github.com/mean-expert-official/loopback-component-realtime" target="_blank" rel="external">LoopBack Component Real-Time</a> v1.0.0-rc.5+</li>
+<li><a href="https://socket.io" target="_blank" rel="external">Socket IO</a> Adapter <em>(Any valid socket.io-adapter like <a href="https://www.npmjs.com/package/socket.io-adapter-mongo" target="_blank" rel="external">socket.io-adapter-mongo</a>, <a href="https://www.npmjs.com/package/socket.io-redis" target="_blank" rel="external">socket.io-redis</a>, etc)</em></li>
+<li>PubSub capable database like <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a></li>
+</ul>
+<h2 id="Creating-DataSource"><a href="#Creating-DataSource" class="headerlink" title="Creating DataSource"></a>Creating DataSource</h2><p>Regardless the datasource you select for your API Models, you will need to create a datasource pointing to a <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a> database.</p>
+<p>If you already selected <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a> database for your API Models, you won’t need to create a new datasource, users using any other databases like SQL ones, <em>will require to create a new datasource pointing to <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a></em> and install its <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> dependency.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> to/project/api</div><div class="line">$ npm install --save [loopback-connector-mongodb | loopback-connector-redis]</div></pre></td></tr></table></figure>
+<p>and configure as any other <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> datasource, example:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"mongodb"</span>: &#123;</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"mongodb://user:pass@host:27016/dbname"</span>,</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"mongodb"</span>,</div><div class="line">    <span class="attr">"connector"</span>: <span class="string">"mongodb"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>server/datasources.json</code></p>
+<h2 id="Enable-Clustering-Mode"><a href="#Enable-Clustering-Mode" class="headerlink" title="Enable Clustering Mode"></a>Enable Clustering Mode</h2><p>In order to enable the clustering mode, we need to set the following configurations:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"@mean-expert/loopback-component-realtime"</span>: &#123;</div><div class="line">    <span class="attr">"auth"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"debug"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"driver"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"socket.io"</span>,</div><div class="line">      <span class="attr">"options"</span>: &#123;</div><div class="line">        <span class="attr">"adapter"</span>: &#123;</div><div class="line">          <span class="attr">"name"</span>: <span class="string">"socket.io-adapter-mongo"</span>,</div><div class="line">          <span class="attr">"datasource"</span>: <span class="string">"mongodb"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Please note that the <code>adapter.name</code> should be the adapter you selected and installed prior this process, as well as the <code>adapter.datasource</code> should be the name of the datasource you created.</p>
+<p>After following the configurations above, <a href="http://fireloop.io">FireLoop</a> will work either on clustered process or server environments.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+                   
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Sirviendo Aplicaciones</title>
     <link href="http://fireloop.io/es/serving-apps/"/>
     <id>http://fireloop.io/es/serving-apps/</id>
-    <published>2016-12-27T01:36:31.281Z</published>
-    <updated>2016-12-27T01:37:58.373Z</updated>
+    <published>2017-04-18T11:17:14.365Z</published>
+    <updated>2017-04-18T11:17:14.366Z</updated>
     
     <content type="html"><![CDATA[<figure class="image-bubble">
                 <div class="img-lightbox">
@@ -51,8 +143,8 @@
     <title>Ejemplo de Estatisticas RealTime</title>
     <link href="http://fireloop.io/es/realtime-stats-example/"/>
     <id>http://fireloop.io/es/realtime-stats-example/</id>
-    <published>2016-12-27T01:18:30.377Z</published>
-    <updated>2016-12-27T17:45:16.609Z</updated>
+    <published>2017-04-18T11:17:14.362Z</published>
+    <updated>2017-04-18T11:17:14.364Z</updated>
     
     <content type="html"><![CDATA[<figure class="image-bubble">
                 <div class="img-lightbox">
@@ -140,11 +232,71 @@
   </entry>
   
   <entry>
+    <title>Hola Mundo</title>
+    <link href="http://fireloop.io/es/hello-world/"/>
+    <id>http://fireloop.io/es/hello-world/</id>
+    <published>2017-04-18T11:17:14.362Z</published>
+    <updated>2017-04-18T11:17:14.362Z</updated>
+    
+    <content type="html"><![CDATA[<p>Bienvenido a [Hexo] (<a href="https://hexo.io/)!" target="_blank" rel="external">https://hexo.io/)!</a> Este es tu primer post. Consulte [documentación] (<a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a>) para obtener más información. Si tienes algún problema al usar Hexo, puedes encontrar la respuesta en [solución de problemas] (<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">https://hexo.io/docs/troubleshooting.html</a>) o puedes preguntarme sobre [GitHub] (<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">https://github.com/hexojs/hexo/issues</a>).</p>
+<h2 id="Inicio-rapido"><a href="#Inicio-rapido" class="headerlink" title="Inicio rapido"></a>Inicio rapido</h2><h3 id="Crear-un-nuevo-post"><a href="#Crear-un-nuevo-post" class="headerlink" title="Crear un nuevo post"></a>Crear un nuevo post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"Mi nuevo post"</span></div></pre></td></tr></table></figure>
+<p>Mas info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Correr-Servidor"><a href="#Correr-Servidor" class="headerlink" title="Correr Servidor"></a>Correr Servidor</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>Mas info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generar-Archivos-Estaticos"><a href="#Generar-Archivos-Estaticos" class="headerlink" title="Generar Archivos Estaticos"></a>Generar Archivos Estaticos</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>Mas info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-a-sitios-remotos"><a href="#Deploy-a-sitios-remotos" class="headerlink" title="Deploy a sitios remotos"></a>Deploy a sitios remotos</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>Mas info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Bienvenido a [Hexo] (&lt;a href=&quot;https://hexo.io/)!&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/)!&lt;/a&gt; Este es tu primer post. Consulte 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Inicio Rapido</title>
+    <link href="http://fireloop.io/es/getting-started/"/>
+    <id>http://fireloop.io/es/getting-started/</id>
+    <published>2017-04-18T11:17:14.361Z</published>
+    <updated>2017-04-18T11:17:14.362Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://fireloop.io">FireLoop</a> Es una Plataforma en Real-time para <a href="http://nodejs.org" target="_blank" rel="external">NodeJS</a> que le permite crear aplicaciones modernas y complejas integrando a la perfección las sorprendentes tecnologias de MEAN Stack como frameworks IBM <a href="http://loopback.io" target="_blank" rel="external">Loopback</a>, Google <a href="http://angular.io" target="_blank" rel="external">Angular 2</a>, Telerik’s <a href="http://nativescript.org" target="_blank" rel="external">NativeScript 2</a> y <a href="http://ionic.io" target="_blank" rel="external">Ionic 2</a></p>
+<p><a href="http://fireloop.io">FireLoop</a> También le ofrece módulos exclusivos que le permitirán crear automáticamente sus APIs en tiempo real, los SDKs de clientes, las estadísticas como <a href="https://firebase.google.com/" target="_blank" rel="external">FireBase</a>, <strong>Backend y Frontend desarrollado en <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a>!!!</strong>.</p>
+<p><em>Por cierto, es fresco y de código abierto!!!</em></p>
+<h3 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalacion"></a>Instalacion</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g @mean-expert/fireloop</div></pre></td></tr></table></figure>
+<h3 id="Caracteristicas-de-FireLoop"><a href="#Caracteristicas-de-FireLoop" class="headerlink" title="Características de FireLoop"></a>Características de FireLoop</h3><ul>
+<li>Configuración agradable y fácil.</li>
+<li>1 herramienta de línea de comandos para todos (Server, Web Clients, Mobile Clients, SDK Builder).</li>
+<li>Back y Front en <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a>.</li>
+<li>Integracion con <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> 2 y 3.</li>
+<li>Integracion con <a href="http://angular.io" target="_blank" rel="external">Angular 2</a>.</li>
+<li>Integracion con <a href="http://nativescript.org" target="_blank" rel="external">NativeScript 2</a>.</li>
+<li>Integracion con <a href="http://ionic.io" target="_blank" rel="external">Ionic 2</a>. </li>
+<li>Integracion con <a href="https://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">SDK Builder</a>.</li>
+<li>Integracion con <a href="https://github.com/mean-expert-official/loopback-component-realtime" target="_blank" rel="external">Real-Time</a>.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://fireloop.io&quot;&gt;FireLoop&lt;/a&gt; Es una Plataforma en Real-time para &lt;a href=&quot;http://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Creación de modelos FireLoop</title>
     <link href="http://fireloop.io/es/creating-fireloop-models/"/>
     <id>http://fireloop.io/es/creating-fireloop-models/</id>
-    <published>2016-12-27T01:14:19.710Z</published>
-    <updated>2016-12-27T17:45:16.607Z</updated>
+    <published>2017-04-18T11:17:14.361Z</published>
+    <updated>2017-04-18T11:17:14.361Z</updated>
     
     <content type="html"><![CDATA[<p>Cuando empiece a construir un sistema, lo primero que debe hacer justo después de su instalación, es comenzar a crear sus Modelos de API.</p>
 <p>Estos modelos son similares a <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> Modelos, pero con una diferencia … Estos modelos serán creados y ejecutados usando <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a> en lugar de JavaScript. (POW!)</p>
@@ -167,8 +319,8 @@
     <title>Creando el SDK para el Cliente</title>
     <link href="http://fireloop.io/es/creating-client-sdk/"/>
     <id>http://fireloop.io/es/creating-client-sdk/</id>
-    <published>2016-12-27T01:10:31.529Z</published>
-    <updated>2016-12-28T19:07:49.922Z</updated>
+    <published>2017-04-18T11:17:14.359Z</published>
+    <updated>2017-04-18T11:17:14.361Z</updated>
     
     <content type="html"><![CDATA[<p>La integración <a href="http://fireloop.io">FireLoop</a> se construye en el SDK, por lo que sólo necesita generar uno e instalarlo mediante la herramienta CLI.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop</div><div class="line"></div><div class="line">     _-----_     ╭──────────────────────────╮</div><div class="line">    |       |    │   Welcome to FireLoop!   │</div><div class="line">    |--(o)--|    │  The MEAN Stack Platform │</div><div class="line">   `---------´   │      by MEAN Expert      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __<span class="string">'.___.'</span>__   </div><div class="line"> ´   `  |° ´ Y `</div><div class="line"></div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? Generate Angular2 SDK</div><div class="line">? For <span class="built_in">which</span> application <span class="keyword">do</span> you want to build an SDK? (Use arrow keys)</div><div class="line">❯ webapp</div><div class="line">? What SDK features <span class="keyword">do</span> you want to include?</div><div class="line"> (*) Enable PubSub + IO + FireLoop functionality</div><div class="line">&gt;(*) Add default values <span class="keyword">in</span> models</div><div class="line">? Do you want to generate ONLY FireLoop SDK + Auth Services? (Y/n)</div></pre></td></tr></table></figure>
@@ -190,8 +342,8 @@
     <title>Creación de aplicaciones cliente</title>
     <link href="http://fireloop.io/es/creating-client-apps/"/>
     <id>http://fireloop.io/es/creating-client-apps/</id>
-    <published>2016-12-27T01:07:04.069Z</published>
-    <updated>2016-12-27T17:45:16.605Z</updated>
+    <published>2017-04-18T11:17:14.359Z</published>
+    <updated>2017-04-18T11:17:14.359Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop</div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? Generate Angular2 Client</div><div class="line"></div><div class="line">     _-----_     </div><div class="line">    |       |    ╭──────────────────────────╮</div><div class="line">    |--(o)--|    │ Lets<span class="string">'s create an Angular │</span></div><div class="line">   `---------´   │      2 Application!      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __'.___.<span class="string">'__   </span></div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What type of Angular 2 Application do you want to create? 1.- Angular 2 Web</div><div class="line">? What's the name of your application? (webapp)</div></pre></td></tr></table></figure>
 <p>Una vez creada su aplicación, automáticamente habrá instalado su [kit de desarrollo de software], pero cada vez que [cree un nuevo modelo]; Deberá volver a crear su SDK siguiendo estas instrucciones.</p>
@@ -210,8 +362,8 @@
     <title>Tabla de comparación</title>
     <link href="http://fireloop.io/es/comparison-table/"/>
     <id>http://fireloop.io/es/comparison-table/</id>
-    <published>2016-12-27T00:58:32.714Z</published>
-    <updated>2016-12-27T17:45:16.604Z</updated>
+    <published>2017-04-18T11:17:14.358Z</published>
+    <updated>2017-04-18T11:17:14.359Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Tabla-de-comparacion"><a href="#Tabla-de-comparacion" class="headerlink" title="Tabla de comparación"></a>Tabla de comparación</h2><table>
 <thead>
@@ -297,8 +449,8 @@
     <title>Api</title>
     <link href="http://fireloop.io/es/api/"/>
     <id>http://fireloop.io/es/api/</id>
-    <published>2016-12-27T00:42:15.827Z</published>
-    <updated>2016-12-27T17:45:16.603Z</updated>
+    <published>2017-04-18T11:17:14.358Z</published>
+    <updated>2017-04-18T11:17:14.358Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Debería [crear una aplicación] y <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">software development kit</a> utilizando la Herramienta de CLI <a href="http://fireloop.io">FireLoop</a> antes de poder utilizar la siguiente API.</p>
@@ -369,71 +521,11 @@
   </entry>
   
   <entry>
-    <title>Hola Mundo</title>
-    <link href="http://fireloop.io/es/hello-world/"/>
-    <id>http://fireloop.io/es/hello-world/</id>
-    <published>2016-12-26T23:47:21.461Z</published>
-    <updated>2016-12-26T18:10:08.177Z</updated>
-    
-    <content type="html"><![CDATA[<p>Bienvenido a [Hexo] (<a href="https://hexo.io/)!" target="_blank" rel="external">https://hexo.io/)!</a> Este es tu primer post. Consulte [documentación] (<a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a>) para obtener más información. Si tienes algún problema al usar Hexo, puedes encontrar la respuesta en [solución de problemas] (<a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">https://hexo.io/docs/troubleshooting.html</a>) o puedes preguntarme sobre [GitHub] (<a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">https://github.com/hexojs/hexo/issues</a>).</p>
-<h2 id="Inicio-rapido"><a href="#Inicio-rapido" class="headerlink" title="Inicio rapido"></a>Inicio rapido</h2><h3 id="Crear-un-nuevo-post"><a href="#Crear-un-nuevo-post" class="headerlink" title="Crear un nuevo post"></a>Crear un nuevo post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"Mi nuevo post"</span></div></pre></td></tr></table></figure>
-<p>Mas info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Correr-Servidor"><a href="#Correr-Servidor" class="headerlink" title="Correr Servidor"></a>Correr Servidor</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>Mas info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generar-Archivos-Estaticos"><a href="#Generar-Archivos-Estaticos" class="headerlink" title="Generar Archivos Estaticos"></a>Generar Archivos Estaticos</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>Mas info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-a-sitios-remotos"><a href="#Deploy-a-sitios-remotos" class="headerlink" title="Deploy a sitios remotos"></a>Deploy a sitios remotos</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>Mas info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Bienvenido a [Hexo] (&lt;a href=&quot;https://hexo.io/)!&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/)!&lt;/a&gt; Este es tu primer post. Consulte 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Inicio Rapido</title>
-    <link href="http://fireloop.io/es/getting-started/"/>
-    <id>http://fireloop.io/es/getting-started/</id>
-    <published>2016-12-26T23:47:21.414Z</published>
-    <updated>2016-12-27T17:45:16.608Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://fireloop.io">FireLoop</a> Es una Plataforma en Real-time para <a href="http://nodejs.org" target="_blank" rel="external">NodeJS</a> que le permite crear aplicaciones modernas y complejas integrando a la perfección las sorprendentes tecnologias de MEAN Stack como frameworks IBM <a href="http://loopback.io" target="_blank" rel="external">Loopback</a>, Google <a href="http://angular.io" target="_blank" rel="external">Angular 2</a>, Telerik’s <a href="http://nativescript.org" target="_blank" rel="external">NativeScript 2</a> y <a href="http://ionic.io" target="_blank" rel="external">Ionic 2</a></p>
-<p><a href="http://fireloop.io">FireLoop</a> También le ofrece módulos exclusivos que le permitirán crear automáticamente sus APIs en tiempo real, los SDKs de clientes, las estadísticas como <a href="https://firebase.google.com/" target="_blank" rel="external">FireBase</a>, <strong>Backend y Frontend desarrollado en <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a>!!!</strong>.</p>
-<p><em>Por cierto, es fresco y de código abierto!!!</em></p>
-<h3 id="Instalacion"><a href="#Instalacion" class="headerlink" title="Instalacion"></a>Instalacion</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g @mean-expert/fireloop</div></pre></td></tr></table></figure>
-<h3 id="Caracteristicas-de-FireLoop"><a href="#Caracteristicas-de-FireLoop" class="headerlink" title="Características de FireLoop"></a>Características de FireLoop</h3><ul>
-<li>Configuración agradable y fácil.</li>
-<li>1 herramienta de línea de comandos para todos (Server, Web Clients, Mobile Clients, SDK Builder).</li>
-<li>Back y Front en <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a>.</li>
-<li>Integracion con <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> 2 y 3.</li>
-<li>Integracion con <a href="http://angular.io" target="_blank" rel="external">Angular 2</a>.</li>
-<li>Integracion con <a href="http://nativescript.org" target="_blank" rel="external">NativeScript 2</a>.</li>
-<li>Integracion con <a href="http://ionic.io" target="_blank" rel="external">Ionic 2</a>. </li>
-<li>Integracion con <a href="https://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">SDK Builder</a>.</li>
-<li>Integracion con <a href="https://github.com/mean-expert-official/loopback-component-realtime" target="_blank" rel="external">Real-Time</a>.</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://fireloop.io&quot;&gt;FireLoop&lt;/a&gt; Es una Plataforma en Real-time para &lt;a href=&quot;http://nodejs.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Serving Applications</title>
     <link href="http://fireloop.io/en/serving-apps/"/>
     <id>http://fireloop.io/en/serving-apps/</id>
-    <published>2016-12-26T23:47:21.368Z</published>
-    <updated>2016-12-27T17:45:16.602Z</updated>
+    <published>2017-04-18T11:17:14.356Z</published>
+    <updated>2017-04-18T11:17:14.356Z</updated>
     
     <content type="html"><![CDATA[<p><a href="http://fireloop.io">FireLoop</a> is able to run all of your project applications at once (including your server), for this you can use the <code>fireloop serve</code> command and select the applications you want to serve.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop serve</div><div class="line"></div><div class="line"></div><div class="line">     _-----_     </div><div class="line">    |       |    ╭──────────────────────────╮</div><div class="line">    |--(o)--|    │      Let<span class="string">'s serve an      │</span></div><div class="line">   `---------´   │       application!       │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __'.___.<span class="string">'__   </span></div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What application do you want to serve? (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to inverse selection)</div><div class="line">❯◯ webapp</div><div class="line"> ◯ server</div></pre></td></tr></table></figure>
@@ -454,8 +546,8 @@
     <title>Real Time Stats Example</title>
     <link href="http://fireloop.io/en/realtime-stats-example/"/>
     <id>http://fireloop.io/en/realtime-stats-example/</id>
-    <published>2016-12-26T23:47:21.368Z</published>
-    <updated>2016-12-27T17:45:16.600Z</updated>
+    <published>2017-04-18T11:17:14.355Z</published>
+    <updated>2017-04-18T11:17:14.355Z</updated>
     
     <content type="html"><![CDATA[<figure class="image-bubble">
                 <div class="img-lightbox">
@@ -547,8 +639,8 @@
     <title>Hello World</title>
     <link href="http://fireloop.io/en/hello-world/"/>
     <id>http://fireloop.io/en/hello-world/</id>
-    <published>2016-12-26T23:47:21.368Z</published>
-    <updated>2016-12-26T19:11:13.112Z</updated>
+    <published>2017-04-18T11:17:14.354Z</published>
+    <updated>2017-04-18T11:17:14.355Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -574,8 +666,8 @@
     <title>Getting Started</title>
     <link href="http://fireloop.io/en/getting-started/"/>
     <id>http://fireloop.io/en/getting-started/</id>
-    <published>2016-12-26T23:47:21.368Z</published>
-    <updated>2016-12-27T17:45:16.599Z</updated>
+    <published>2017-04-18T11:17:14.354Z</published>
+    <updated>2017-04-18T11:17:14.354Z</updated>
     
     <content type="html"><![CDATA[<p><a href="http://fireloop.io">FireLoop</a> is a <a href="http://nodejs.org" target="_blank" rel="external">NodeJS</a> Real-Time Platform that allows you to build modern and complex applications by seamlessly integrating the amazing technologies from the MEAN Stack; Like the IBM’s <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>, Google’s <a href="http://angular.io" target="_blank" rel="external">Angular 2</a>, Telerik’s <a href="http://nativescript.org" target="_blank" rel="external">NativeScript 2</a> and <a href="http://ionic.io" target="_blank" rel="external">Ionic 2</a> Frameworks.</p>
 <p><a href="http://fireloop.io">FireLoop</a> also provides you with exclusive modules that will allow you to automatically build your <a href="https://firebase.google.com/" target="_blank" rel="external">FireBase</a> alike Real-Time APIs, Client SDKs, Statistics, <strong>Back and Front Ends development in <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a>!!!</strong>.</p>
@@ -607,8 +699,8 @@
     <title>Creating FireLoop Models</title>
     <link href="http://fireloop.io/en/creating-fireloop-models/"/>
     <id>http://fireloop.io/en/creating-fireloop-models/</id>
-    <published>2016-12-26T23:47:21.352Z</published>
-    <updated>2016-12-27T17:45:16.598Z</updated>
+    <published>2017-04-18T11:17:14.353Z</published>
+    <updated>2017-04-18T11:17:14.354Z</updated>
     
     <content type="html"><![CDATA[<p>When you start building a system, the fist thing you need to do right after your setup, is to start creating your API Models.</p>
 <p>This models are similar to <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> Models, but with a difference… This models will be created and executed using <a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a> instead of JavaScript. (POW!)</p>
@@ -629,31 +721,11 @@
   </entry>
   
   <entry>
-    <title>Creating Client Applications</title>
-    <link href="http://fireloop.io/en/creating-client-apps/"/>
-    <id>http://fireloop.io/en/creating-client-apps/</id>
-    <published>2016-12-26T23:47:21.336Z</published>
-    <updated>2016-12-27T17:45:16.596Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop</div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? Generate Angular2 Client</div><div class="line"></div><div class="line">     _-----_     </div><div class="line">    |       |    ╭──────────────────────────╮</div><div class="line">    |--(o)--|    │ Lets<span class="string">'s create an Angular │</span></div><div class="line">   `---------´   │      2 Application!      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __'.___.<span class="string">'__   </span></div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What type of Angular 2 Application do you want to create? 1.- Angular 2 Web</div><div class="line">? What's the name of your application? (webapp)</div></pre></td></tr></table></figure>
-<p>After your application is created, it will automatically have installed your <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">software development kit</a>, but any time you <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-FireLoop-Models" target="_blank" rel="external">create a new model</a>; You will need to re-build your SDK by <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">following this instructions</a>.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Creating Client SDK</title>
     <link href="http://fireloop.io/en/creating-client-sdk/"/>
     <id>http://fireloop.io/en/creating-client-sdk/</id>
-    <published>2016-12-26T23:47:21.336Z</published>
-    <updated>2016-12-28T19:07:49.922Z</updated>
+    <published>2017-04-18T11:17:14.353Z</published>
+    <updated>2017-04-18T11:17:14.353Z</updated>
     
     <content type="html"><![CDATA[<p>The <a href="http://fireloop.io">FireLoop</a> integration is built in the SDK, so you just need to generate one and install it by using the CLI Tool.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop</div><div class="line"></div><div class="line">     _-----_     ╭──────────────────────────╮</div><div class="line">    |       |    │   Welcome to FireLoop!   │</div><div class="line">    |--(o)--|    │  The MEAN Stack Platform │</div><div class="line">   `---------´   │      by MEAN Expert      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __<span class="string">'.___.'</span>__   </div><div class="line"> ´   `  |° ´ Y `</div><div class="line"></div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? Generate Angular2 SDK</div><div class="line">? For <span class="built_in">which</span> application <span class="keyword">do</span> you want to build an SDK? (Use arrow keys)</div><div class="line">❯ webapp</div><div class="line">? What SDK features <span class="keyword">do</span> you want to include?</div><div class="line"> (*) Enable PubSub + IO + FireLoop functionality</div><div class="line">&gt;(*) Add default values <span class="keyword">in</span> models</div><div class="line">? Do you want to generate ONLY FireLoop SDK + Auth Services? (Y/n)</div></pre></td></tr></table></figure>
@@ -672,11 +744,31 @@
   </entry>
   
   <entry>
+    <title>Creating Client Applications</title>
+    <link href="http://fireloop.io/en/creating-client-apps/"/>
+    <id>http://fireloop.io/en/creating-client-apps/</id>
+    <published>2017-04-18T11:17:14.352Z</published>
+    <updated>2017-04-18T11:17:14.352Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop</div><div class="line">? What <span class="keyword">do</span> you want to <span class="keyword">do</span>? Generate Angular2 Client</div><div class="line"></div><div class="line">     _-----_     </div><div class="line">    |       |    ╭──────────────────────────╮</div><div class="line">    |--(o)--|    │ Lets<span class="string">'s create an Angular │</span></div><div class="line">   `---------´   │      2 Application!      │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __'.___.<span class="string">'__   </span></div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What type of Angular 2 Application do you want to create? 1.- Angular 2 Web</div><div class="line">? What's the name of your application? (webapp)</div></pre></td></tr></table></figure>
+<p>After your application is created, it will automatically have installed your <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">software development kit</a>, but any time you <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-FireLoop-Models" target="_blank" rel="external">create a new model</a>; You will need to re-build your SDK by <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">following this instructions</a>.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Comparison Table</title>
     <link href="http://fireloop.io/en/comparison-table/"/>
     <id>http://fireloop.io/en/comparison-table/</id>
-    <published>2016-12-26T23:47:21.305Z</published>
-    <updated>2016-12-27T17:45:16.595Z</updated>
+    <published>2017-04-18T11:17:14.351Z</published>
+    <updated>2017-04-18T11:17:14.351Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Comparison-Table"><a href="#Comparison-Table" class="headerlink" title="Comparison Table"></a>Comparison Table</h2><table>
 <thead>
@@ -764,8 +856,8 @@
     <title>Api</title>
     <link href="http://fireloop.io/en/api/"/>
     <id>http://fireloop.io/en/api/</id>
-    <published>2016-12-26T23:47:21.305Z</published>
-    <updated>2016-12-27T17:45:16.595Z</updated>
+    <published>2017-04-18T11:17:14.350Z</published>
+    <updated>2017-04-18T11:17:14.350Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>You should <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-Applications" target="_blank" rel="external">create an application</a> and <a href="https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-SDK" target="_blank" rel="external">software development kit</a> by using the <a href="http://fireloop.io">FireLoop</a> CLI Tool before being able to use the following API.</p>
@@ -832,34 +924,6 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;You should &lt;a href=&quot;https://github.com/mean-expert-official/fireloop.io/wiki/Creating-Client-Applications&quot; target=&quot;_blank&quot; r
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>categories</title>
-    <link href="http://fireloop.io/en/categories/index/"/>
-    <id>http://fireloop.io/en/categories/index/</id>
-    <published>2016-12-26T16:27:27.000Z</published>
-    <updated>2016-12-26T16:27:41.398Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>tags</title>
-    <link href="http://fireloop.io/en/tags/index/"/>
-    <id>http://fireloop.io/en/tags/index/</id>
-    <published>2016-12-26T16:26:41.000Z</published>
-    <updated>2016-12-26T16:27:15.229Z</updated>
-    
-    <summary type="html">
     
     </summary>
     

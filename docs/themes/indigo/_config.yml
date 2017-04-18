@@ -29,12 +29,15 @@ menu:
   fire:
     text: Real Time Stats Example
     url: /realtime-stats-example/
+  free-code-camp:
+    text: Scaling Fireloop
+    url: /scaling-fireloop/
   server:
     text: Serving Applications
     url: /serving-apps/
-  github:
-    url: https://github.com/mean-expert-official/fireloop.io
-    target: _blank
+  # github:
+  #   url: https://github.com/mean-expert-official/fireloop.io
+  #   target: _blank
 
 rss: /atom.xml
 

@@ -22,25 +22,25 @@ ga('send', 'pageview');
     
     
     
-    <title>Sirviendo Aplicaciones | Fireloop Documentation | Designed for Modern Real-Time Applications by MEAN Expert.</title>
+    <title>Escalando FireLoop | Fireloop Documentation | Designed for Modern Real-Time Applications by MEAN Expert.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#C13A00">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="FireLoop.io              FireLoop es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (incl">
+    <meta name="description" content="FireLoop.io              Escalando FireLoopConstruir aplicaciones con FireLoop es agradable y fácil, pero n">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sirviendo Aplicaciones">
-<meta property="og:url" content="http://fireloop.io/es/serving-apps/index.html">
+<meta property="og:title" content="Escalando FireLoop">
+<meta property="og:url" content="http://fireloop.io/es/scaling-fireloop/index.html">
 <meta property="og:site_name" content="Fireloop Documentation">
-<meta property="og:description" content="FireLoop.io              FireLoop es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (incl">
+<meta property="og:description" content="FireLoop.io              Escalando FireLoopConstruir aplicaciones con FireLoop es agradable y fácil, pero n">
 <meta property="og:image" content="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png">
-<meta property="og:updated_time" content="2017-04-18T11:17:14.366Z">
+<meta property="og:updated_time" content="2017-04-18T12:16:33.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sirviendo Aplicaciones">
-<meta name="twitter:description" content="FireLoop.io              FireLoop es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (incl">
+<meta name="twitter:title" content="Escalando FireLoop">
+<meta name="twitter:description" content="FireLoop.io              Escalando FireLoopConstruir aplicaciones con FireLoop es agradable y fácil, pero n">
 <meta name="twitter:image" content="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png">
     
         <link rel="alternative" href="/atom.xml" title="Fireloop Documentation" type="application/atom+xml">
@@ -148,7 +148,7 @@ ga('send', 'pageview');
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Sirviendo Aplicaciones</div>
+        <div class="flex-col header-title ellipsis">Escalando FireLoop</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -172,9 +172,9 @@ ga('send', 'pageview');
         
           
             <option
-              value="/en/serving-apps/"
+              value="/en/scaling-fireloop/"
               
-              data-href="/en/serving-apps/"
+              data-href="/en/scaling-fireloop/"
             >
               English
             </option>
@@ -198,7 +198,7 @@ ga('send', 'pageview');
         <h1 class="title">Docs</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-04-18T11:17:14.365Z" itemprop="datePublished" class="page-time">
+                <time datetime="2017-04-18T11:40:54.485Z" itemprop="datePublished" class="page-time">
   2017-04-18
 </time>
 
@@ -218,13 +218,20 @@ ga('send', 'pageview');
 
 <div class="container body-wrap">
     
-<article id="post-serving-apps"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Escalando-FireLoop"><span class="post-toc-number">1.</span> <span class="post-toc-text">Escalando FireLoop</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Requerimientos"><span class="post-toc-number">2.</span> <span class="post-toc-text">Requerimientos</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Creando-el-DataSource"><span class="post-toc-number">3.</span> <span class="post-toc-text">Creando el DataSource</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Habilitar-el-modo-Clustering"><span class="post-toc-number">4.</span> <span class="post-toc-text">Habilitar el modo Clustering</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-scaling-fireloop"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Sirviendo Aplicaciones</h1>
+        <h1 class="post-card-title">Escalando FireLoop</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-4-18 7:17" datetime="2017-04-18T11:17:14.365Z"  itemprop="datePublished">2017-04-18</time>
+            <time class="post-time" title="2017-4-18 7:40" datetime="2017-04-18T11:40:54.485Z"  itemprop="datePublished">2017-04-18</time>
 
             
 
@@ -246,10 +253,24 @@ ga('send', 'pageview');
                 </div>
                 <div class="image-caption">FireLoop.io</div>
             </figure>
-<p><a href="http://fireloop.io">FireLoop</a> es capaz de ejecutar todas las aplicaciones de su proyecto a la vez (incluyendo su servidor), para esto puede usar el comando <code>fireloop serve</code> y seleccionar las aplicaciones que desea servir.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> myproject</div><div class="line">$ fireloop serve</div><div class="line"></div><div class="line"></div><div class="line">     _-----_     </div><div class="line">    |       |    ╭──────────────────────────╮</div><div class="line">    |--(o)--|    │      Let<span class="string">'s serve an      │</span></div><div class="line">   `---------´   │       application!       │</div><div class="line">    ( _´U`_ )    ╰──────────────────────────╯</div><div class="line">    /___A___\   /</div><div class="line">     |  ~  |     </div><div class="line">   __'.___.<span class="string">'__   </span></div><div class="line"> ´   `  |° ´ Y ` </div><div class="line"></div><div class="line">? What application do you want to serve? (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to inverse selection)</div><div class="line">❯◯ webapp</div><div class="line"> ◯ server</div></pre></td></tr></table></figure>
-<p>Es importante tener en cuenta que tanto las aplicaciones de cliente como de servidor se ejecutarán en <a href="http://typescriptlang.org" target="_blank" rel="external">TypeScript</a> y se cargarán con mecanismos livereload según el entorno.</p>
-<p>Esto significa que una vez que sus aplicaciones se estén ejecutando, éstas serán reiniciadas por cualquier modificación de código y recompiladas para ser recargadas en vivo.</p>
+<h2 id="Escalando-FireLoop"><a href="#Escalando-FireLoop" class="headerlink" title="Escalando FireLoop"></a>Escalando FireLoop</h2><p>Construir aplicaciones con <a href="http://fireloop.io">FireLoop</a> es agradable y fácil, pero no valdría nada si la plataforma no escalara a varios servidores o incluso procese instancias.</p>
+<p>La siguiente documentación explicará cómo habilitar <a href="http://fireloop.io">FireLoop</a> para trabajar en entornos agrupados.</p>
+<h2 id="Requerimientos"><a href="#Requerimientos" class="headerlink" title="Requerimientos"></a>Requerimientos</h2><ul>
+<li><a href="https://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">SDK Builder</a> v2.1.0-rc.10+</li>
+<li><a href="http://github.com/mean-expert-official/loopback-component-realtime" target="_blank" rel="external">LoopBack Component Real-Time</a> v1.0.0-rc.5+</li>
+<li><a href="https://socket.io" target="_blank" rel="external">Socket IO</a> Adaptador <em>(cualquier socket.io-adapter como <a href="https://www.npmjs.com/package/socket.io-adapter-mongo" target="_blank" rel="external">socket.io-adapter-mongo</a>, <a href="https://www.npmjs.com/package/socket.io-redis" target="_blank" rel="external">socket.io-redis</a>, etc)</em></li>
+<li>PubSub capa de base de datos como <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> o <a href="https://redis.io/" target="_blank" rel="external">Redis</a></li>
+</ul>
+<h2 id="Creando-el-DataSource"><a href="#Creando-el-DataSource" class="headerlink" title="Creando el DataSource"></a>Creando el DataSource</h2><p>Independientemente del origen de datos que seleccione para sus modelos de API, deberá crear una fuente de datos que apunte a una base de datos <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> o <a href="https://redis.io/" target="_blank" rel="external">Redis</a>.</p>
+<p>Si ya seleccionó <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> o <a href="https://redis.io/" target="_blank" rel="external">Redis</a> como base de datos para sus Modelos de API, no necesitará crear una nueva fuente de datos, los usuarios que utilicen otras bases de datos como SQL, <em> requerirá crear una nueva fuente de datos apuntando a <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> O <a href="https://redis.io/" target="_blank" rel="external">Redis</a> </em> e instale su correspondiente dependencia de <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> to/project/api</div><div class="line">$ npm install --save [loopback-connector-mongodb | loopback-connector-redis]</div></pre></td></tr></table></figure>
+<p>y como cualquier otro origen de datos <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a>, se configura de la siguiente forma:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"mongodb"</span>: &#123;</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"mongodb://user:pass@host:27016/dbname"</span>,</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"mongodb"</span>,</div><div class="line">    <span class="attr">"connector"</span>: <span class="string">"mongodb"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>server/datasources.json</code></p>
+<h2 id="Habilitar-el-modo-Clustering"><a href="#Habilitar-el-modo-Clustering" class="headerlink" title="Habilitar el modo Clustering"></a>Habilitar el modo Clustering</h2><p>Para habilitar el modo de Clustering, necesitamos realizar las siguientes configuraciones:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"@mean-expert/loopback-component-realtime"</span>: &#123;</div><div class="line">    <span class="attr">"auth"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"debug"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"driver"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"socket.io"</span>,</div><div class="line">      <span class="attr">"options"</span>: &#123;</div><div class="line">        <span class="attr">"adapter"</span>: &#123;</div><div class="line">          <span class="attr">"name"</span>: <span class="string">"socket.io-adapter-mongo"</span>,</div><div class="line">          <span class="attr">"datasource"</span>: <span class="string">"mongodb"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Tenga en cuenta que <code>adapter.name</code> debe ser el adaptador que ha seleccionado e instalado antes de este proceso, así como el<code>adapter.datasource</code> debe ser el nombre de la fuente de datos que ha creado.</p>
+<p>Después de seguir las configuraciones anteriores, <a href="http://fireloop.io">FireLoop</a> funcionará en entornos de procesos o servidores agrupados.</p>
 
         </div>
 
@@ -257,11 +278,11 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    Last Updated：<time datetime="2017-04-18T11:17:14.366Z" title="2017-4-18 7:17" itemprop="dateUpdated">2017:18:7:17</time>
+    Last Updated：<time datetime="2017-04-18T12:16:33.545Z" title="2017-4-18 8:16" itemprop="dateUpdated">2017:18:8:16</time>
 </span><br>
 
 
-        All rigths Reserved：<a href="/es/serving-apps/" target="_blank" rel="external">http://fireloop.io/es/serving-apps/</a>
+        All rigths Reserved：<a href="/es/scaling-fireloop/" target="_blank" rel="external">http://fireloop.io/es/scaling-fireloop/</a>
     </div>
     <footer>
         <a href="http://fireloop.io">
@@ -287,20 +308,13 @@ ga('send', 'pageview');
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/es/realtime-stats-example/" id="post-prev" class="post-nav-link">
+      <a href="/en/scaling-fireloop/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Ejemplo de Estatisticas RealTime</h4>
+        <h4 class="title">Scaling FireLoop</h4>
       </a>
     </div>
   
 
-  
-    <div class="waves-block waves-effect next">
-      <a href="/en/scaling-fireloop/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Scaling FireLoop</h4>
-      </a>
-    </div>
   
 </nav>
 
@@ -309,7 +323,7 @@ ga('send', 'pageview');
    <!-- 
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="serving-apps" data-title="Sirviendo Aplicaciones" data-url="http://fireloop.io/es/serving-apps/"></div>
+    <div class="ds-thread" data-thread-key="scaling-fireloop" data-title="Escalando FireLoop" data-url="http://fireloop.io/es/scaling-fireloop/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
