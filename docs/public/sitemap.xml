@@ -2,156 +2,170 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://fireloop.io/es/scaling-fireloop/</loc>
+    <loc>http://fireloop.io/es/handle-disconnections/</loc>
     
-    <lastmod>2017-04-18T12:16:33.545Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/en/scaling-fireloop/</loc>
-    
-    <lastmod>2017-04-18T12:16:13.297Z</lastmod>
+    <lastmod>2017-05-04T21:41:26.411Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://fireloop.io/es/serving-apps/</loc>
+    <loc>http://fireloop.io/en/handle-disconnections/</loc>
     
-    <lastmod>2017-04-18T11:17:14.366Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/realtime-stats-example/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.364Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/getting-started/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.362Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/hello-world/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.362Z</lastmod>
+    <lastmod>2017-05-04T21:41:11.580Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://fireloop.io/es/creating-fireloop-models/</loc>
     
-    <lastmod>2017-04-18T11:17:14.361Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/creating-client-sdk/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.361Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/comparison-table/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.359Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/creating-client-apps/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.359Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/es/api/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.358Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://fireloop.io/en/tags/index/</loc>
     
-    <lastmod>2017-04-18T11:17:14.357Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://fireloop.io/en/serving-apps/</loc>
+    <loc>http://fireloop.io/es/serving-apps/</loc>
     
-    <lastmod>2017-04-18T11:17:14.356Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/en/realtime-stats-example/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.355Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://fireloop.io/en/hello-world/</loc>
+    <loc>http://fireloop.io/es/scaling-fireloop/</loc>
     
-    <lastmod>2017-04-18T11:17:14.355Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://fireloop.io/en/getting-started/</loc>
+    <loc>http://fireloop.io/es/realtime-stats-example/</loc>
     
-    <lastmod>2017-04-18T11:17:14.354Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/es/creating-client-sdk/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/es/hello-world/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/es/api/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/es/comparison-table/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/es/creating-client-apps/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/es/getting-started/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.975Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://fireloop.io/en/creating-fireloop-models/</loc>
     
-    <lastmod>2017-04-18T11:17:14.354Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/en/creating-client-sdk/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.353Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://fireloop.io/en/creating-client-apps/</loc>
-    
-    <lastmod>2017-04-18T11:17:14.352Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://fireloop.io/en/comparison-table/</loc>
     
-    <lastmod>2017-04-18T11:17:14.351Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/scaling-fireloop/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/realtime-stats-example/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/hello-world/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/serving-apps/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/getting-started/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://fireloop.io/en/categories/index/</loc>
     
-    <lastmod>2017-04-18T11:17:14.351Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/creating-client-sdk/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://fireloop.io/en/creating-client-apps/</loc>
+    
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://fireloop.io/en/api/</loc>
     
-    <lastmod>2017-04-18T11:17:14.350Z</lastmod>
+    <lastmod>2017-05-04T21:13:32.971Z</lastmod>
     
   </url>
   
