@@ -26,6 +26,9 @@ menu:
   database:
     text: Creating FireLoop Models
     url: /creating-fireloop-models/
+  plug:
+    text: Handle Disconnections
+    url: /handle-disconnections/
   fire:
     text: Real Time Stats Example
     url: /realtime-stats-example/
