@@ -1,5 +1,6 @@
 "use strict";
-var fs = require('fs');
+Object.defineProperty(exports, "__esModule", { value: true });
+var fs = require("fs");
 var yosay = require('yosay');
 var generators = require('yeoman-generator');
 var chalk = require('chalk');
@@ -22,4 +23,4 @@ module.exports = generators.extend({
         this.log(chalk.green('Updating: ', this.options.filePath));
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/jsonupdate/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/jsonupdate/index.js.map

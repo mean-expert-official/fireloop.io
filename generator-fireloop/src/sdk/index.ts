@@ -4,6 +4,8 @@ var path = require('path');
 var yosay = require('yosay');
 var generators = require('yeoman-generator');
 import * as chalk from 'chalk';
+import * as async from 'async';
+
 /**
  * @module Builder [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
@@ -12,70 +14,65 @@ import * as chalk from 'chalk';
  */
 module.exports = generators.extend({
   /**
-   * @method prompting
-   * @author Brannon N. Darby II <gh:ng-logic>
-   * @description
-   * If this.options.showOptions = false, build SDK with default options
-   * Otherwise, prompt user with options and use selections when building SDK
+   * @module fireloop:sdk
+   * @author Brannon N. Darby II <gh:brannon-darby>
    */
-  prompting: function () {
-    let keys: { IO: string, FIRELOOP: string, DEFAULT_VALUES: string } = {
-      IO: 'Enable PubSub + IO + FireLoop functionality',
-      FIRELOOP: 'Generate ONLY FireLoop SDK + Auth Services',
-      DEFAULT_VALUES: 'Add default values in models'
-    };
-    let choices: string[] = [keys.IO, keys.DEFAULT_VALUES];
-    // TODO: set FIRELOOP to true after fix
-    let selected: { IO: boolean, FIRELOOP: boolean, DEFAULT_VALUES: boolean } = {
-      IO: true,
-      FIRELOOP: false, // FireLoop only will avoid to create LoopBack services, by default we want both of them.
-      DEFAULT_VALUES: false
-    };
-    this.selected = selected;
-    if (this.options.showOptions) {
-      return this.prompt([{
-        type: 'checkbox',
-        name: 'list',
-        message: 'What SDK features do you want to include?',
-        default: 0,
-        choices: choices
-      }]).then(function (answers: { list: string[] }) {
-        answers.list.forEach((answer: string) => {
-          if (answer === keys.IO) {
-            this.selected.IO = true;
-          } else if (answer === keys.DEFAULT_VALUES) {
-            this.selected.DEFAULT_VALUES = true;
-          }
-        });
-        if (selected.IO) {
-          return this.prompt([{
-            type: 'confirm',
-            name: 'fl',
-            message: 'Do you want to generate ONLY FireLoop SDK + Auth Services?'
-          }]).then(function (answers: { fl: boolean }) {
-            this.selected.FIRELOOP = answers.fl;
-          }.bind(this));
-        }
-      }.bind(this));
-    }
+  constructor: function() {
+    generators.apply(this, arguments);
+    this.log(yosay('Let\'s build an SDK!'));
   },
 
-  buildSDK: function () {
+  prompting: function() {
+
+    const sdkOptions: {
+      IO: string;
+      FIRELOOP_ONLY: string;
+      NGRX: string;
+      DEFAULT_VALUES: string;
+    } = {
+        IO: 'Enable PubSub + IO + FireLoop functionality',
+        FIRELOOP_ONLY: 'Generate ONLY FireLoop SDK + Auth Services',
+        NGRX: 'Enable NGRX functionality',
+        DEFAULT_VALUES: 'Add default values in models'
+      };
+
+    const choices: string[] = [
+      sdkOptions.IO,
+      sdkOptions.FIRELOOP_ONLY,
+      sdkOptions.NGRX,
+      sdkOptions.DEFAULT_VALUES,
+    ];
+
+    const defaultSelected: string[] = [
+      sdkOptions.IO,
+    ];
+
+    let selected = {};
+
+    return this.prompt([{
+      type: 'checkbox',
+      name: 'list',
+      message: 'What SDK features do you want to include?',
+      default: defaultSelected,
+      choices: choices
+    }]).then(function(answers: { list: string[] }) {
+      answers.list.forEach((answer: string) => {
+        this.selected[answer] = true;
+      })
+    }.bind(this));
+  },
+
+  buildSDK: function() {
 
     this.options.clients = this.config.get('clients') || {};
     let serverPath: string;
-    console.log('Serching for server path');
+    console.log('Searching for server path...');
     Object.keys(this.options.clients).forEach((name: string) => {
       if (this.options.clients[name].type === 'server') {
         serverPath = this.options.clients[name].path;
-        console.log('Serching path found: ', serverPath);
+        console.log('Server path found: ', serverPath);
       }
     });
-
-    this.log(chalk.green(`SERVER PATH: ${serverPath}`));
-    this.log(chalk.green(`IO: ${this.selected.IO}`));
-    this.log(chalk.green(`FIRELOOP ONLY: ${this.selected.FIRELOOP}`));
-    this.log(chalk.green(`DEFAULT_VALUES: ${this.selected.DEFAULT_VALUES}`));
 
     this.spawnCommand(
       'node_modules/.bin/lb-sdk',
@@ -86,9 +83,10 @@ module.exports = generators.extend({
           ? 'ng2web'
           : this.options.clientType.trim(),
         '-w', 'enabled',
-        '-i', this.selected.IO ? 'enabled' : 'disabled',
-        '-f', this.selected.FIRELOOP ? 'enabled' : 'disabled',
-        '-v', this.selected.DEFAULT_VALUES ? 'enabled' : 'disabled'
+        '-i', this.selected[this.sdkOptions.IO] ? 'enabled' : 'disabled',
+        '-f', this.selected[this.sdkOptions.FIRELOOP] ? 'enabled' : 'disabled',
+        '-n', this.selected[this.sdkOptions.NGRX] ? 'enabled' : 'disabled',
+        '-v', this.selected[this.sdkOptions.DEFAULT_VALUES] ? 'enabled' : 'disabled'
       ],
       {
         shell: true,
@@ -96,5 +94,4 @@ module.exports = generators.extend({
       }
     );
   }
-
 });

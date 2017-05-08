@@ -1,10 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var yosay = require('yosay');
 var fs = require('fs');
 var path = require('path');
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
-var ejs = require('ejs');
+var chalk = require("chalk");
+var ejs = require("ejs");
 /**
  * @module Angular 2 [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
@@ -104,4 +105,4 @@ module.exports = generators.extend({
         }
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2web/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2web/index.js.map

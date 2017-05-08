@@ -11,7 +11,7 @@
     {
       "name": "Brannon N. Darby II",
       "email": "bdarby86@gmail.com",
-      "url": "https://github.com/ng-logic"
+      "url": "https://github.com/brannon-darby"
     },
     {
       "name": "Andres D. Jimenez S",
@@ -42,6 +42,7 @@
     "chalk": "1.1.3",
     "change-case": "3.0.0",
     "command-exists": "1.0.2",
+    "concurrently": "^3.4.0",
     "nodemon": "1.11.0",
     "rimraf": "2.5.4",
     "snyk": "1.22.1",

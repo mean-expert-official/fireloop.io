@@ -1,13 +1,14 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var yosay = require('yosay');
 var path = require('path');
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
+var chalk = require("chalk");
 /**
  * @module FireLoopGenerator [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
  * @description
- * This module generates and configure a FireLoop Server
+ * This module generates and configures a FireLoop Server
  */
 module.exports = generators.extend({
     constructor: function () {
@@ -22,37 +23,46 @@ module.exports = generators.extend({
          * TODO: Add user interface for those app clients that are mobile,
          * ask if wants to run IOS or Android
          */
-        var spawns = {
-            server: {
-                cmd: path.join(require.resolve('nodemon').replace(/nodemon(\/|\\)lib(\/|\\)nodemon.js/, ''), '.bin/nodemon')
-            },
-            ng2web: {
-                cmd: path.join(require.resolve('@angular/cli').replace(/@angular(\/|\\)cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, ''), '.bin/ng'),
-                argv: ['serve']
-            }
-        };
         return this.prompt([{
                 type: 'checkbox',
                 name: 'list',
                 message: 'What application do you want to serve?',
-                default: 0,
+                default: choices,
                 choices: choices
             }]).then(function (answers) {
-            var _this = this;
-            answers.list.forEach(function (answer) {
-                var client = clients[answer];
-                var spawn = spawns[client.type];
-                var type = client.type === 'server' ? 'Server' : 'Client';
-                if (!spawn.cmd) {
-                    _this.log(chalk.red("Oops " + type + " is not yet implemented, try by running nativescript or ionic commands within your client app."));
-                }
-                _this.log(chalk.green("\tLoading " + type + " Application: " + answer));
-                _this.spawnCommand(spawn.cmd, spawn.argv, { shell: true, cwd: path.normalize(client.path) })
-                    .on('exit', function (code) {
-                    _this.log(chalk.green("\n\n" + type + " Application Closed: " + answer));
-                });
-            });
+            this.selected = answers.list;
         }.bind(this));
+    },
+    writing: function () {
+        var _this = this;
+        var clients = this.config.get('clients') || {};
+        var spawns = {
+            server: {
+                cmd: path.join(require.resolve('nodemon').replace(/nodemon(\/|\\)lib(\/|\\)nodemon.js/, ''), '.bin/nodemon'),
+                argv: ['.']
+            },
+            ng2web: {
+                cmd: path.join(require.resolve('@angular/cli').replace(/@angular(\/|\\)cli(\/|\\)lib(\/|\\)cli(\/|\\)index.js/, ''), '.bin/ng'),
+                argv: ['serve --progress false']
+            }
+        };
+        var clientsToServe = [];
+        this.selected.forEach(function (answer) {
+            var client = clients[answer];
+            var spawn = spawns[client.type];
+            var type = client.type === 'server' ? 'Server' : 'Client';
+            if (!spawn.cmd) {
+                _this.log(chalk.red("Oops " + type + " is not yet implemented, try by running nativescript or ionic commands within your client app."));
+            }
+            _this.log(chalk.green("\tLoading " + type + " Application: " + answer));
+            clientsToServe.push({ cmd: spawn.cmd, argv: spawn.argv, opt: { shell: true, cwd: _this.destinationPath(client.path) } });
+        });
+        var clientList = [];
+        clientsToServe.forEach(function (client) {
+            clientList.push("cd " + client.opt.cwd + "/ && " + client.cmd + " " + client.argv);
+        });
+        var concurrent = path.join(require.resolve('concurrently').replace(/concurrently(\/|\\)src(\/|\\)main.js/, ''), '.bin/concurrently');
+        this.spawnCommand(concurrent, clientList);
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/serve/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/serve/index.js.map

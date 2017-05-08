@@ -1,7 +1,8 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var yosay = require('yosay');
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
+var chalk = require("chalk");
 /**
  * @module FireLoopGenerator [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
@@ -91,4 +92,4 @@ module.exports = generators.extend({
         }.bind(this));
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/app/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/app/index.js.map
