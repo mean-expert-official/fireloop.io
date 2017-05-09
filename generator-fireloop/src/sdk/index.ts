@@ -24,6 +24,17 @@ module.exports = generators.extend({
 
   prompting: function() {
 
+    this.options.clients = this.config.get('clients') || {};
+    // Filter clients only not server.
+    let clients: string[] = [];
+    if (typeof this.options.clients === 'object') {
+      Object.keys(this.options.clients).forEach((name: string) => {
+        if (this.options.clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
+          clients.push(name);
+        }
+      });
+    }
+
     let sdkOptions: {
       IO: string;
       FIRELOOP_ONLY: string;
@@ -36,7 +47,7 @@ module.exports = generators.extend({
         DEFAULT_VALUES: 'Add default values in models'
       };
 
-    let choices: string[] = [
+    let features: string[] = [
       sdkOptions.IO,
       sdkOptions.FIRELOOP_ONLY,
       sdkOptions.NGRX,
@@ -47,21 +58,43 @@ module.exports = generators.extend({
       sdkOptions.IO,
     ];
 
+    let sharedPaths: any = {
+      ng2web: 'src/app/shared/sdk',
+      ng2universal: 'src/app/shared/sdk',
+      ng2native: 'app/shared/sdk',
+      ng2ionic: 'src/app/shared/sdk'
+    };
+
     return this.prompt([{
-      type: 'checkbox',
-      name: 'list',
-      message: 'What SDK features do you want to include?',
-      default: defaultSelected,
-      choices: choices
-    }]).then(function(answers: { list: string[] }) {
-      this.selected = answers.list;
-      this.sdkOptions = sdkOptions;
-    }.bind(this));
+      type: 'list',
+      name: 'client',
+      message: 'For which application do you want to build an SDK?',
+      default: 0,
+      choices: clients
+    }, {
+        type: 'checkbox',
+        name: 'sdkFeatures',
+        message: 'What SDK features do you want to include?',
+        default: defaultSelected,
+        choices: features,
+        store: true
+      }]).then(function(answers: any) {
+        this.client = this.options.clients[answers.client];
+        this.client.name = answers.client;
+        this.sdkFeatures = answers.sdkFeatures;
+        this.sdkOptions = sdkOptions;
+        return this.prompt([{
+          type: 'input',
+          name: 'sdkPath',
+          message: 'In what directory should the SDK be created?',
+          default: this.client.sdkPath || path.join(this.client.path, sharedPaths[this.client.type])
+        }]).then(function(answers: any) {
+          this.sdkPath = answers.sdkPath;
+        }.bind(this));
+      }.bind(this));
   },
 
   buildSDK: function() {
-
-    this.options.clients = this.config.get('clients') || {};
     let serverPath: string;
     console.log('Searching for server path...');
     Object.keys(this.options.clients).forEach((name: string) => {
@@ -75,20 +108,22 @@ module.exports = generators.extend({
       'node_modules/.bin/lb-sdk',
       [
         'server/server',
-        path.join('../', this.options.clientPath || 'webapp/src/app/shared/sdk'),
+        this.destinationPath(this.sdkPath || 'webapp/src/app/shared/sdk'),
         '-d', !this.options.clientType || this.options.clientType.match(/(ng2web|ng2ionic)/)
           ? 'ng2web'
           : this.options.clientType.trim(),
         '-w', 'enabled',
-        '-i', (this.selected.indexOf(this.sdkOptions.IO) > -1) ? 'enabled' : 'disabled',
-        '-f', (this.selected.indexOf(this.sdkOptions.FIRELOOP) > -1) ? 'enabled' : 'disabled',
-        '-n', (this.selected.indexOf(this.sdkOptions.NGRX) > -1) ? 'enabled' : 'disabled',
-        '-v', (this.selected.indexOf(this.sdkOptions.DEFAULT_VALUES) > -1) ? 'enabled' : 'disabled'
+        '-i', (this.sdkFeatures.indexOf(this.sdkOptions.IO) > -1) ? 'enabled' : 'disabled',
+        '-f', (this.sdkFeatures.indexOf(this.sdkOptions.FIRELOOP) > -1) ? 'enabled' : 'disabled',
+        '-n', (this.sdkFeatures.indexOf(this.sdkOptions.NGRX) > -1) ? 'enabled' : 'disabled',
+        '-v', (this.sdkFeatures.indexOf(this.sdkOptions.DEFAULT_VALUES) > -1) ? 'enabled' : 'disabled'
       ],
       {
         shell: true,
         cwd: this.destinationPath(serverPath)
       }
     );
+    this.options.clients[this.client.name].sdkPath = this.sdkPath;
+    this.config.set('clients', this.options.clients);
   }
 });

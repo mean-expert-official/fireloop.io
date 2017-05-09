@@ -69,4 +69,4 @@ module.exports = generators.extend({
         this.spawnCommand(concurrent, clientList);
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/desktop/fireloop.io/generator-fireloop/src/serve/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/serve/index.js.map

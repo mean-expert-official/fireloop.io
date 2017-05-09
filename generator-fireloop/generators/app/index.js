@@ -10,24 +10,32 @@ var chalk = require("chalk");
  * This module generates and configure a FireLoop Server
  */
 module.exports = generators.extend({
+    /**
+     * @module fireloop
+     * @author Brannon N. Darby II <gh:brannon-darby>
+     */
     constructor: function () {
         generators.apply(this, arguments);
         this.log(yosay('Welcome to FireLoop! \n The MEAN Stack Platform by MEAN Expert'));
     },
     prompting: function () {
+        var _this = this;
+        this.options.clients = this.config.get('clients') || {};
+        // Filter clients only not server.
+        var clients = [];
+        if (typeof this.options.clients === 'object') {
+            Object.keys(this.options.clients).forEach(function (name) {
+                if (_this.options.clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
+                    clients.push(name);
+                }
+            });
+        }
         var keys = {
             GENERATE_PROJECT: 'Generate FireLoop Project',
             GENERATE_CLIENT: 'Generate Angular2 Client',
             GENERATE_SDK: 'Generate Angular2 SDK',
             FIRELOOP_VERSION: 'Show FireLoop Version'
         };
-        var sharedPaths = {
-            ng2web: 'src/app/shared/sdk',
-            ng2universal: 'src/app/shared/sdk',
-            ng2native: 'app/shared/sdk',
-            ng2ionic: 'src/app/shared/sdk'
-        };
-        var clients = this.config.get('clients');
         var choices = new Array();
         if (!this.config.get('version')) {
             choices.push(keys.GENERATE_PROJECT);
@@ -35,17 +43,8 @@ module.exports = generators.extend({
         if (this.config.get('version')) {
             choices.push(keys.GENERATE_CLIENT);
         }
-        // Filter clients only not server.
-        var _clients = [];
-        if (typeof clients === 'object') {
-            Object.keys(clients).forEach(function (name) {
-                if (clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
-                    _clients.push(name);
-                }
-            });
-            if (_clients.length > 0) {
-                choices.push(keys.GENERATE_SDK);
-            }
+        if (clients.length > 0) {
+            choices.push(keys.GENERATE_SDK);
         }
         choices.push(keys.FIRELOOP_VERSION);
         return this.prompt([{
@@ -68,21 +67,7 @@ module.exports = generators.extend({
                     });
                     break;
                 case keys.GENERATE_SDK:
-                    this.prompt([{
-                            type: 'list',
-                            name: 'client',
-                            message: 'For which application do you want to build an SDK?',
-                            default: 0,
-                            choices: _clients
-                        }]).then(function (answers) {
-                        this.composeWith('fireloop:sdk', {
-                            options: {
-                                clientPath: clients[answers.client].path + "/" + sharedPaths[clients[answers.client].type],
-                                clientType: clients[answers.client].type,
-                                showOptions: true
-                            }
-                        });
-                    }.bind(this));
+                    this.composeWith('fireloop:sdk').on('end', function () { return done(); });
                     break;
                 case keys.FIRELOOP_VERSION:
                     var version = require('../../package.json').version;
@@ -92,4 +77,4 @@ module.exports = generators.extend({
         }.bind(this));
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/desktop/fireloop.io/generator-fireloop/src/app/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/app/index.js.map

@@ -112,4 +112,4 @@ function propertyBuilder(config) {
     });
     return "" + properties.join(",") + (properties.length > 0 ? '\n        ' : '');
 }
-//# sourceMappingURL=C:/Users/bdarby/desktop/fireloop.io/generator-fireloop/src/model/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/model/index.js.map
