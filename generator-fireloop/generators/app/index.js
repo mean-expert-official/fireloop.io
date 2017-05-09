@@ -92,4 +92,4 @@ module.exports = generators.extend({
         }.bind(this));
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/app/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/desktop/fireloop.io/generator-fireloop/src/app/index.js.map

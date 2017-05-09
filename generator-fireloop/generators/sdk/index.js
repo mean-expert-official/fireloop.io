@@ -34,7 +34,6 @@ module.exports = generators.extend({
         var defaultSelected = [
             sdkOptions.IO,
         ];
-        var selected = {};
         return this.prompt([{
                 type: 'checkbox',
                 name: 'list',
@@ -42,10 +41,8 @@ module.exports = generators.extend({
                 default: defaultSelected,
                 choices: choices
             }]).then(function (answers) {
-            var _this = this;
-            answers.list.forEach(function (answer) {
-                _this.selected[answer] = true;
-            });
+            this.selected = answers.list;
+            this.sdkOptions = sdkOptions;
         }.bind(this));
     },
     buildSDK: function () {
@@ -66,14 +63,14 @@ module.exports = generators.extend({
                 ? 'ng2web'
                 : this.options.clientType.trim(),
             '-w', 'enabled',
-            '-i', this.selected[this.sdkOptions.IO] ? 'enabled' : 'disabled',
-            '-f', this.selected[this.sdkOptions.FIRELOOP] ? 'enabled' : 'disabled',
-            '-n', this.selected[this.sdkOptions.NGRX] ? 'enabled' : 'disabled',
-            '-v', this.selected[this.sdkOptions.DEFAULT_VALUES] ? 'enabled' : 'disabled'
+            '-i', (this.selected.indexOf(this.sdkOptions.IO) > -1) ? 'enabled' : 'disabled',
+            '-f', (this.selected.indexOf(this.sdkOptions.FIRELOOP) > -1) ? 'enabled' : 'disabled',
+            '-n', (this.selected.indexOf(this.sdkOptions.NGRX) > -1) ? 'enabled' : 'disabled',
+            '-v', (this.selected.indexOf(this.sdkOptions.DEFAULT_VALUES) > -1) ? 'enabled' : 'disabled'
         ], {
             shell: true,
             cwd: this.destinationPath(serverPath)
         });
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/sdk/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/desktop/fireloop.io/generator-fireloop/src/sdk/index.js.map

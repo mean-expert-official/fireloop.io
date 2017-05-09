@@ -24,7 +24,7 @@ module.exports = generators.extend({
 
   prompting: function() {
 
-    const sdkOptions: {
+    let sdkOptions: {
       IO: string;
       FIRELOOP_ONLY: string;
       NGRX: string;
@@ -36,18 +36,16 @@ module.exports = generators.extend({
         DEFAULT_VALUES: 'Add default values in models'
       };
 
-    const choices: string[] = [
+    let choices: string[] = [
       sdkOptions.IO,
       sdkOptions.FIRELOOP_ONLY,
       sdkOptions.NGRX,
       sdkOptions.DEFAULT_VALUES,
     ];
 
-    const defaultSelected: string[] = [
+    let defaultSelected: string[] = [
       sdkOptions.IO,
     ];
-
-    let selected = {};
 
     return this.prompt([{
       type: 'checkbox',
@@ -56,9 +54,8 @@ module.exports = generators.extend({
       default: defaultSelected,
       choices: choices
     }]).then(function(answers: { list: string[] }) {
-      answers.list.forEach((answer: string) => {
-        this.selected[answer] = true;
-      })
+      this.selected = answers.list;
+      this.sdkOptions = sdkOptions;
     }.bind(this));
   },
 
@@ -83,10 +80,10 @@ module.exports = generators.extend({
           ? 'ng2web'
           : this.options.clientType.trim(),
         '-w', 'enabled',
-        '-i', this.selected[this.sdkOptions.IO] ? 'enabled' : 'disabled',
-        '-f', this.selected[this.sdkOptions.FIRELOOP] ? 'enabled' : 'disabled',
-        '-n', this.selected[this.sdkOptions.NGRX] ? 'enabled' : 'disabled',
-        '-v', this.selected[this.sdkOptions.DEFAULT_VALUES] ? 'enabled' : 'disabled'
+        '-i', (this.selected.indexOf(this.sdkOptions.IO) > -1) ? 'enabled' : 'disabled',
+        '-f', (this.selected.indexOf(this.sdkOptions.FIRELOOP) > -1) ? 'enabled' : 'disabled',
+        '-n', (this.selected.indexOf(this.sdkOptions.NGRX) > -1) ? 'enabled' : 'disabled',
+        '-v', (this.selected.indexOf(this.sdkOptions.DEFAULT_VALUES) > -1) ? 'enabled' : 'disabled'
       ],
       {
         shell: true,

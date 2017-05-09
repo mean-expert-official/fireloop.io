@@ -11,6 +11,10 @@ var chalk = require("chalk");
  * This module generates and configures a FireLoop Server
  */
 module.exports = generators.extend({
+    /**
+     * @module fireloop:serve
+     * @author Brannon N. Darby II <gh:brannon-darby>
+     */
     constructor: function () {
         generators.apply(this, arguments);
         this.log(yosay('Let\'s serve an application!'));
@@ -65,4 +69,4 @@ module.exports = generators.extend({
         this.spawnCommand(concurrent, clientList);
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/serve/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/desktop/fireloop.io/generator-fireloop/src/serve/index.js.map
