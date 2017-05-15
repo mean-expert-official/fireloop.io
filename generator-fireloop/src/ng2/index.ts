@@ -45,7 +45,7 @@ module.exports = generators.extend({
         }
         next(err);
       })
-    ], (err) => {
+    ], (err: any) => {
       // UI
       return this.prompt([{
         type: 'list',

@@ -1,12 +1,13 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require('fs');
 var yosay = require('yosay');
 var rmdir = require('rimraf');
 var mkdirp = require('mkdirp');
 var path = require('path');
 var generators = require('yeoman-generator');
-var chalk = require('chalk');
-var ejs = require('ejs');
+var chalk = require("chalk");
+var ejs = require("ejs");
 /**
  * @module ServerGenerator [FireLoop]
  * @author Jonathan Casarrubias <t: johncasarrubias, gh:mean-expert-official>
@@ -68,4 +69,4 @@ module.exports = generators.extend({
 function generate(cwd, config) {
     fs.writeFileSync(path.join(cwd, config.output.file), ejs.render(fs.readFileSync(require.resolve(__dirname + "/../../" + config.template), { encoding: 'utf-8' }), config.params));
 }
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/setup/index.js.map
+//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/setup/index.js.map

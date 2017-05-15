@@ -11,7 +11,10 @@ interface Client { path: string, type: string }
  * This module generates and configure a FireLoop Server
  */
 module.exports = generators.extend({
-
+  /**
+   * @module fireloop
+   * @author Brannon N. Darby II <gh:brannon-darby>
+   */
 
   constructor: function() {
     generators.apply(this, arguments);
@@ -20,6 +23,17 @@ module.exports = generators.extend({
 
   prompting: function() {
 
+    this.options.clients = this.config.get('clients') || {};
+    // Filter clients only not server.
+    let clients: string[] = [];
+    if (typeof this.options.clients === 'object') {
+      Object.keys(this.options.clients).forEach((name: string) => {
+        if (this.options.clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
+          clients.push(name);
+        }
+      });
+    }
+
     let keys: any = {
       GENERATE_PROJECT: 'Generate FireLoop Project',
       GENERATE_CLIENT: 'Generate Angular2 Client',
@@ -27,14 +41,6 @@ module.exports = generators.extend({
       FIRELOOP_VERSION: 'Show FireLoop Version'
     };
 
-    let sharedPaths: any = {
-      ng2web: 'src/app/shared/sdk',
-      ng2universal: 'src/app/shared/sdk',
-      ng2native: 'app/shared/sdk',
-      ng2ionic: 'src/app/shared/sdk'
-    };
-
-    let clients: any =  this.config.get('clients');
     let choices: string[] = new Array<string>();
 
     if (!this.config.get('version')) {
@@ -45,17 +51,8 @@ module.exports = generators.extend({
       choices.push(keys.GENERATE_CLIENT);
     }
 
-    // Filter clients only not server.
-    let _clients: string[] = []; 
-    if (typeof clients === 'object') {
-      Object.keys(clients).forEach((name: string) => {
-        if (clients[name].type.match(/(ng2web|ng2ionic|ng2native|ng2universal)/)) {
-          _clients.push(name);
-        }
-      });
-      if (_clients.length > 0) {
-        choices.push(keys.GENERATE_SDK);
-      }
+    if (clients.length > 0) {
+      choices.push(keys.GENERATE_SDK);
     }
 
     choices.push(keys.FIRELOOP_VERSION);
@@ -80,21 +77,7 @@ module.exports = generators.extend({
           });
           break;
         case keys.GENERATE_SDK:
-          this.prompt([{
-            type: 'list',
-            name: 'client',
-            message: 'For which application do you want to build an SDK?',
-            default: 0,
-            choices: _clients
-          }]).then(function(answers: { client: any }) {
-            this.composeWith('fireloop:sdk', {
-              options: {
-                clientPath: `${clients[answers.client].path}/${sharedPaths[clients[answers.client].type]}`,
-                clientType: clients[answers.client].type,
-                showOptions: true
-              }
-            });
-          }.bind(this));
+          this.composeWith('fireloop:sdk').on('end', () => done());
           break;
         case keys.FIRELOOP_VERSION:
           let version = require('../../package.json').version;
