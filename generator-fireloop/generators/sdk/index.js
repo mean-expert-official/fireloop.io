@@ -89,7 +89,7 @@ module.exports = generators.extend({
                 console.log('Server path found: ', serverPath);
             }
         });
-        this.spawnCommand('node_modules/.bin/lb-sdk', [
+        this.spawnCommand(this.destinationPath(path.join(serverPath, 'node_modules/.bin/lb-sdk')), [
             'server/server',
             this.destinationPath(this.sdkPath || 'webapp/src/app/shared/sdk'),
             '-d', !this.options.clientType || this.options.clientType.match(/(ng2web|ng2ionic)/)
