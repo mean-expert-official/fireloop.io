@@ -105,7 +105,7 @@ module.exports = generators.extend({
     });
 
     this.spawnCommand(
-      'node_modules/.bin/lb-sdk',
+      this.destinationPath(path.join(serverPath, 'node_modules/.bin/lb-sdk')),
       [
         'server/server',
         this.destinationPath(this.sdkPath || 'webapp/src/app/shared/sdk'),
