@@ -2,6 +2,11 @@ FireLoop Project Change Log
 ===========================
 
 
+### Release 1.0.0-beta.2.5
+
+- Fixed SDK generator issues
+- Implemented custom SDK directories
+
 ### Release 1.0.0-beta.2.4
 
 - Fixed relative path issues on windows.

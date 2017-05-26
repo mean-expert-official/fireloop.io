@@ -1,6 +1,6 @@
 {
   "name": "generator-fllb",
-  "version": "1.0.0-beta.2.4",
+  "version": "1.0.0-beta.2.5",
   "description": "Yeoman generator for LoopBack modified for FireLoop CLI usage",
   "license": "MIT",
   "main": "app/index.js",
