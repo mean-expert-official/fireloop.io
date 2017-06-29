@@ -72,4 +72,4 @@ module.exports = generators.extend({
         });
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/ng2/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2/index.js.map

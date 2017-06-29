@@ -23,4 +23,4 @@ module.exports = generators.extend({
         this.log(chalk.green('Updating: ', this.options.filePath));
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/jsonupdate/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/jsonupdate/index.js.map

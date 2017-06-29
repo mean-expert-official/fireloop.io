@@ -108,4 +108,4 @@ module.exports = generators.extend({
         this.config.set('clients', this.options.clients);
     }
 });
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/sdk/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/sdk/index.js.map

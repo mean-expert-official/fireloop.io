@@ -48,6 +48,7 @@ module.exports = generators.extend({
     let fname = this.destinationPath(`./common/models/${casedName}.json`);
     let config = require(fname);
     config.mixins = {
+      FireLoop: true,
       TimeStamp: {
         required: false
       },

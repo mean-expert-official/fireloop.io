@@ -2,6 +2,11 @@ FireLoop Project Change Log
 ===========================
 
 
+### Release 1.0.0-beta.2.6
+
+- Fixed missing FireLoop mixin on model generation
+- Fixed deprecated Ionic Flag
+
 ### Release 1.0.0-beta.2.5
 
 - Fixed SDK generator issues

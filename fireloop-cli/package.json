@@ -1,6 +1,6 @@
 {
   "name": "@mean-expert/fireloop",
-  "version": "1.0.0-beta.2.5",
+  "version": "1.0.0-beta.2.6",
   "description": "This CLI Tool generates FireLoop projects and provides a handful way to work with MEAN Stack based Applications.",
   "main": "index.js",
   "bin": {
@@ -27,8 +27,8 @@
     "@angular/cli": "1.0.0",
     "chalk": "1.1.3",
     "extfs": "0.0.7",
-    "generator-fireloop": "1.0.0-beta.2.5",
-    "generator-fllb": "1.0.0-beta.2.5",
+    "generator-fireloop": "1.0.0-beta.2.6",
+    "generator-fllb": "1.0.0-beta.2.6",
     "yargs": "6.6.0",
     "yeoman-environment": "1.6.6"
   }

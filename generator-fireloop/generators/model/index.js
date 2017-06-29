@@ -47,6 +47,7 @@ module.exports = generators.extend({
         var fname = this.destinationPath("./common/models/" + casedName + ".json");
         var config = require(fname);
         config.mixins = {
+            FireLoop: true,
             TimeStamp: {
                 required: false
             },
@@ -112,4 +113,4 @@ function propertyBuilder(config) {
     });
     return "" + properties.join(",") + (properties.length > 0 ? '\n        ' : '');
 }
-//# sourceMappingURL=C:/Users/bdarby/Desktop/fireloop.io/generator-fireloop/src/model/index.js.map
+//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/model/index.js.map
