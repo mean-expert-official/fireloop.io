@@ -27,7 +27,7 @@ module.exports = generators.Base.extend({
             }
             else {
                 this.log(chalk.green("\n\nCreating new Ionic 2 Application: " + answers.name));
-                this.spawnCommand('ionic', ['start', answers.name, '--v2'], { shell: true })
+                this.spawnCommand('ionic', ['start', answers.name], { shell: true })
                     .on('exit', function (code) {
                     if (code === 0) {
                         _this.options.current = answers.name;
