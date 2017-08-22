@@ -32,7 +32,7 @@ module.exports = generators.extend({
         let clicmd: string = path.join(nmdir, '.bin/ng');
         let args: string[] = ['new', answers.name];
         if (answers.universal) { args.push('--universal'); }
-        this.spawnCommand(clicmd, ['new', answers.name], { shell: true })
+        this.spawnCommand(clicmd, ['new', answers.name], {   })
           .on('exit', (code: number) => {
             if (code === 0) {
               this.options.current = answers.name;

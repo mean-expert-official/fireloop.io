@@ -119,7 +119,6 @@ module.exports = generators.extend({
         '-v', (this.sdkFeatures.indexOf(this.sdkOptions.DEFAULT_VALUES) > -1) ? 'enabled' : 'disabled'
       ],
       {
-        shell: true,
         cwd: this.destinationPath(serverPath)
       }
     );

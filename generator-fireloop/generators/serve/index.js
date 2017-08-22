@@ -66,7 +66,6 @@ module.exports = generators.extend({
                 cmd: spawn.cmd,
                 argv: spawn.argv,
                 opt: {
-                    shell: true,
                     cwd: spawn.cwd,
                     detached: true,
                 }

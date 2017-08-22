@@ -101,7 +101,6 @@ module.exports = generators.extend({
             '-n', (this.sdkFeatures.indexOf(this.sdkOptions.NGRX) > -1) ? 'enabled' : 'disabled',
             '-v', (this.sdkFeatures.indexOf(this.sdkOptions.DEFAULT_VALUES) > -1) ? 'enabled' : 'disabled'
         ], {
-            shell: true,
             cwd: this.destinationPath(serverPath)
         });
         this.options.clients[this.client.name].sdkPath = this.sdkPath;

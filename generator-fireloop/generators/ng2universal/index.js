@@ -37,7 +37,7 @@ module.exports = generators.extend({
                 if (answers.universal) {
                     args.push('--universal');
                 }
-                this.spawnCommand(clicmd, ['new', answers.name], { shell: true })
+                this.spawnCommand(clicmd, ['new', answers.name], {})
                     .on('exit', function (code) {
                     if (code === 0) {
                         _this.options.current = answers.name;

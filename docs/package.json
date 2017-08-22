@@ -5,7 +5,14 @@
   "hexo": {
     "version": "3.3.5"
   },
+  "engines": {
+    "node": "6.5.0",
+    "npm": "3.10.9"
+  },
   "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
     "hexo": "^3.2.2",
     "hexo-deployer-git": "^0.2.0",
     "hexo-generator-archive": "^0.1.4",

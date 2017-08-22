@@ -27,7 +27,7 @@ module.exports = generators.extend({
         done();
       } else {
         this.log(chalk.green(`\n\nCreating new NativeScript 2 Application: ${answers.name}`));
-        this.spawnCommand('tns', ['create', answers.name, '--ng'], { shell: true })
+        this.spawnCommand('tns', ['create', answers.name, '--ng'], { })
           .on('exit', (code: number) => {
             if (code === 0) {
               this.options.current = answers.name;
