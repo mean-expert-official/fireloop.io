@@ -51,6 +51,10 @@ module.exports = generators.extend({
             ng2web: {
                 cmd: require.resolve('@angular/cli').replace(/(@angular[(\/)(\\\\)]cli[(\/)(\\\\)]lib[(\/)(\\\\)]cli[(\/)(\\\\)]index.js)/g, '.bin/ng'),
                 argv: ['serve']
+            },
+            ng2ionic: {
+                cmd: 'ionic',
+                argv: ['serve']
             }
         };
         var clientsToServe = this.selected.map(function (answer) {
