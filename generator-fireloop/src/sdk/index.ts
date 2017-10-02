@@ -104,14 +104,16 @@ module.exports = generators.extend({
       }
     });
 
+    console.log('SDK Driver: ', this.client.type);
+
     this.spawnCommand(
       this.destinationPath(path.join(serverPath, 'node_modules/.bin/lb-sdk')),
       [
         'server/server',
         this.destinationPath(this.sdkPath || 'webapp/src/app/shared/sdk'),
-        '-d', !this.options.clientType || this.options.clientType.match(/(ng2web|ng2ionic)/)
+        '-d', !this.client.type || this.client.type.match(/(ng2web|ng2ionic)/)
           ? 'ng2web'
-          : this.options.clientType.trim(),
+          : this.client.type.trim(),
         '-w', 'enabled',
         '-i', (this.sdkFeatures.indexOf(this.sdkOptions.IO) > -1) ? 'enabled' : 'disabled',
         '-f', (this.sdkFeatures.indexOf(this.sdkOptions.FIRELOOP) > -1) ? 'enabled' : 'disabled',
