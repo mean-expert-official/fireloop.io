@@ -60,7 +60,7 @@ module.exports = generators.extend({
     install: function () {
         var dest = this.destinationPath(this.options.current);
         if (this.options.current) {
-            this.spawnCommand("npm", ['install', '--save', 'nativescript-socketio'], {
+            this.spawnCommand("npm", ['install', '--save', 'nativescript-socket.io'], {
                 cwd: dest
             });
         }
@@ -74,7 +74,7 @@ module.exports = generators.extend({
             [
                 {
                     template: 'templates/nativescript/app.module.ts',
-                    output: this.options.current + "/app/main.ts",
+                    output: this.options.current + "/app/app.module.ts",
                     params: {}
                 }
             ].forEach(function (config) {
@@ -86,4 +86,4 @@ module.exports = generators.extend({
         }
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/ng2native/index.js.map
+//# sourceMappingURL=/Users/benab/GitHub/fireloop.io/generator-fireloop/src/ng2native/index.js.map

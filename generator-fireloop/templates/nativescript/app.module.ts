@@ -1,17 +1,43 @@
-// this import should be first in order to load some required settings (like globals and reflect-metadata)
-import { platformNativeScriptDynamic, NativeScriptModule } from "nativescript-angular/platform";
-import { NgModule } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
+
+// Loopback NativeScript SDK Module
 import { SDKNativeModule } from './shared/sdk/index';
 
+import { ItemService } from "./item/item.service";
+import { ItemsComponent } from "./item/items.component";
+import { ItemDetailComponent } from "./item/item-detail.component";
+
+// Uncomment and add to NgModule imports if you need to use two-way binding
+// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+
+// Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
+// import { NativeScriptHttpModule } from "nativescript-angular/http";
+
 @NgModule({
-    declarations: [AppComponent],
-    bootstrap: [AppComponent],
+    bootstrap: [
+        AppComponent
+    ],
     imports: [
         NativeScriptModule,
-        SDKNativeModule.forRoot()
+        SDKNativeModule.forRoot(),
+        AppRoutingModule
     ],
+    declarations: [
+        AppComponent,
+        ItemsComponent,
+        ItemDetailComponent
+    ],
+    providers: [
+        ItemService
+    ],
+    schemas: [
+        NO_ERRORS_SCHEMA
+    ]
 })
-class AppComponentModule {}
-
-platformNativeScriptDynamic().bootstrapModule(AppComponentModule);
+/*
+Pass your application module to the bootstrapModule function located in main.ts to start your app
+*/
+export class AppModule { }
