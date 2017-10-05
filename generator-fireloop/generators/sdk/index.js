@@ -89,12 +89,13 @@ module.exports = generators.extend({
                 console.log('Server path found: ', serverPath);
             }
         });
+        console.log('SDK Driver: ', this.client.type);
         this.spawnCommand(this.destinationPath(path.join(serverPath, 'node_modules/.bin/lb-sdk')), [
             'server/server',
             this.destinationPath(this.sdkPath || 'webapp/src/app/shared/sdk'),
-            '-d', !this.options.clientType || this.options.clientType.match(/(ng2web|ng2ionic)/)
+            '-d', !this.client.type || this.client.type.match(/(ng2web|ng2ionic)/)
                 ? 'ng2web'
-                : this.options.clientType.trim(),
+                : this.client.type.trim(),
             '-w', 'enabled',
             '-i', (this.sdkFeatures.indexOf(this.sdkOptions.IO) > -1) ? 'enabled' : 'disabled',
             '-f', (this.sdkFeatures.indexOf(this.sdkOptions.FIRELOOP) > -1) ? 'enabled' : 'disabled',
@@ -107,4 +108,4 @@ module.exports = generators.extend({
         this.config.set('clients', this.options.clients);
     }
 });
-//# sourceMappingURL=/Volumes/HD710M/development/www/mean.expert/@mean-expert/fireloop.io/generator-fireloop/src/sdk/index.js.map
+//# sourceMappingURL=/Users/benab/GitHub/fireloop.io/generator-fireloop/src/sdk/index.js.map

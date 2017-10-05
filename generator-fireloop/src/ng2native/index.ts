@@ -61,7 +61,7 @@ module.exports = generators.extend({
     let dest = this.destinationPath(this.options.current);
     if (this.options.current) {
       this.spawnCommand(
-        `npm`, ['install', '--save', 'nativescript-socketio'], {
+        `npm`, ['install', '--save', 'nativescript-socket.io'], {
           cwd: dest
         });
     } else {
@@ -74,7 +74,7 @@ module.exports = generators.extend({
       [
         {
           template: 'templates/nativescript/app.module.ts',
-          output: `${this.options.current}/app/main.ts`,
+          output: `${this.options.current}/app/app.module.ts`,
           params: {}
         }
       ].forEach(
